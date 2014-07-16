@@ -1,3 +1,7 @@
+services:
+    pattern:  /services
+    defaults: { template: 'TemploBundle:Static:services.html.twig' }    
+    
 intermediation-sale:
     pattern:  /service/sale
     defaults: { template: 'TemploBundle:Static:sales.html.twig' }    
