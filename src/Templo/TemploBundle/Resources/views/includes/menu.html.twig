@@ -7,9 +7,9 @@
 
 <div class="popup">
     <ul>
-        <li><a href="contact.php">{{'sticky-toolbar.popup.contact' | trans| upper}}</a></li>
-        <li><a href="forum.html">{{'sticky-toolbar.popup.office' | trans| upper}}</a></li>
-        <li><a href="ticket.html">{{'sticky-toolbar.popup.what' | trans| upper}}</a></li>
+        <li><a href="contact.php">{{'sticky-toolbar.popup.contact' | trans}}</a></li>
+        <li><a href="forum.html">{{'sticky-toolbar.popup.office' | trans}}</a></li>
+        <li><a href="ticket.html">{{'sticky-toolbar.popup.what' | trans}}</a></li>
     </ul>
 </div><!--/ popup-->
 
@@ -117,51 +117,51 @@
                         <!-- Mega Menu -->
                         <li class="dropdown fhmm-fw"><a href="{{ path('portada') }}"><i class="fa fa-home"></i> {{ 'menu.home' | trans | upper }}</a></li><!-- mega menu -->
                         <!-- list elements -->
-                        <li class="dropdown fhmm-fw"><a href="services.php" data-toggle="dropdown" class="dropdown-toggle">{{ 'menu.service' | trans | upper }}<b class="caret"></b></a>
+                        <li class="dropdown fhmm-fw"><a href="" data-toggle="dropdown" class="dropdown-toggle">{{ 'menu.service' | trans | upper }}<b class="caret"></b></a>
                             <ul class="dropdown-menu fullwidth">
                                 <li class="fhmm-content withdesc">
                                     <div class="row">
                                         <div class="col-sm-2">
                                             <h3 class="title">{{ 'menu.service-type.intermediation' | trans | upper }}</h3>
                                             <ul>
-                                                <li><a data-description="Activos Mobiliarios" href="sale_properties.php">Venta</a></li>
-                                                <li><a data-description="Activos Mobiliarios" href="rent_properties.php">Alquiler</a></li>
-                                                <li><a data-description="Credito Personalizado" href="financial.php">Financiación</a></li>
-                                                <li><a data-description="Luz, agua, gas..." href="supplies.php">Suministros</a></li>
-                                                <li><a data-description="Impago, hogar, vida..." href="insurances.php">Seguros</a></li>
+                                                <li><a data-description="Activos Mobiliarios" href="{{ path('intermediation-sale') }}">Venta</a></li>
+                                                <li><a data-description="Activos Mobiliarios" href="{{ path('intermediation-rent') }}">Alquiler</a></li>
+                                                <li><a data-description="Credito Personalizado" href="{{ path('intermediation-financing') }}">Financiación</a></li>
+                                                <li><a data-description="Luz, agua, gas..." href="{{ path('intermediation-supplies') }}">Suministros</a></li>
+                                                <li><a data-description="Impago, hogar, vida..." href="{{ path('intermediation-insurance') }}">Seguros</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-2">
                                             <h3 class="title">{{ 'menu.service-type.construction' | trans | upper }}</h3>
                                             <ul>
-                                                <li><a data-description="Diseño de Interiores" href="design.php">Interiorismo</a></li>
-                                                <li><a data-description="Seguidad y Salud" href="safety.php">Coord. Seguridad</a></li>
-                                                <li><a data-description="Dirección de Ejecución" href="construction.php">Construcción</a></li>
+                                                <li><a data-description="Diseño de Interiores" href="{{ path('construction-interior') }}">Interiorismo</a></li>
+                                                <li><a data-description="Seguidad y Salud" href="{{ path('construction-safety-coordinator') }}">Coord. Seguridad</a></li>
+                                                <li><a data-description="Dirección de Ejecución" href="{{ path('construction-construction') }}">Construcción</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-2">
                                             <h3 class="title">{{ 'menu.service-type.certificate' | trans | upper }}</h3>
                                             <ul>
-                                                <li><a data-description="Certificado Energético" href="certificate.php">Certificados</a></li>
-                                                <li><a data-description="Inspección Edificios" href="agencies.php">ITE</a></li>
-                                                <li><a data-description="Licencia de Actividad" href="licenses.php">Licencias</a></li>
+                                                <li><a data-description="Certificado Energético" href="{{ path('certificates-certificates') }}">Certificados</a></li>
+                                                <li><a data-description="Inspección Edificios" href="{{ path('certificates-ite') }}">ITE</a></li>
+                                                <li><a data-description="Licencia de Actividad" href="{{ path('certificates-licenses') }}">Licencias</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-2">
                                             <h3 class="title">{{ 'menu.service-type.supplementary' | trans | upper }}</h3>
                                             <ul>
-                                                <li><a data-description="Liso, estuco..." href="painting.php">Pintura</a></li>
-                                                <li><a data-description="Hogar, locales, oficinas..." href="cleaner.php">Limpieza Profesional</a></li>
+                                                <li><a data-description="Liso, estuco..." href="{{ path('complement-painting') }}">Pintura</a></li>
+                                                <li><a data-description="Hogar, locales, oficinas..." href="{{ path('complement-cleaning') }}">Limpieza Profesional</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-2">
                                             <h3 class="title">{{ 'menu.service-type.templo' | trans | upper }}</h3>
                                             <ul>
-                                                <li><a data-description="Envíenos su CV" href="workus.php">Trabaja con Nosotros</a></li>
-                                                <li><a data-description="Información" href="about.php">Información Empresa</a></li>
-                                                <li><a data-description="Valores Empresa" href="values.php">Nuestros Valores</a></li>
-                                                <li><a data-description="Podemos Ayudarte" href="contact.php">Formulario de Contacto</a></li>
-                                                <li><a data-description="Preguntas Frecuentes..." href="faqs.php">¿Tienes Dudas?</a></li>
+                                                <li><a data-description="Envíenos su CV" href="{{ path('templo-work-with-us') }}">Trabaja con Nosotros</a></li>
+                                                <li><a data-description="Información" href="{{ path('templo-information') }}">Información Empresa</a></li>
+                                                <li><a data-description="Valores Empresa" href="{{ path('templo-our-values') }}">Nuestros Valores</a></li>
+                                                <li><a data-description="Podemos Ayudarte" href="{{ path('templo-contact-us') }}">Formulario de Contacto</a></li>
+                                                <li><a data-description="Preguntas Frecuentes..." href="{{ path('templo-ask') }}">¿Tienes Dudas?</a></li>
                                             </ul>
                                         </div>
                                     </div><!-- end row -->
@@ -174,11 +174,8 @@
                                 <li class="fhmm-content fullwidth">
                                     <div class="row">
                                         
-                                        {% for property in mostPopular %}                    
-                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                            {% include 'TemploBundle:includes:property-minibox.html.twig' %}
-                                        </div>
-                                       {% endfor %}                                          
+                                       {{ render(controller('TemploBundle:Default:topMenuProperties')) }}                                       
+                                                                                
                                                               
                                     </div><!-- end row -->
                                 </li><!-- end grid demo -->

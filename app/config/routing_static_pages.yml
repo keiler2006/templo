@@ -1,11 +1,58 @@
-ayuda:
-    pattern:  /ayuda
-    defaults: { template: 'TemploBundle:Static:ayuda.html.twig' }
+intermediation-sale:
+    pattern:  /service/sale
+    defaults: { template: 'TemploBundle:Static:sales.html.twig' }    
+intermediation-rent:
+    pattern:  /service/rent
+    defaults: { template: 'TemploBundle:Static:rent.html.twig' }
+intermediation-financing:
+    pattern:  /service/financing
+    defaults: { template: 'TemploBundle:Static:financing.html.twig' }
+intermediation-supplies:
+    pattern:  /service/supplies
+    defaults: { template: 'TemploBundle:Static:supplies.html.twig' }
+intermediation-insurance:
+    pattern:  /service/insurance
+    defaults: { template: 'TemploBundle:Static:insurance.html.twig' }
 
-privacidad:
-    pattern:  /privacidad
-    defaults: { template: 'TemploBundle:Static:privacidad.html.twig' }
+construction-interior:
+    pattern:  /service/interior
+    defaults: { template: 'TemploBundle:Static:interior.html.twig' }
+construction-safety-coordinator:
+    pattern:  /service/safety-coordinator
+    defaults: { template: 'TemploBundle:Static:safety-coordinator.html.twig' }
+construction-construction:
+    pattern:  /service/construction
+    defaults: { template: 'TemploBundle:Static:construction.html.twig' }
 
-sobre_nosotros:
-    pattern:  /sobre-nosotros
-    defaults: { template: 'TemploBundle:Static:sobre-nosotros.html.twig' }
+certificates-certificates:
+    pattern:  /service/certificates
+    defaults: { template: 'TemploBundle:Static:certificates.html.twig' }
+certificates-ite:
+    pattern:  /service/ite
+    defaults: { template: 'TemploBundle:Static:ite.html.twig' }
+certificates-licenses:
+    pattern:  /service/licenses
+    defaults: { template: 'TemploBundle:Static:licenses.html.twig' }
+
+complement-painting:
+    pattern:  /service/painting
+    defaults: { template: 'TemploBundle:Static:painting.html.twig' }
+complement-cleaning:
+    pattern:  /service/cleaning
+    defaults: { template: 'TemploBundle:Static:cleaning.html.twig' }
+
+templo-work-with-us:
+    pattern:  /work-with-us
+    defaults: { template: 'TemploBundle:Static:work-with-us.html.twig' }
+templo-information:
+    pattern:  /information
+    defaults: { template: 'TemploBundle:Static:information.html.twig' }
+templo-our-values:
+    pattern:  /our-values
+    defaults: { template: 'TemploBundle:Static:our-values.html.twig' }
+templo-contact-us:
+    pattern:  /contact-us
+    defaults: { template: 'TemploBundle:Static:contact-us.html.twig' }
+templo-ask:
+    pattern:  /ask
+    defaults: { template: 'TemploBundle:Static:ask.html.twig' }

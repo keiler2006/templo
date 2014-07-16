@@ -1,3 +1,2 @@
-templo_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: TemploBundle:Default:index }
+services-routes:
+    resource: services_routing.yml

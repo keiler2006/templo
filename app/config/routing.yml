@@ -1,8 +1,8 @@
 ﻿_paginas:
     resource: routing_static_pages.yml
-    prefix:   /{_locale}/sitio
+    prefix:   /{_locale}
     requirements:
-        _locale: en|es
+        _locale: en|es|cn
     defaults:
         _locale: es
         _controller: FrameworkBundle:Template:template
@@ -24,5 +24,5 @@ _portada:
 
 templo:
     resource: "@TemploBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
 
