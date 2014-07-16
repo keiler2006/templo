@@ -1,0 +1,28 @@
+top-bar:
+    login-register: Log in / Register
+    languages:
+        spanish: Spanish
+        english: English
+        chinese: Chinese
+         
+menu:
+    home: Home
+    service: Services
+    service-type: 
+        intermediation: Intermediation  
+        construction: Construction
+        certificate: Certificates
+        supplementary: Supplementary
+        templo: Templo
+    property: Property
+    find: We find your home
+    
+sticky-toolbar:
+    support-menu: Support menu
+    questions: Any question?
+    popup:
+        contact: Contact
+        office: Offices
+        what: What do we do?
+    
+    

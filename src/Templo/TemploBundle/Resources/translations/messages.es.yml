@@ -1,0 +1,28 @@
+top-bar:
+    login-register: Acceso / Registro
+    languages:
+        spanish: Español
+        english: Inglés
+        chinese: Chino
+        
+menu:
+    home: Inicio
+    service: Servicios
+    service-type: 
+        intermediation: Intermediación  
+        construction: Construcción
+        certificate: Certificados
+        supplementary: Complementos
+        templo: Templo
+    property: Propiedades
+    find: Buscamos su vivienda
+    
+sticky-toolbar:
+    support-menu: Menú de soporte
+    questions: ¿Alguna pregunta?
+    popup:
+        contact: Contacto
+        office: Oficinas
+        what: Qué hacemos
+    
+    

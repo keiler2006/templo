@@ -1,0 +1,22 @@
+<div class="boxes first">
+    <div class="ImageWrapper boxes_img">
+        <img class="img-responsive" src="{{ asset('uploads/images/property/'~property.id~'_home.jpg') }}" alt="">
+        <div class="ImageOverlayH"></div>
+        <div class="Buttons StyleMg">
+            <span class="WhiteSquare"><a class="fancybox" href="{{ asset('uploads/images/property/'~property.id~'_home.jpg') }}"><i class="fa fa-search"></i></a>
+            </span>
+            <span class="WhiteSquare"><a href="01_home.php"><i class="fa fa-link"></i></a>
+            </span>
+        </div>
+        <div class="box_type">€ {{property.price}}</div>
+        <div class="status_type">{{property.status}}</div>
+    </div>
+    <h2 class="title"><a href="01_home.php">{{property.title}}</a> <small class="small_title">{{property.address}}</small></h2>
+
+    <div class="boxed_mini_details1 clearfix">
+        <span class="garage first"><strong>Garaje</strong><i class="icon-garage"></i> {{property.garage}}</span>
+        <span class="bedrooms"><strong>Hab.</strong><i class="icon-bed"></i> {{property.bed}}</span>
+        <span class="status"><strong>Baños</strong><i class="icon-bath"></i> {{property.bath}}</span>
+        <span class="sqft last"><strong>Metros</strong><i class="icon-sqft"></i> {{property.sqft}}</span>
+    </div>
+</div><!-- end boxes -->

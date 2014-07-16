@@ -1,0 +1,360 @@
+{% extends 'TemploBundle::base.html.twig' %}
+
+{% block main %}
+<section id="one-parallax" class="parallax" style="background-image: url('{{ asset('demos/01_parallax.jpg') }}');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+    <div class="mapandslider">
+        <div class="overlay1 dm-shadow">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <div id="property-slider" class="clearfix">
+                            <div class="flexslider">
+                                <ul class="slides">
+				{% include 'TemploBundle:includes:property-slider.html.twig' %}
+                                {% include 'TemploBundle:includes:property-slider.html.twig' %} 
+				{% include 'TemploBundle:includes:property-slider.html.twig' %}
+                                </ul><!-- end slides -->
+                            </div><!-- end flexslider -->
+                        </div><!-- end property-slider -->
+                    </div><!-- end col-lg-8 -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                    </div>
+                </div><!-- end row -->
+            </div><!-- end dm_container -->
+        </div>
+    </div>
+</section><!-- end mapandslider -->
+
+<section class="generalwrapper dm-shadow clearfix">
+    <div class="container">
+        <div class="row text-center">
+            <h1 class="big_title">{% trans %}PUEDE COMPRAR LA CASA DE SUS SUEÑOS <small>Es muy sencillo. Solo únase a nosotros </small>{% endtrans %}</h1>
+            <div class="services_section clearfix">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="servicebox first">
+                        <div class="service-icon">
+                            <div class="dm-icon-effect-1" data-effect="slide-bottom">
+                                <a href="#" class=""> <i class="hovicon effect-1 sub-a fa fa-list fa-2x"></i> </a>
+                            </div>
+                        </div>
+                        <div class="servicetitle">
+                            <h3>Listado Propiedades Destacadas</h3>
+                        </div>
+                        <p>Visualice las propiedades con los mejores precios del mercado.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="servicebox">
+                        <div class="service-icon">
+                            <div class="dm-icon-effect-1" data-effect="slide-bottom">
+                                <a href="#" class=""> <i class="hovicon effect-1 sub-a fa fa-eye-slash fa-2x"></i> </a>
+                            </div>
+                        </div>
+                        <div class="servicetitle">
+                            <h3>Nuestras Oficinas </h3>
+                        </div>
+                        <p>Los profesionales más cualificados, se encuentran a su disposición.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="servicebox">
+                        <div class="service-icon">
+                            <div class="dm-icon-effect-1" data-effect="slide-bottom">
+                                <a href="#" class=""> <i class="hovicon effect-1 sub-a fa fa-check-square-o fa-2x"></i> </a>
+                            </div>
+                        </div>
+                        <div class="servicetitle">
+                            <h3>Facil de Usar</h3>
+                        </div>
+                        <p>Manual para comprender el manejo de nuestra página.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="servicebox last">
+                        <div class="service-icon">
+                            <div class="dm-icon-effect-1" data-effect="slide-bottom">
+                                <a href="#" class=""> <i class="hovicon effect-1 sub-a fa fa-home fa-2x"></i> </a>
+                            </div>
+                        </div>
+                        <div class="servicetitle">
+                            <h3>Venda y Consiga Dinero Online</h3>
+                        </div>
+                        <p>Si usted desea que nuestros compradores e inversores conozcan su propiedad, PUBLIQUELO GRATIS.</p>
+                    </div>
+                </div>
+            </div><!-- services_section -->  
+        </div><!-- end row -->
+        <div class="text-center clearfix">
+            <a class="btn btn-primary" href="services.php">VER TODOS LOS SERVICIOS</a>
+        </div><!-- end text-center -->
+    </div><!-- end container -->
+</section><!-- end generalwrapper -->
+
+<section id="three-parallax" class="parallax" style="background-image: url('{{ asset('demos/02_parallax.jpg') }}');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+    <div class="threewrapper">
+        <div class="overlay1 dm-shadow">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center clearfix">
+                        <h1 class="big_title">PROPIEDADES MÁS POPULARES <small>Las propiedades más visitadas de la semana </small></h1>
+                    </div>
+                    
+                    {% for property in mostPopular %}                    
+                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                         {% include 'TemploBundle:includes:property-minibox.html.twig' %}
+                     </div>
+                    {% endfor %}                   
+
+
+                    <blockquote class="pull-left" style="width:100%;">
+                        <p>El precio de la vivienda se estabiliza. COMPRE AHORA AL MEJOR PRECIO DE MERCADO.</p>
+                    </blockquote>
+
+                   {% for property in mostCheap %}                    
+                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                         {% include 'TemploBundle:includes:property-minibox.html.twig' %}
+                     </div>
+                    {% endfor %}  
+                    
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end overlay1 -->
+    </div><!-- end threewrapper -->
+</section><!-- end parallax -->
+
+<section class="generalwrapper dm-shadow clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12 first clearfix">
+            </div>
+
+            <div class="col-lg-7 col-md-9 col-sm-9 col-xs-12 clearfix">
+                <div id="tabbed_widget" class="tabbable clearfix" data-effect="slide-bottom"> 
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab" data-toggle="tab">Venta</a></li>
+                        <li><a href="#tab2" data-toggle="tab">Alquiler</a></li>
+                    </ul>
+                    <div class="tab-content tabbed_widget clearfix">
+                        <div class="tab-pane active" id="tab">
+                            <div class="col-lg-4 col-md-4 col-sm-4 first">
+                                    {% include 'TemploBundle:includes:property-minibox2.html.twig' %}
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                    {% include 'TemploBundle:includes:property-minibox2.html.twig' %}
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 last">
+                                    {% include 'TemploBundle:includes:property-minibox2.html.twig' %}
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 first">
+                                    {% include 'TemploBundle:includes:property-minibox2.html.twig' %}
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                    {% include 'TemploBundle:includes:property-minibox2.html.twig' %}
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 last">
+                                    {% include 'TemploBundle:includes:property-minibox2.html.twig' %}
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 first">
+                                    {% include 'TemploBundle:includes:property-minibox2.html.twig' %}
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                    {% include 'TemploBundle:includes:property-minibox2.html.twig' %}
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 last">
+                                    {% include 'TemploBundle:includes:property-minibox2.html.twig' %}
+                            </div>
+                        </div><!-- tab pane-->
+
+                        <div class="tab-pane" id="tab2">
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 first">
+                                    {% include 'TemploBundle:includes:property-minibox2.html.twig' %}
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                    {% include 'TemploBundle:includes:property-minibox2.html.twig' %}
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 last">
+                                    {% include 'TemploBundle:includes:property-minibox2.html.twig' %}
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 first">
+                                    {% include 'TemploBundle:includes:property-minibox2.html.twig' %}
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                   {% include 'TemploBundle:includes:property-minibox2.html.twig' %}
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 last">
+                                    {% include 'TemploBundle:includes:property-minibox2.html.twig' %}
+                            </div>
+                        </div><!-- tab pane -->
+
+                    </div><!-- tab-content -->
+                </div> <!-- widget -->  
+            </div><!-- end col-lg-7 -->
+
+            <div class="col-lg-3 col-md-6 col-sm-9 col-xs-12 last clearfix">
+                <div class="widget text-center clearfix">
+                    <br><br>
+                    <img data-effect="fade" class="img-thumbnail img-responsive" src="{{ asset('demos/01_banner.jpg') }}" alt="">
+                </div><!-- end of widget -->  
+            </div><!-- end col-lg-4 --> 
+        </div><!-- end row -->
+    </div><!-- end dm_container -->  
+</section><!-- end generalwrapper -->
+
+<section id="two-parallax" class="parallax" style="background-image: url('{{ asset('demos/03_parallax.jpg') }}');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+    <div class="threewrapper">
+        <div class="overlay1 dm-shadow">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center clearfix">
+                        <h3 class="big_title">Testimonios <small>La felicidad de nuestros clientes nos avala </small></h3>
+                    </div><!-- text-center -->
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="boxes testimonial_widget text-right first" data-effect="slide-left">
+                            <div class="image">
+                                <img class="img-circle img-responsive img-thumbnail" alt="" src="{{ asset('demos/03_team.jpg') }}">
+                            </div>
+                            <div class="testimonial_desc">
+                                <h3 class="title">Jianu CONSTANTIN</h3>
+                                <p><i class="fa fa-quote-left"></i>Intentamos durante un a�o vender nuestro piso sin conseguirlo y la mejor decisi�n que tomamos fue contratar a Templo Consulting, en tres meses lo habian vendido.<i class="fa fa-quote-right"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="boxes testimonial_widget text-left last" data-effect="slide-right">
+                            <div class="image">
+                                <img class="img-circle img-responsive img-thumbnail" alt="" src="{{ asset('demos/02_team.jpg') }}">
+                            </div>
+                            <div class="testimonial_desc">
+                                <h3 class="title">Ernesto ROLD�N</h3>
+                                <p><span><i class="fa fa-quote-left"></i></span>He vendido mi vivienda, que ten�a inquilino, con Templo Consulting. Profesionales, cuidadosos y buenos vendedores.<i class="fa fa-quote-right"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="boxes testimonial_widget text-right first" data-effect="slide-left">
+                            <div class="image">
+                                <img class="img-circle img-responsive img-thumbnail" alt="" src="{{ asset('demos/04_team.jpg') }}">
+                            </div>
+                            <div class="testimonial_desc">
+                                <h3 class="title">Paloma PONS</h3>
+                                <p><i class="fa fa-quote-left"></i>Gracias a Templo Consulting todos los problemas que tuvimos con la inscripci�n registral de la vivienda, fuer�n solucionados.<i class="fa fa-quote-right"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end overlay1 -->
+    </div><!-- end threewrapper -->
+</section><!-- end parallax -->
+
+<section class="secondwrapper dm-shadow clearfix">
+    <div class="container">       
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-12">
+            </div>
+        </div><!-- end row -->
+    </div><!-- end dm_container -->  
+</section><!-- end secondwrapper -->
+
+<section id="four-parallax" class="parallax" style="background-image: url('{{ asset('demos/04_parallax.jpg') }}');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+    <div class="overlay1 dm-shadow">
+        <div class="container">
+            <div class="row">
+                <div class="text-center clearfix">
+                    <h3 class="big_title">Agencias <small>La localizaci�n de nuestras agencias</small></h3>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> <!-- agencies 1 -->
+                    <div class="boxes agencies_widget first" data-effect="slide-bottom"> 
+                        <div class="col-lg-3">
+                            <div class="image">
+                                <img class="img-responsive img-thumbnail" src="{{ asset('demos/agencies1_logo.jpg') }}" alt="">
+                            </div><!-- end agencies img -->
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="agencies_desc">
+                                <h3 class="title">Santiago de Compostela 64. Madrid</h3>
+                                <p>Agencia Inmobiliar�a</p>
+                                <a href="#" class="btn btn-primary btn-sm">M�s Informaci�n</a> <a href="#" class="btn btn-primary btn-sm">Propiedades Asignadas</a>
+
+                            </div><!-- agencies_desc -->
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="agencies_meta">
+                            <span><i class="fa fa-envelope"></i> <a href="mailto:info@temploconsulting.com">info@temploconsulting.com</a></span>
+                            <span><i class="fa fa-link"></i> <a href="www.temploconsulting.com">www.temploconsulting.com</a></span><br>
+                            <span><i class="fa fa-phone-square"></i> +34 914 892 127</span>
+                        </div><!-- end agencies_meta -->
+                    </div><!-- end boxes -->
+                </div><!-- end col-6 -->
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> <!-- agencies 2 -->
+                    <div class="boxes agencies_widget first" data-effect="slide-bottom"> 
+                        <div class="col-lg-3">
+                            <div class="image">
+                                <img class="img-responsive img-thumbnail" src="{{ asset('demos/agencies3_logo.jpg') }}" alt="">
+                            </div><!-- end agencies img -->
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="agencies_desc">
+                                <h3 class="title">Rue de la Croix d'Or. Ginebra</h3>
+                                <p>Agencia Inmobiliar�a</p>
+                                <a href="#" class="btn btn-primary btn-sm">M�s Informaci�n</a> 
+
+                            </div><!-- agencies_desc -->
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="agencies_meta">
+                            <span><i class="fa fa-envelope"></i> <a href="mailto:info@temploconsulting.com">info@temploconsulting.com</a></span>
+                            <span><i class="fa fa-link"></i> <a href="www.temploconsulting.com">www.temploconsulting.com</a></span><br>
+                            <span><i class="fa fa-phone-square"></i> +41 791 762 208</span>
+                        </div><!-- end agencies_meta -->
+                    </div><!-- end boxes -->
+                </div><!-- end col-6 -->
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" data-effect="slide-bottom"> <!-- agencies 3 -->
+                    <div class="boxes agencies_widget last">
+                        <div class="col-lg-3">
+                            <div class="image">
+                                <img class="img-responsive img-thumbnail" src="{{ asset('demos/agencies2_logo.jpg') }}" alt="">
+                            </div><!-- end agencies img -->
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="agencies_desc">
+                                <h3 class="title">Portugal 1. Pozuelo de Alarc�n</h3>
+                                <p>Estudio de Arquitectura</p>
+                                <a href="#" class="btn btn-primary btn-sm">M�s Informaci�n</a> 
+
+                            </div><!-- agencies_desc -->
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="agencies_meta">
+                            <span><i class="fa fa-envelope"></i> <a href="mailto:info@temploconsulting.com">info@temploconsulting.com</a></span>
+                            <span><i class="fa fa-link"></i> <a href="www.temploconsulting.com">www.temploconsulting.com</a></span><br>
+                            <span><i class="fa fa-phone-square"></i> +34 914 892 127</span>
+                        </div><!-- end agencies_meta -->
+                    </div><!-- end boxes -->
+                </div><!-- end col-6 -->
+            </div><!-- end row -->
+        </div><!-- end dm_container -->
+    </div><!-- end overlay -->
+</section> 
+{% endblock %}

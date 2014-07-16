@@ -1,0 +1,11 @@
+ayuda:
+    pattern:  /ayuda
+    defaults: { template: 'TemploBundle:Static:ayuda.html.twig' }
+
+privacidad:
+    pattern:  /privacidad
+    defaults: { template: 'TemploBundle:Static:privacidad.html.twig' }
+
+sobre_nosotros:
+    pattern:  /sobre-nosotros
+    defaults: { template: 'TemploBundle:Static:sobre-nosotros.html.twig' }

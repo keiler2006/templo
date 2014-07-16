@@ -1,0 +1,194 @@
+<div class="sticky-toolbar">
+    <ul>
+        <li id="support"><a title="{{'sticky-toolbar.support-menu' | trans}}" title="" href="#" ><i class="fa fa-link"></i></a></li>
+        <li id="help"><a href="#ContactFormModal" data-toggle="modal" title="{{'sticky-toolbar.question' | trans}}"><i class="fa fa-question"></i></a></li>
+    </ul>
+</div><!--/ sticky-toolbar-->
+
+<div class="popup">
+    <ul>
+        <li><a href="contact.php">{{'sticky-toolbar.popup.contact' | trans| upper}}</a></li>
+        <li><a href="forum.html">{{'sticky-toolbar.popup.office' | trans| upper}}</a></li>
+        <li><a href="ticket.html">{{'sticky-toolbar.popup.what' | trans| upper}}</a></li>
+    </ul>
+</div><!--/ popup-->
+
+</div><!--/ toolbar-wrapp-->
+
+<div class="modal fade" id="ContactFormModal" tabindex="-1" role="dialog" aria-labelledby="ContactFormModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h2 class="big_title">¿Tiene preguntas?<small>No se preocupe! Estamos aquí para ayudarle</small></h2>
+            </div>
+            <div class="modal-body clearfix">
+                <div class="text-left">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="ImageWrapper boxes_img">
+                            <img src="{{ asset('demos/01_about.jpg') }}" class="img-responsive" alt="">
+                            <div class="ImageOverlayH"></div>
+                            <div class="Buttons StyleSc">
+                                <span class="WhiteSquare"><a href="http://www.facebook.com/temploconsulting"><i class="fa fa-facebook"></i></a></span>
+                                <span class="WhiteSquare"><a href="http://twitter.com/templo_cons"><i class="fa fa-twitter"></i></a></span>
+                                <span class="WhiteSquare"><a href="https://plus.google.com/102908365515054598982?rel=author"><i class="fa fa-google-plus"></i></a></span>
+                            </div>
+                        </div>
+                        <div class="servicetitle"><h2>Contacto Templo Consulting</h2></div>
+                        <ul>
+                            <li><i class="fa fa-external-link"></i> www.temploconsulting.com.com</li>
+                            <li><i class="fa fa-envelope"></i> info@temploconsulting.com</li>
+                            <li><i class="fa fa-phone-square"></i> +34 914 892 127</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <form id="contact" class="row" action="contact.php" name="contactform" method="post">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Nombre"> 
+                            <input type="text" name="email" id="email" class="form-control" placeholder="Email"> 
+                            <input type="text" name="phone" id="phone" class="form-control" placeholder="Teléfono">
+                            <input type="text" name="subject" id="subject" class="form-control" placeholder="Asunto"> 
+                            <textarea class="form-control" name="comments" id="comments" rows="6" placeholder="Mensaje ..."></textarea>
+                            <button type="button" class="btn btn-primary">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="topbar clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="callus">
+                    <p>
+                        <span><i class="fa fa-envelope"></i> info@temploconsulting.com</span>
+                        <span><i class="fa fa-phone-square"></i> 914892127</span>
+                    </p>
+                </div><!-- end callus-->
+            </div><!-- end col-lg-6 -->
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="marketing">
+                    <ul class="topflags pull-right">
+                        <li><a data-placement="bottom" data-toggle="tooltip" data-original-title="{{'top-bar.languages.spanish' | trans}}" title="" href="{{ path('portada', { '_locale': 'es' }) }}"><img alt="es" src="{{ asset('images/flags/es.png') }}"></a></li>
+                        <li><a data-placement="bottom" data-toggle="tooltip" data-original-title="{{'top-bar.languages.english' | trans}}" title="" href="{{ path('portada', { '_locale': 'en' }) }}"><img alt="us" src="{{ asset('images/flags/us.png') }}"></a></li>
+                        <li><a data-placement="bottom" data-toggle="tooltip" data-original-title="{{'top-bar.languages.chinese' | trans}}" title="" href="{{ path('portada', { '_locale': 'cn' }) }}"><img alt="cn" src="{{ asset('images/flags/cn.png') }}"></a></li>
+                    </ul><!-- end flags -->
+                    <ul class="topmenu pull-right">
+                        <li><a href="login.html"><i class="fa fa-lock"></i>{{'top-bar.login-register' | trans}}</a></li>
+                    </ul><!-- topmenu -->
+                </div><!-- end marketing -->
+            </div><!-- end col-lg-6 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end topbar -->        <header class="header1">
+    <div class="container">
+        <div class="row header-row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="logo-wrapper clearfix">
+                    <div class="logo">
+                        <a href="index.php" title="Inicio">
+                            <img src="{{ asset('images/logo.png') }}" alt="Logo Templo  Consulting">
+                        </a>
+                    </div><!-- /.site-name -->
+                </div><!-- /.logo-wrapper -->
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+            </div>      
+            <div class="col-lg-5 col-md-5 col-sm-12  pull-right">
+                <div class="social clearfix pull-right">
+                    <span><a data-placement="bottom" data-toggle="tooltip" data-original-title="Twitter" title="Twitter Templo Consulting" href="http://twitter.com/templo_cons"><i class="fa fa-twitter"></i></a></span>
+                    <span><a data-placement="bottom" data-toggle="tooltip" data-original-title="Facebook" title="Facebook Templo Consulting" href="http://www.facebook.com/temploconsulting"><i class="fa fa-facebook"></i></a></span>
+                    <span><a data-placement="bottom" data-toggle="tooltip" data-original-title="Google Plus" title="Google Plus Templo Consulting" href="https://plus.google.com/102908365515054598982?rel=author"><i class="fa fa-google-plus"></i></a></span>
+                    <span><a data-placement="bottom" data-toggle="tooltip" data-original-title="Linkedin" title="Linkedin Templo Consulting" href="http://www.linkedin.com/company/3321721?trk=tyah"><i class="fa fa-linkedin"></i></a></span>
+                    <span><a data-placement="bottom" data-toggle="tooltip" data-original-title="Blog" title="Blog Templo Consulting" href="http://templo-consulting.blogspot.com.es/"><i class="fa fa-book"></i></a></span>
+                </div><!-- end social -->
+            </div>     
+        </div><!-- end row -->
+        <nav class="navbar navbar-default fhmm" role="navigation">
+            <div class="menudrop container">
+                <div class="navbar-header">
+                    <button type="button" data-toggle="collapse" data-target="#defaultmenu" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div><!-- end navbar-header -->
+                <div id="defaultmenu" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Mega Menu -->
+                        <li class="dropdown fhmm-fw"><a href="{{ path('portada') }}"><i class="fa fa-home"></i> {{ 'menu.home' | trans | upper }}</a></li><!-- mega menu -->
+                        <!-- list elements -->
+                        <li class="dropdown fhmm-fw"><a href="services.php" data-toggle="dropdown" class="dropdown-toggle">{{ 'menu.service' | trans | upper }}<b class="caret"></b></a>
+                            <ul class="dropdown-menu fullwidth">
+                                <li class="fhmm-content withdesc">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <h3 class="title">{{ 'menu.service-type.intermediation' | trans | upper }}</h3>
+                                            <ul>
+                                                <li><a data-description="Activos Mobiliarios" href="sale_properties.php">Venta</a></li>
+                                                <li><a data-description="Activos Mobiliarios" href="rent_properties.php">Alquiler</a></li>
+                                                <li><a data-description="Credito Personalizado" href="financial.php">Financiación</a></li>
+                                                <li><a data-description="Luz, agua, gas..." href="supplies.php">Suministros</a></li>
+                                                <li><a data-description="Impago, hogar, vida..." href="insurances.php">Seguros</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <h3 class="title">{{ 'menu.service-type.construction' | trans | upper }}</h3>
+                                            <ul>
+                                                <li><a data-description="Diseño de Interiores" href="design.php">Interiorismo</a></li>
+                                                <li><a data-description="Seguidad y Salud" href="safety.php">Coord. Seguridad</a></li>
+                                                <li><a data-description="Dirección de Ejecución" href="construction.php">Construcción</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <h3 class="title">{{ 'menu.service-type.certificate' | trans | upper }}</h3>
+                                            <ul>
+                                                <li><a data-description="Certificado Energético" href="certificate.php">Certificados</a></li>
+                                                <li><a data-description="Inspección Edificios" href="agencies.php">ITE</a></li>
+                                                <li><a data-description="Licencia de Actividad" href="licenses.php">Licencias</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <h3 class="title">{{ 'menu.service-type.supplementary' | trans | upper }}</h3>
+                                            <ul>
+                                                <li><a data-description="Liso, estuco..." href="painting.php">Pintura</a></li>
+                                                <li><a data-description="Hogar, locales, oficinas..." href="cleaner.php">Limpieza Profesional</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <h3 class="title">{{ 'menu.service-type.templo' | trans | upper }}</h3>
+                                            <ul>
+                                                <li><a data-description="Envíenos su CV" href="workus.php">Trabaja con Nosotros</a></li>
+                                                <li><a data-description="Información" href="about.php">Información Empresa</a></li>
+                                                <li><a data-description="Valores Empresa" href="values.php">Nuestros Valores</a></li>
+                                                <li><a data-description="Podemos Ayudarte" href="contact.php">Formulario de Contacto</a></li>
+                                                <li><a data-description="Preguntas Frecuentes..." href="faqs.php">¿Tienes Dudas?</a></li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- end row -->
+                                </li><!-- end grid demo -->
+                            </ul><!-- end drop down menu -->
+                        </li><!-- end list elements -->
+                        <!-- list elements -->
+                        <li class="dropdown fhmm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ 'menu.property' | trans | upper }} <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="fhmm-content fullwidth">
+                                    <div class="row">
+                                        
+                                        {% for property in mostPopular %}                    
+                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                            {% include 'TemploBundle:includes:property-minibox.html.twig' %}
+                                        </div>
+                                       {% endfor %}                                          
+                                                              
+                                    </div><!-- end row -->
+                                </li><!-- end grid demo -->
+                            </ul><!-- end drop down menu -->
+                        </li><!-- end list elements -->
+                        <!-- standard drop down -->
+                        <li><a href="list-property.html">{{ 'menu.find' | trans | upper }}</a></li>
+                    </ul><!-- end nav navbar-nav -->
+                </div><!-- end #navbar-collapse-1 -->
+            </div><!-- end dm_container -->
+        </nav><!-- end navbar navbar-default fhmm -->
+    </div><!-- end container -->
+</header><!-- end header -->

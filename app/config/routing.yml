@@ -1,0 +1,28 @@
+﻿_paginas:
+    resource: routing_static_pages.yml
+    prefix:   /{_locale}/sitio
+    requirements:
+        _locale: en|es
+    defaults:
+        _locale: es
+        _controller: FrameworkBundle:Template:template
+        private: false
+        maxAge: 86400
+        sharedMaxAge: 86400
+
+# Ruta de la portada completa del sitio (con _locale y el slug de la ciudad)
+portada:
+    pattern:  /{_locale}
+    defaults: { _controller: TemploBundle:Default:index, _locale: es }
+    requirements:
+        _locale: en|es|cn
+
+
+_portada:
+     pattern:  /
+     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: portada }
+
+templo:
+    resource: "@TemploBundle/Resources/config/routing.yml"
+    prefix:   /
+
