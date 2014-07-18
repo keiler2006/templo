@@ -2,6 +2,10 @@ parameters:
 #    templo.example.class: Templo\TemploBundle\Example
 
 services:
+    # custom file namer
+    templo.namer_uniqid:
+        class: Templo\TemploBundle\Namer\TemploNamer
+        
 #    templo.example:
 #        class: %templo.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]

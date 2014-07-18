@@ -16,7 +16,29 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Templo\TemploBundle\TemploBundle(),
+            
+             // FOSUserBundle
+            new FOS\UserBundle\FOSUserBundle(),
+            
+            // StofDoctrineExtensionsBundle
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            
+              // FOSJsRoutingBundle
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            
+             // FOSMessageBundle
+            //new FOS\MessageBundle\FOSMessageBundle(),
+            
+              // VichUploaderBundle, KnpGaufretteBundle
+            new Vich\UploaderBundle\VichUploaderBundle(),
+
+            // AvalancheImagineBundle
+            new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
+            
+            new Templo\TemploBundle\TemploBundle(),           
+
+            new Templo\MessageBundle\TemploMessageBundle(),
+            new Templo\UserBundle\TemploUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {           

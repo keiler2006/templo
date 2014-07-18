@@ -1,0 +1,7 @@
+parameters:
+#    templo_user.example.class: Templo\UserBundle\Example
+
+services:
+#    templo_user.example:
+#        class: %templo_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
