@@ -1,9 +1,9 @@
 # This file is auto-generated during the composer install
 parameters:
     database_driver: pdo_sqlite
-    database_host: 
-    database_port: 
-    database_name: 
+    database_host: ~
+    database_port: ~
+    database_name: ~
     database_user: root
     database_password: null
     database_p: "%kernel.root_dir%/data/templo.db3"
