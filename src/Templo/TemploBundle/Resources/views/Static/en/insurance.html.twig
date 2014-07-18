@@ -1,0 +1,67 @@
+{% extends 'TemploBundle::services-template1.html.twig' %}
+
+{% block breadcrumb %}
+   <ul class="breadcrumb">
+        <li><a href="{{ path('portada') }}">{{ 'breadcrumb.home' | trans }}</a></li>
+        <li><a href="{{ path('services') }}">{{ 'breadcrumb.services' | trans }}</a></li>
+        <li>{{ 'breadcrumb.insuraces' | trans }}</li> 
+    </ul>
+{% endblock %}
+
+{% block title1 %}
+Seguros Hogar, Alquiler, Vida...
+{% endblock %}
+
+{% block left_region %}
+    {% include 'TemploBundle:Static/'~app.request.locale~'/widget:major_insurers.html.twig'%}  
+{% endblock %}
+    
+{% block right_region %}
+    {% include 'TemploBundle:Static/'~app.request.locale~'/widget:credit.html.twig'%} 
+    {% include 'TemploBundle:Static/'~app.request.locale~'/widget:supplies.html.twig'%}
+{% endblock %}
+
+    
+{% block center_region %}
+    
+    <h2>TEMPLO HOGAR</h2>
+    <p>Tranquilidad en tu hogar, en tus viajes, con tu familia, con tus ahorros, en tu negocio… En Templo Consulting cuidamos de ti y de los tuyos en todos los ámbitos de tu vida.</p>
+    <p><span lang="ES-TRAD">Con los&nbsp;<strong>seguros Hogar</strong>&nbsp;de TEMPLO CONSULTING&nbsp;usted y&nbsp;su familia vivirán con la&nbsp;tranquilidad que da el&nbsp;<strong>seguro de casa </strong>más&nbsp;completo.&nbsp;</span><span lang="ES-TRAD">Nuestro&nbsp;<strong>seguro del Hogar</strong>&nbsp;ofrece amplias coberturas y gran flexibilidad:</span></p>
+    <p><strong>Algunas de las ventajas de nuestro</strong>&nbsp;<strong>seguro Hogar</strong>:<br></p>
+
+      <ul>
+          <li><span lang="ES-TRAD">&nbsp;</span><span lang="ES-TRAD">Protección&nbsp;<strong>frente a cualquier imprevisto</strong>: incendio, robo, fugas de agua, rotura de cristales, fenómenos meteorológicos, etc.</span></li>
+          <li><span lang="ES-TRAD">Cobertura de la&nbsp;<strong>Responsabilidad Civil</strong>de la propiedad de la vivienda, del uso de la misma y del ámbito familiar.</span></li>
+          <li><strong><span lang="ES-TRAD">Asistencia en el Hogar</span></strong><span lang="ES-TRAD">, las 24 horas y 365 días del año: un amplio equipo de profesionales le atenderá en caso de siniestro o en situaciones de urgencia.</span></li>
+          <li><span lang="ES-TRAD">La más completa&nbsp;<strong>Protección Jurídica&nbsp;</strong>para el asegurado y su familia, como propietario o inquilino de la vivienda, y también en el ámbito privado.</span></li>
+      </ul>
+
+    <span lang="FR">Y un innovador servicio de&nbsp;<strong>Teleasistencia Informática</strong>, para resolver las incidencias en su ordenador.</span>
+
+    <p>UN SEGURO TAN PERSONAL COMO TU PROPIO HOGAR.</p>
+    <p>Cualquier persona que sea propietario y/o inquilino de una vivienda familiar ya sean pisos o apartamentos, chalets adosados o chalets independientes, tanto en régimen de propiedad (vivienda principal, secundaria o arrendada) como en alquiler.</p>
+    <p>Templo Consulting&nbsp;te proporciona la gama más amplia de coberturas, que podrás personalizar y completar con múltiples opciones. Nadie mejor que tú puede decidir lo que tu hogar necesita.</p>
+
+    <img class="img-thumbnail" src="{{ asset('demos/01_enterprise.jpg') }}" alt=""><br><br>
+
+    <h2>TEMPLO VIDA</h2>
+    <p>Los&nbsp;<strong>seguros de vida</strong>&nbsp;son imprescindibles para asegurar el bienestar económico familiar en caso de fallecimiento del Asegurado.</p>
+    <p>Con nuestro&nbsp;<strong>seguro de vida</strong>, pase lo que pase su familia podrá seguir manteniendo su nivel de vida, haciendo frente a los compromisos económicos y cumpliendo sus proyectos de futuro (hipotecas, estudios, viajes...).</p>
+    <p>Además, su&nbsp;<strong>seguro de Vida Templo</strong> le permite complementar la garantía de fallecimiento con tres garantías opcionales, que le aportarán todavía más tranquilidad.</p>
+    <p>Porqué TEMPLO VIDA es el&nbsp;<strong>mejor seguro de Vida</strong></p>
+    <ul>
+      <li>Seguro anual renovable. Sin compromiso de permanencia.</li>
+      <li>Precios muy competitivos, especialmente para mujeres. Se ajustan cada año.</li>
+      <li>Libre elección del importe de capital más apropiado a sus necesidades familiares-económicas y posibilidad de ir adecuándolo en el tiempo.</li>
+      <li>Opción de contratar sólo la garantía principal de fallecimiento y de incluir, cuando quiera, garantías complementarias; incapacidad permanente absoluta, doble capital en caso de fallecimiento por accidente o triple capital por fallecimiento por accidente de circulación.</li>
+      <li>Forma de pago flexible y cómoda, según sus posibilidades.</li>
+      <li>Facilidad y rapidez en la contratación. Formulario-solicitud muy simplificado.</li>
+      <li>Hasta 45 años y un capital inferior a 120.000 euros será suficiente con cumplimentar una solicitud simplificada. En caso de capitales superiores será preciso un reconocimiento médico gratuito.</li>
+      <li>Asesoramiento personalizado. Podemos ayudarle a reflexionar con total confianza:<br>
+        <p>¿Necesito un seguro de vida?, ¿Con qué importe de capital?, ¿Qué garantías contrato?, ¿Qué beneficiarios son aconsejables para pagar menos impuestos?</p>
+      </li>
+    </ul>
+
+    <img class="img-thumbnail" src="{{ asset('demos/05_services.jpg') }}" alt=""><br>
+                    
+{% endblock %}

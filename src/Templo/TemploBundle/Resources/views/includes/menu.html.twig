@@ -34,7 +34,7 @@
                                 <span class="WhiteSquare"><a href="https://plus.google.com/102908365515054598982?rel=author"><i class="fa fa-google-plus"></i></a></span>
                             </div>
                         </div>
-                        <div class="servicetitle"><h2>Contacto Templo Consulting</h2></div>
+                        <div class="servicetitle"><h2>Templo Consulting</h2></div>
                         <ul>
                             <li><i class="fa fa-external-link"></i> www.temploconsulting.com.com</li>
                             <li><i class="fa fa-envelope"></i> info@temploconsulting.com</li>
@@ -77,13 +77,14 @@
                         <li><a data-placement="bottom" data-toggle="tooltip" data-original-title="{{'top-bar.languages.chinese' | trans}}" title="" href="{{ path('portada', { '_locale': 'cn' }) }}"><img alt="cn" src="{{ asset('images/flags/cn.png') }}"></a></li>
                     </ul><!-- end flags -->
                     <ul class="topmenu pull-right">
-                        <li><a href="login.html"><i class="fa fa-lock"></i>{{'top-bar.login-register' | trans}}</a></li>
-                    </ul><!-- topmenu -->
+                        <li><a href="login.html"><!-- <i class="fa fa-lock"> --> </i>{{'top-bar.login-register' | trans}}</a></li>
+                    </ul><!--  -->
                 </div><!-- end marketing -->
             </div><!-- end col-lg-6 -->
         </div><!-- end row -->
     </div><!-- end container -->
-</div><!-- end topbar -->        <header class="header1">
+</div><!-- end topbar -->        
+<header class="header1">
     <div class="container">
         <div class="row header-row">
             <div class="col-lg-4 col-md-6 col-sm-12">
@@ -124,44 +125,44 @@
                                         <div class="col-sm-2">
                                             <h3 class="title">{{ 'menu.service-type.intermediation' | trans | upper }}</h3>
                                             <ul>
-                                                <li><a data-description="{{ 'menu.data-description.intermediation.sale' | trans }}" href="{{ path('intermediation-sale') }}">{{ 'menu.intermediation.sale' | trans }}</a></li>
-                                                <li><a data-description="{{ 'menu.data-description.intermediation.rent' | trans }}" href="{{ path('intermediation-rent') }}">{{ 'menu.intermediation.rent' | trans }}</a></li>
-                                                <li><a data-description="{{ 'menu.data-description.intermediation.financing' | trans }}" href="{{ path('intermediation-financing') }}">{{ 'menu.intermediation.financing' | trans }}</a></li>
-                                                <li><a data-description="{{ 'menu.data-description.intermediation.supplies' | trans }}" href="{{ path('intermediation-supplies') }}">{{ 'menu.intermediation.supplies' | trans }}</a></li>
-                                                <li><a data-description="{{ 'menu.data-description.intermediation.insurance' | trans }}" href="{{ path('intermediation-insurance') }}">{{ 'menu.intermediation.insurance' | trans }}</a></li>
+                                                <li><a data-description="Ventas Mobiliarios" href="{{ path('intermediation-sale') }}">{{ 'menu.service-type.intermediation-submenu.sale' | trans| upper }}</a></li>
+                                                <li><a data-description="Activos Mobiliarios" href="{{ path('intermediation-rent') }}">{{ 'menu.service-type.intermediation-submenu.rent' | trans| upper }}</a></li>
+                                                <li><a data-description="Credito Personalizado" href="{{ path('intermediation-financing') }}">{{ 'menu.service-type.intermediation-submenu.financing' | trans| upper }}</a></li>
+                                                <li><a data-description="Luz, agua, gas..." href="{{ path('intermediation-supplies') }}">{{ 'menu.service-type.intermediation-submenu.supplies' | trans| upper }}</a></li>
+                                                <li><a data-description="Impago, hogar, vida..." href="{{ path('intermediation-insurance') }}">{{ 'menu.service-type.intermediation-submenu.insurance' | trans| upper }}</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-2">
                                             <h3 class="title">{{ 'menu.service-type.construction' | trans | upper }}</h3>
                                             <ul>
-                                                <li><a data-description="{{ 'menu.data-description.construction.interior' | trans }}" href="{{ path('construction-interior') }}">{{ 'menu.construction.interior' | trans }}</a></li>
-                                                <li><a data-description="{{ 'menu.data-description.construction.safety-coordinator' | trans }}" href="{{ path('construction-safety-coordinator') }}">{{ 'menu.construction.safety-coordinator' | trans }}</a></li>
-                                                <li><a data-description="{{ 'menu.data-description.construction.construction' | trans }}" href="{{ path('construction-construction') }}">{{ 'menu.construction.construction' | trans }}</a></li>
+                                                <li><a data-description="Diseño de Interiores" href="{{ path('construction-interior') }}">{{ 'menu.service-type.construction-submenu.interior' | trans| upper }}</a></li>
+                                                <li><a data-description="Seguidad y Salud" href="{{ path('construction-safety-coordinator') }}">{{ 'menu.service-type.construction-submenu.coord' | trans| upper }}</a></li>
+                                                <li><a data-description="Dirección de Ejecución" href="{{ path('construction-construction') }}">{{ 'menu.service-type.construction-submenu.construction' | trans| upper }}</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-2">
                                             <h3 class="title">{{ 'menu.service-type.certificate' | trans | upper }}</h3>
                                             <ul>
-                                                <li><a data-description="{{ 'menu.data-description.certificate.certificates' | trans }}" href="{{ path('certificates-certificates') }}">{{ 'menu.certificate.certificates' | trans }}</a></li>
-                                                <li><a data-description="{{ 'menu.data-description.certificate.ite' | trans }}" href="{{ path('certificates-ite') }}">{{ 'menu.certificate.ite' | trans }}</a></li>
-                                                <li><a data-description="{{ 'menu.data-description.certificate.licenses' | trans }}" href="{{ path('certificates-licenses') }}">{{ 'menu.certificate.licenses' | trans }}</a></li>
+                                                <li><a data-description="Certificado Energético" href="{{ path('certificates-certificates') }}">{{ 'menu.service-type.certificate-submenu.certificates' | trans| upper }}</a></li>
+                                                <li><a data-description="Inspección Edificios" href="{{ path('certificates-ite') }}">{{ 'menu.service-type.certificate-submenu.ite' | trans| upper }}</a></li>
+                                                <li><a data-description="Licencia de Actividad" href="{{ path('certificates-licenses') }}">{{ 'menu.service-type.certificate-submenu.licenses' | trans| upper }}</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-2">
                                             <h3 class="title">{{ 'menu.service-type.supplementary' | trans | upper }}</h3>
                                             <ul>
-                                                <li><a data-description="{{ 'menu.data-description.supplementary.painting' | trans }}" href="{{ path('complement-painting') }}">{{ 'menu.supplementary.painting' | trans }}</a></li>
-                                                <li><a data-description="{{ 'menu.data-description.supplementary.cleaning' | trans }}" href="{{ path('complement-cleaning') }}">{{ 'menu.supplementary.cleaning' | trans }}</a></li>
+                                                <li><a data-description="Liso, estuco..." href="{{ path('complement-painting') }}">{{ 'menu.service-type.supplementary-submenu.paint' | trans | upper }}</a></li>
+                                                <li><a data-description="Hogar, locales, oficinas..." href="{{ path('complement-cleaning') }}">{{ 'menu.service-type.supplementary-submenu.cleaning' | trans | upper }}</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-2">
                                             <h3 class="title">{{ 'menu.service-type.templo' | trans | upper }}</h3>
                                             <ul>
-                                                <li><a data-description="{{ 'menu.data-description.templo.work-with-us' | trans }}" href="{{ path('templo-work-with-us') }}">{{ 'menu.templo.work-with-us' | trans }}</a></li>
-                                                <li><a data-description="{{ 'menu.data-description.templo.information' | trans }}" href="{{ path('templo-information') }}">{{ 'menu.templo.information' | trans }}</a></li>
-                                                <li><a data-description="{{ 'menu.data-description.templo.our-values' | trans }}" href="{{ path('templo-our-values') }}">{{ 'menu.templo.our-values' | trans }}</a></li>
-                                                <li><a data-description="{{ 'menu.data-description.templo.contact-us' | trans }}" href="{{ path('templo-contact-us') }}">{{ 'menu.templo.contact-us' | trans }}</a></li>
-                                                <li><a data-description="{{ 'menu.data-description.templo.ask' | trans }}" href="{{ path('templo-ask') }}">{{ 'menu.templo.ask' | trans }}</a></li>
+                                                <li><a data-description="Envíenos su CV" href="{{ path('templo-work-with-us') }}">{{ 'menu.service-type.templo-submenu.work' | trans | upper }}</a></li>
+                                                <li><a data-description="Información" href="{{ path('templo-information') }}">{{ 'menu.service-type.templo-submenu.cleaning' | trans | upper }}</a></li>
+                                                <li><a data-description="Valores Empresa" href="{{ path('templo-our-values') }}">{{ 'menu.service-type.templo-submenu.valors' | trans | upper }}</a></li>
+                                                <li><a data-description="Podemos Ayudarte" href="{{ path('templo-contact-us') }}">{{ 'menu.service-type.templo-submenu.cleaning' | trans | upper }}</a></li>
+                                                <li><a data-description="Preguntas Frecuentes..." href="{{ path('templo-ask') }}">{{ 'menu.service-type.templo-submenu.work' | trans | upper }}</a></li>
                                             </ul>
                                         </div>
                                     </div><!-- end row -->
@@ -172,16 +173,19 @@
                         <li class="dropdown fhmm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ 'menu.property' | trans | upper }} <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li class="fhmm-content fullwidth">
-                                    <div class="row"> 
+                                    <div class="row">
                                         
-                                       {{ render(controller('TemploBundle:Default:topMenuProperties')) }}  
-                                        
+                                       {{ render(controller('TemploBundle:Default:topMenuProperties')) }}                                       
+                                                                                
+                                                              
                                     </div><!-- end row -->
                                 </li><!-- end grid demo -->
                             </ul><!-- end drop down menu -->
                         </li><!-- end list elements -->
                         <!-- standard drop down -->
                         <li><a href="list-property.html">{{ 'menu.find' | trans | upper }}</a></li>
+                        
+                        <li><a href="list-property.html">{{ 'menu.house' | trans | upper }}</a></li>
                     </ul><!-- end nav navbar-nav -->
                 </div><!-- end #navbar-collapse-1 -->
             </div><!-- end dm_container -->

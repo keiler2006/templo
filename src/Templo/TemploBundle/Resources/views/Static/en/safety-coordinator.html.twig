@@ -1,0 +1,57 @@
+{% extends 'TemploBundle::services-template1.html.twig' %}
+
+{% block breadcrumb %}
+   <ul class="breadcrumb">
+        <li><a href="{{ path('portada') }}">{{ 'breadcrumb.home' | trans }}</a></li>
+        <li><a href="{{ path('services') }}">{{ 'breadcrumb.services' | trans }}</a></li>
+        <li>{{ 'breadcrumb.coord-safe' | trans }}</li> 
+    </ul>
+{% endblock %}
+
+{% block title1 %}
+Seguros Hogar, Alquiler, Vida...
+{% endblock %}
+
+{% block left_region %}
+    {% include 'TemploBundle:Static/'~app.request.locale~'/widget:major_insurers.html.twig'%}  
+{% endblock %}
+    
+{% block right_region %}
+    {% include 'TemploBundle:Static/'~app.request.locale~'/widget:safety.html.twig'%}
+    {% include 'TemploBundle:Static/'~app.request.locale~'/widget:supplies.html.twig'%}
+{% endblock %}
+
+    
+{% block center_region %}
+    
+    <p>Dado el carácter temporal de una obra, la Ley de Prevención de Riesgos Laborales aborda su particularidad a través de su desarrollo reglamentario, cuya herramienta fundamental es la aplicación del Real Decreto 1627/97 de Coordinación de Seguridad y Salud en Obras.</p>
+    <p><strong>¿Cuándo se designa un Coordinador de Seguridad y Salud?</strong></p>
+    <ul>
+      <li>En las obras, cuando en la elaboración del proyecto de obra intervengan varios proyectistas, el promotor designará un coordinador en materia de seguridad y de salud durante la elaboración del proyecto de obra.</li>
+      <li>Cuando en la ejecución de la obra intervenga más de una empresa, o una empresa y trabajadores autónomos o diversos trabajadores autónomos, el promotor, antes del inicio de los trabajos o tan pronto como se constate dicha circunstancia, designará un coordinador en materia de seguridad y salud durante la ejecución de la obra.</li>
+      <li>La designación de los coordinadores no eximirá al promotor de sus responsabilidades, que además es responsable de efectuar un aviso a la autoridad laboral competente antes del comienzo de los trabajos. </li>
+      </ul>
+    <p> <strong>¿Cuándo se realiza un estudio de Seguridad o uno Básico?</strong>  </p>
+    <p>El promotor estará obligado a que en la fase de redacción del proyecto se elabore un estudio de seguridad y salud en los proyectos de obras en que se den alguno de los supuestos siguientes: </p>
+    <ul>
+      <li>Que el presupuesto de ejecución por contrata incluido en el proyecto sea igual o superior a 450.000 €.</li>
+      <li>Que la duración estimada sea superior a 30 días laborables, empleándose en algún momento a más de 20 trabajadores simultáneamente.</li>
+      <li>Que el volumen de mano de obra estimada, entendiendo por tal la suma de los días de trabajo del total de los trabajadores en la obra, sea superior a 500 horas.</li>
+      <li>Las obras de túneles, galerías, conducciones subterráneas y presas.</li>
+      </ul>
+    <p>En los proyectos de obras no incluidos en ninguno de los supuestos previstos en el apartado anterior, el promotor estará obligado a que en la fase de redacción del proyecto se elabore un estudio básico de seguridad y salud. </p>
+
+    <img class="img-responsive" src="{{ asset('images/constructionsafety.jpg') }}" alt="">
+    <br>
+
+    <p><strong>¿Qué es el Plan de Seguridad y Salud?</strong></p>
+    <p>Es la aplicación del estudio de seguridad y salud o, en su caso, del estudio básico de cada contratista, que elaborará un plan de seguridad y salud en el trabajo en el que se analicen, estudien, desarrollen y complementen las previsiones contenidas en el estudio o estudio básico, en función de su propio sistema de ejecución de la obra.</p>
+    <p>TEMPLO CONSULTING ofrece a sus clientes dotar de coordinadores de seguridad y salud en obras con amplia experiencia en grandes obras de distinta tipología, debidamente colegiados en sus respectivos Colegios Profesionales, tanto en fase de proyecto como de ejecución realizando los Estudios de Seguridad y Salud.</p>
+    <p>Para satisfacer las necesidades de nuestros clientes contamos con: </p>
+    <ul>
+      <li>Una plantilla de Coordinadores de Seguridad y Salud con formación como técnicos superiores en PRL, así como con los cursos de Coordinador de Obra con distintas titulaciones en función de la Obra, Aparejadores, Arquitectos, Ingenieros, Ingenieros Técnicos.</li>
+      <li>Implantación a nivel nacional.</li>
+      <li>Una metodología de trabajo personalizada, dotada de soporte informático basada en la experiencia y presencia física en obra, lo que implica índices de siniestralidad más bajos en las obras que TEMPLO CONSULTING desarrolla como Coordinador. Además en función de la obra, colabora en la redacción y presentación del aviso previo.</li>
+    </ul>
+                    
+{% endblock %}

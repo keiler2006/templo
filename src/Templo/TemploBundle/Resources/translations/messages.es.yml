@@ -9,69 +9,37 @@ menu:
     home: Inicio
     service: Servicios
     service-type: 
-        intermediation: Intermediación  
+        intermediation: Intermediación
+        intermediation-submenu:
+                  sale: Venta
+                  rent: Renta
+                  financing: Financiación           
+                  supplies: Suministro
+                  insurance: Seguros           
         construction: Construcción
+        construction-submenu:
+                  interior: Interiorismo 
+                  coord: Coord. Seguridad 
+                  construction: Construcción
         certificate: Certificados
+        certificate-submenu:
+                  certificates: Certificados  
+                  ite: ITE
+                  licenses: Licencias
         supplementary: Complementos
+        supplementary-submenu:
+                  paint: Pintura  
+                  cleaning: Limpieza Profesional
         templo: Templo
+        templo-submenu:
+                  work: Trabaja con Nosotros  
+                  cleaning: Información Empresa 
+                  valors: Nuestros Valores
+                  cleaning: Formulario de Contacto
+                  work: ¿Tienes Dudas?
     property: Propiedades
     find: Buscamos su vivienda
-    intermediation:
-        sale: Venta
-        rent: Renta
-        financing: Financiación
-        supplies: Suministros
-        insurance: Seguros
-    construction:
-        interior: Interiorismo
-        safety-coordinator: Coord. Seguridad
-        construction: Contrucción
-    certificate:
-        certificates: Certificados
-        ite: Inspección Técnica
-        licenses: Licencias
-    supplementary:
-        painting: Pintura
-        cleaning: Limpieza Profesional 
-    templo:
-        work-with-us: Trabaja con nosotros
-        information: Información Empresa
-        our-values: Nuestros valores
-        contact-us: Formulario de contacto
-        ask: ¿Tiene Dudas?
-        
-    data-description:
-        intermediation:
-            sale: Activos Mobiliarios
-            rent: Activos Mobiliarios
-            financing: Crédito Personalizado
-            supplies: Luz, agua, gas...
-            insurance: Impago, hogar, vida...
-        construction:
-            interior: Diseño de Interiores
-            safety-coordinator: Seguridad y Salud
-            construction: Dirección de Ejecución
-        certificate:
-            certificates: Certificado Energético
-            ite: Inspección Edificios
-            licenses: Licencia de Actividad
-        supplementary:
-            painting: Liso, estuco...
-            cleaning: Hogar, locales, oficinas... 
-        templo:
-            work-with-us: Envíenos su CV
-            information: Información
-            our-values: Valores Empresa
-            contact-us: Podemos Ayudarte
-            ask: Preguntas Frecuentes...
-    
-breadcrumb:
-    home: Inicio
-    services: Servicios
-    interior: Interiorismo, Decoración y Diseño de Espacios
-    financial: Financiación Personalizada
-    supplies: Cambio de Suministros en su Hogar o Negocio
-    insuraces: Seguros de hogar, vida, alquiler...
+    house: Publica tu Anuncio Gratis
     
 sticky-toolbar:
     support-menu: Menú de soporte
@@ -80,6 +48,17 @@ sticky-toolbar:
         contact: Contacto
         office: Oficinas
         what: Qué hacemos
+        
+breadcrumb:
+    home: Inicio
+    services: Servicios
+    sale: Venta
+    rent: Renta
+    coord-safe: Coord. Seguridad
+    construcction: Construccion
+    interior: Interiorismo, Decoración y Diseño de Espacios
+    financial: Financiación Personalizada
+    supplies: Cambio de Suministros en su Hogar o Negocio
+    insuraces: Seguros de hogar, vida, alquiler...
 
-    
     

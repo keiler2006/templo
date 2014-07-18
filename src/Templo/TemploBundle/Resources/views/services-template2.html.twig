@@ -17,20 +17,18 @@
 
 <section class="generalwrapper dm-shadow clearfix">
     <div class="container">
-        <div class="row">
-            <div id="left_sidebar" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 first clearfix">
-                {% block left_region %} {% endblock %}                    
-            </div><!-- #left_sidebar -->
-
-            <div id="content" class="col-lg-7 col-md-6 col-sm-6 col-xs-12 clearfix">
-                {% block center_region %} {% endblock %}
-            </div><!-- end content -->                   
-
-            <div id="right_sidebar" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 last clearfix">
-                {% block right_region %} {% endblock %}  
-            </div><!-- end sidebar -->
-
+        <div class="row"> 
+                <div id="content" class="col-lg-9 col-md-9 col-sm-9 col-xs-12 clearfix">
+                    <div class="blog_container clearfix">
+                        {% block anuncios_region %}{% endblock %}
+                    </div><!-- end blog_container --> 
+               </div><!-- end content -->
+               <div id="right_sidebar" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 last clearfix">
+                    {% block right_region %} 
+                    {% endblock %}  
+               </div><!-- end sidebar -->
         </div><!-- end row -->
     </div><!-- end container -->
 </section><!-- end generalwrapper -->
 {% endblock %}
+

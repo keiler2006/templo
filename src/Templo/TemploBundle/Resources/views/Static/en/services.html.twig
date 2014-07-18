@@ -1,0 +1,83 @@
+{% extends 'TemploBundle::base.html.twig' %}
+
+{% block main %}
+<section class="post-wrapper-top dm-shadow clearfix">
+            <div class="container">
+                <div class="post-wrapper-top-shadow">
+                    <span class="s1"></span>
+                </div>
+                <div class="col-lg-12">
+                    <ul class="breadcrumb">
+                        <li><a href="{{ path('portada') }}">{{ 'breadcrumb.home' | trans }}</a></li>
+                        <li>{{ 'breadcrumb.services' | trans }}</li>
+                    </ul>
+                    <br>
+                    <h1>{{ 'titles.Servicios Profesionales' | trans }}</h1>
+                </div>
+            </div>
+        </section><!-- end post-wrapper-top -->
+    
+        <section class="generalwrapper dm-shadow clearfix">
+        	<div class="container">
+				<div id="content" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 first">
+                            <h3 class="widget-title">
+                                <span>{{ 'menu.service-type.intermediation' | trans | upper }}</span>
+                            </h3>
+                            <ul class="check">
+                                <li><a href="{{ path('intermediation-sale') }}">{{ 'menu.intermediation.sale' | trans }}</a><img class="img-services" src="{{ asset('demos/01_services.jpg') }}" alt=""></li>
+                                <li><a href="{{ path('intermediation-rent') }}">{{ 'menu.intermediation.rent' | trans }}<img class="img-services" src="{{ asset('demos/02_services.jpg') }}" alt=""></a></li>
+                                <li><a href="{{ path('intermediation-financing') }}">{{ 'menu.intermediation.financing' | trans }}<img class="img-services" src="{{ asset('demos/03_services.jpg') }}" alt=""></a></li>
+                                <li><a href="{{ path('intermediation-supplies') }}">{{ 'menu.intermediation.supplies' | trans }}<img class="img-services" src="{{ asset('demos/04_services.jpg') }}" alt=""></a></li>
+                                <li><a href="{{ path('intermediation-insurance') }}">{{ 'menu.intermediation.insurance' | trans }}<img class="img-services" src="{{ asset('demos/05_services.jpg') }}" alt=""></a></li>
+                            </ul>
+                        </div><!-- end col-2 --> 
+                        
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <h3 class="widget-title">
+                                <span>{{ 'menu.service-type.construction' | trans | upper }}</span>
+                            </h3>
+                            <ul class="check">
+                                <li><a href="{{ path('construction-interior') }}">{{ 'menu.construction.interior' | trans }}<img class="img-services" src="{{ asset('demos/06_services.jpg') }}" alt=""></a></li>
+                                <li><a href="{{ path('construction-safety-coordinator') }}">{{ 'menu.construction.safety-coordinator' | trans }}<img class="img-services" src="{{ asset('demos/07_services.jpg') }}" alt=""></a></li>
+                                <li><a href="{{ path('construction-construction') }}">{{ 'menu.construction.construction' | trans }}<img class="img-services" src="{{ asset('demos/08_services.jpg') }}" alt=""></a></li>
+                            </ul>
+                        </div><!-- end col2 -->
+                        
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                            <h3 class="widget-title">
+                                <span>{{ 'menu.service-type.certificate' | trans | upper }}</span>
+                            </h3>
+                            <ul class="check">
+                                <li><a href="{{ path('certificates-certificates') }}">{{ 'menu.data-description.certificate.certificates' | trans }}<img class="img-services" src="{{ asset('demos/10_services.jpg') }}" alt=""></a></li>
+                                <li><a href="{{ path('certificates-ite') }}">{{ 'menu.certificate.ite' | trans }}<img class="img-services" src="{{ asset('demos/11_services.jpg') }}" alt=""></a></li>
+                                <li><a href="{{ path('certificates-licenses') }}">{{ 'menu.certificate.licenses' | trans }}<img class="img-services" src="{{ asset('demos/09_services.jpg') }}" alt=""></a></li>
+                            </ul>
+                        </div><!-- end col-2 --> 
+        
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <h3 class="widget-title">
+                                <span>{{ 'menu.service-type.supplementary' | trans | upper }}</span>
+                            </h3>
+                            <ul class="check">
+                                <li><a href="{{ path('complement-painting') }}">{{ 'menu.supplementary.painting' | trans }}<img class="img-services" src="{{ asset('demos/12_services.jpg') }}" alt=""></a></li>
+                                <li><a href="{{ path('complement-cleaning') }}">{{ 'menu.supplementary.cleaning' | trans }}<img class="img-services" src="{{ asset('demos/13_services.jpg') }}" alt=""></a></li>
+                            </ul>
+                        </div><!-- end col-2 --> 
+        
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 last">
+                            <h3 class="widget-title">
+                                <span>{{ 'menu.service-type.templo' | trans | upper }}</span>
+                            </h3>
+                            <ul class="check">
+                                <li><a href="{{ path('templo-work-with-us') }}">{{ 'menu.templo.work-with-us' | trans }}<img class="img-services" src="{{ asset('demos/14_services.jpg') }}" alt=""></a></li>
+                                <li><a href="{{ path('templo-information') }}">{{ 'menu.templo.information' | trans }}<img class="img-services" src="{{ asset('demos/15_services.jpg') }}" alt=""></a></li>
+                                <li><a href="{{ path('templo-our-values') }}">{{ 'menu.templo.our-values' | trans }}<img class="img-services" src="{{ asset('demos/16_services.jpg') }}" alt=""></a></li>
+                                <li><a href="{{ path('templo-contact-us') }}">{{ 'menu.templo.contact-us' | trans }}<img class="img-services" src="{{ asset('demos/17_services.jpg') }}" alt=""></a></li>
+                                <li><a href="{{ path('templo-ask') }}">{{ 'menu.templo.ask' | trans }}<img class="img-services" src="{{ asset('demos/18_services.jpg') }}" alt=""></a></li>
+                            </ul>
+                        </div><!-- end col-4 --> 
+                    </div><!-- end content -->
+            </div><!-- end container -->
+        </section><!-- end generalwrapper -->
+{% endblock %}

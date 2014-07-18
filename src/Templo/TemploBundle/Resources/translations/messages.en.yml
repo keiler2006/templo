@@ -9,20 +9,55 @@ menu:
     home: Home
     service: Services
     service-type: 
-        intermediation: Intermediation  
+        intermediation: Intermediation 
+        intermediation-submenu:
+                  sale: Sale
+                  rent: Rent
+                  financing: Financing           
+                  supplies: Supplies
+                  insurance: Insurance           
         construction: Construction
+        construction-submenu:
+                  interior: Interior 
+                  coord: Coord. Security 
+                  construction: Construction
         certificate: Certificates
+        certificate-submenu:
+                  certificates: Certificates  
+                  ite: ITE
+                  licenses: Licenses
         supplementary: Supplementary
+        supplementary-submenu:
+                  paint: Paint  
+                  cleaning: Professional Cleaning
         templo: Templo
+        templo-submenu:
+                  work: Work with Us   
+                  cleaning: Company Information 
+                  valors: Our Values 
+                  cleaning: Contact Form 
+                  work: Have Questions?
     property: Property
     find: We find your home
+    house: Post Free Ads
     
 sticky-toolbar:
     support-menu: Support menu
     questions: Any question?
     popup:
-        contact: Contact
+        contact: Contact      
         office: Offices
         what: What do we do?
-    
+
+breadcrumb:
+    home:  Home 
+    services: Services 
+    sale: Sale
+    rent: Rent
+    interior: Interior Decoration and Design Spaces 
+    coord-safe: Coord. Safety 
+    construcction: Construcction
+    financial: Personalized Financing 
+    supplies: Supplies Change in Your Home or Business 
+    insuraces: Insurance Home, Life, Car ...
     

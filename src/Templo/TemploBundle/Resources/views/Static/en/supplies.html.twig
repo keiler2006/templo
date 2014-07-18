@@ -1,0 +1,42 @@
+{% extends 'TemploBundle::services-template1.html.twig' %}
+
+{% block breadcrumb %}
+   <ul class="breadcrumb">
+        <li><a href="{{ path('portada') }}">{{ 'breadcrumb.home' | trans }}</a></li>
+        <li><a href="{{ path('services') }}">{{ 'breadcrumb.services' | trans }}</a></li>
+        <li>{{ 'breadcrumb.supplies' | trans }}</li> 
+    </ul>
+{% endblock %}
+
+{% block title1 %}
+La factura de luz y gas más económica
+{% endblock %}
+
+{% block left_region %}
+    {% include 'TemploBundle:Static/'~app.request.locale~'/widget:major_suppliers.html.twig'%}  
+{% endblock %}
+    
+{% block right_region %}
+    {% include 'TemploBundle:Static/'~app.request.locale~'/widget:credit.html.twig'%} 
+    {% include 'TemploBundle:Static/'~app.request.locale~'/widget:insurances.html.twig'%}
+{% endblock %}
+
+    
+{% block center_region %}    
+    <h2>AHORRE EN SU FACTURA DE LUZ Y GAS</h2>
+    <p>Ahorrar con la electricidad o el gas ahora es más facil.</p>
+    <p>Templo Consulting le ayuda a reducir lo que paga por los suministros que utiliza en el hogar o su negocio.</p>
+    <p>Si piensa que sus facturas son elevadas, le facilitamos la tarífa que mejor se adapte a tu consumo.</p>
+    <p>Nuestro objetivo es ayudarle a comparar las distintas tarifas electricas o de gas ciudad de su zona, y ayudarle a ahorrar.</p>
+
+
+    <img class="img-thumbnail" src="{{ asset('demos/energy_01.jpg') }}" alt=""><br><br>
+
+    <h2>Información independiente sobre empresas comercializadoras de energía.</h2>
+    <p>Templo Consulting ofrece información sobre el mercado libre de energía. Tenemos a su disposición una fuente de información donde puede comparar de forma neutra, libre y objetiva los precios de energía y gas, y si lo desea, escoger la tarifa que más se ajuste a sus necesidades, entre la gran cantidad de opciones que ofrecen los distintos comercializadoras de energía y gas.</p>
+    <p>Templo Consulting es independiente. No está sujeto a ninguna comercializadora de energía.</p>
+    <p>Para comparar las tarifas de energía usamos nuestra propia base de datos. Todos las comercializadoras de energía, cuyos precios y productos están abiertos al público, están aquí incluidos. En Templo Consulting siempre encuentras las tarifas actualizadas, con datos oficiales suministrados por los comercializadoras de energía.</p>
+
+    <img class="img-thumbnail" src="{{ asset('demos/energy_02.jpg') }}" alt=""><br><br>
+                    
+{% endblock %}
