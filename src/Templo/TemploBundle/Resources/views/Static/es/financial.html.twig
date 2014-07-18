@@ -1,0 +1,54 @@
+{% extends 'TemploBundle::services-template1.html.twig' %}
+
+{% block breadcrumb %}
+   <ul class="breadcrumb">
+        <li><a href="{{ path('portada') }}">{{ 'breadcrumb.home' | trans }}</a></li>
+        <li><a href="{{ path('services') }}">{{ 'breadcrumb.services' | trans }}</a></li>
+        <li>{{ 'breadcrumb.financial' | trans }}</li> 
+    </ul>
+{% endblock %}
+
+{% block title1 %}
+Financiación y Creditos según sus Necesidades
+{% endblock %}
+
+{% block left_region %}
+    {% include 'TemploBundle:Static/'~app.request.locale~'/widget:main_banks.html.twig'%}  
+{% endblock %}
+    
+{% block right_region %}
+    {% include 'TemploBundle:Static/'~app.request.locale~'/widget:insurances.html.twig'%} 
+    {% include 'TemploBundle:Static/'~app.request.locale~'/widget:supplies.html.twig'%}
+{% endblock %}
+
+    
+{% block center_region %}
+    <p>Templo Consulting es una empresa especializada en la gestión y desarrollo de las transacciones inmobiliarias, en el área residencial, que ofrece un servicio de asesoramiento integral, personalizado y transparente, garantizando las soluciones de los problemas y conflictos que se presenten.</p>
+
+    <p>En una coyuntura económica como la actual, y dentro de un sector donde se producen importantes transacciones económicas, la confianza, es un valor tan importante como escaso y para generarla se necesita profesionalidad y transparencia.</p>
+
+    <img class="img-thumbnail" src="{{ asset('demos/01_enterprise.jpg') }}" alt=""><br><br>
+
+    <p>En una coyuntura económica como la actual, y dentro de un sector donde se producen importantes transacciones económicas, la confianza, es un valor tan importante como escaso y para generarla se necesita profesionalidad y transparencia.</p>
+
+    <blockquote class="pull-right">
+        <p><a href="http://economia.elpais.com/economia/2014/05/08/vivienda/1399557284_435284.html">La vivienda de clase media no encuentra comprador.</a></p>
+        <small>El Pais Vivienda <cite title="Source Title">Paula Cossio, 8 MAY 2014</cite></small>
+    </blockquote>
+
+    <div class="clearfix"></div>
+
+    <p>Los profesionales de Templo Consulting conforman equipos multidisciplinares, en los que se complementan la experiencia comercial con una sólida formación jurídica, financiera y tributaria que permite una atención personalizada y completa a nuestros clientes.</p>
+
+    <p>Cuando nuestros clientes confían en TEMPLO CONSULTING se aseguran que la gestión se realice de una forma transparente mediante un contacto permanente, trasladando a las partes una visión clara y precisa de cada operación para garantizar el éxito.</p>          
+
+    <img class="img-thumbnail" src="{{ asset('demos/02_enterprise.jpg') }}" alt=""><br><br>
+
+    <blockquote>
+        <p><a href="http://www.elmundo.es/economia/2014/05/14/53732aedca4741155e8b456e.html">El precio de la vivienda ultima su ajuste con una caída del 1,7%.</a></p>
+        <small>El Mundo Vivienda <cite title="Source Title">15 MAY 2014</cite></small>
+    </blockquote>
+
+    <p>Por eso si lo que quiere es VENDER, COMPRAR O ALQUILAR con la garantía de tener a su servicio un equipo de profesionales que le ayude a conseguirlo, no dude en ponerse en contacto con nosotros.</p>
+
+{% endblock %}

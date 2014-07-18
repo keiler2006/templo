@@ -8,12 +8,12 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <ul class="breadcrumb">
-                <li><a href="{{ path('portada') }}">{{ 'menu.home' | trans }}</a></li>
-                <li><a href="{{ path('services') }}">Servicios</a></li>
-                <li>Interiorismo, Decoración y Diseño de Espacios</li>
+                <li><a href="{{ path('portada') }}">{{ 'breadcrumb.home' | trans }}</a></li>
+                <li><a href="{{ path('services') }}">{{ 'breadcrumb.services' | trans }}</a></li>
+                <li>{{ 'breadcrumb.interior' | trans }}</li>
             </ul>
             <br>
-            <h1>Arquitectura y Diseño de Interiores</h1>
+            <h1>{{ 'titles.interior_design' | trans }}</h1>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
@@ -26,7 +26,7 @@
         <div class="row">
             <div id="left_sidebar" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 first clearfix">
                 <div class="widget clearfix">
-                    <div class="title"><h3>Principales Aseguradoras</h3></div>
+                    <div class="title"><h3>{{'main_insurance' | trans({},'interior')}}</h3></div>
                     <span>
                         <img src="{{ asset('demos/01_insurance.jpg') }}" alt="" class="img-thumbnail img-responsive">
                         <img src="{{ asset('demos/02_insurance.jpg') }}" alt="" class="img-thumbnail img-responsive">
@@ -39,50 +39,11 @@
                         <img src="{{ asset('demos/09_insurance.jpg') }}" alt="" class="img-thumbnail img-responsive">
                         <img src="{{ asset('demos/10_insurance.jpg') }}" alt="" class="img-thumbnail img-responsive">
                     </span>
-                </div><!-- end widget -->                    </div><!-- #left_sidebar -->
+                </div><!-- end widget -->                    
+            </div><!-- #left_sidebar -->
 
             <div id="content" class="col-lg-7 col-md-6 col-sm-6 col-xs-12 clearfix">
-                <h2>TEMPLO INTERIORISMO</h2>
-                <p>Templo Consulting le ayuda a pensar, diseñar y aprovechar los recursos para sacar el máximo partido a los espacios de viviendas y negocios, ajustándose al presupuesto del cliente.</p>
-                <p>Cuando elaboran un proyecto realizan un cuadro de presupuestos, precios (confirmados y supuestos), así como un calendario con los tiempos y trabajos que hay que llevar a cabo. De esta manera hay un control del proceso y si es necesario corregir la dirección.</p>
-                <p>Un buen interiorista debe saber escuchar e interpretar la demanda de sus clientes, tener sentido de las proporciones, de los materiales y armonía cromática.</p>
-                <p>Es importante saber organizar y gestionar una obra, presupuestos y tiempos.</p>
-                <p>Nuestra meta es conseguir la mejor solución para cada cliente.</p>
-
-                <ul>
-                    <li><span lang="ES-TRAD"> </span><span lang="ES-TRAD">Protección <strong>frente a cualquier imprevisto</strong>: incendio, robo, fugas de agua, rotura de cristales, fenómenos meteorológicos, etc.</span></li>
-                    <li><span lang="ES-TRAD">Cobertura de la <strong>Responsabilidad Civil</strong>de la propiedad de la vivienda, del uso de la misma y del ámbito familiar.</span></li>
-                    <li><strong><span lang="ES-TRAD">Asistencia en el Hogar</span></strong><span lang="ES-TRAD">, las 24 horas y 365 días del año: un amplio equipo de profesionales le atenderá en caso de siniestro o en situaciones de urgencia.</span></li>
-                    <li><span lang="ES-TRAD">La más completa <strong>Protección Jurídica </strong>para el asegurado y su familia, como propietario o inquilino de la vivienda, y también en el ámbito privado.</span></li>
-                </ul>
-
-                <span lang="FR">Y un innovador servicio de <strong>Teleasistencia Informática</strong>, para resolver las incidencias en su ordenador.</span>
-
-                <p>UN SEGURO TAN PERSONAL COMO TU PROPIO HOGAR.</p>
-                <p>Cualquier persona que sea propietario y/o inquilino de una vivienda familiar ya sean pisos o apartamentos, chalets adosados o chalets independientes, tanto en régimen de propiedad (vivienda principal, secundaria o arrendada) como en alquiler.</p>
-                <p>Templo Consulting te proporciona la gama más amplia de coberturas, que podrás personalizar y completar con múltiples opciones. Nadie mejor que tú puede decidir lo que tu hogar necesita.</p>
-
-                <img class="img-thumbnail" src="demos/01_enterprise.jpg" alt="Seguros Hogar"><br><br>
-
-                <h2>TEMPLO VIDA</h2>
-                <p>Los <strong>seguros de vida</strong> son imprescindibles para asegurar el bienestar económico familiar en caso de fallecimiento del Asegurado.</p>
-                <p>Con nuestro <strong>seguro de vida</strong>, pase lo que pase su familia podrá seguir manteniendo su nivel de vida, haciendo frente a los compromisos económicos y cumpliendo sus proyectos de futuro (hipotecas, estudios, viajes...).</p>
-                <p>Además, su <strong>seguro de Vida Templo</strong> le permite complementar la garantía de fallecimiento con tres garantías opcionales, que le aportarán todavía más tranquilidad.</p>
-                <p>Porqué TEMPLO VIDA es el <strong>mejor seguro de Vida</strong></p>
-                <ul>
-                    <li>Seguro anual renovable. Sin compromiso de permanencia.</li>
-                    <li>Precios muy competitivos, especialmente para mujeres. Se ajustan cada año.</li>
-                    <li>Libre elección del importe de capital más apropiado a sus necesidades familiares-económicas y posibilidad de ir adecuándolo en el tiempo.</li>
-                    <li>Opción de contratar sólo la garantía principal de fallecimiento y de incluir, cuando quiera, garantías complementarias; incapacidad permanente absoluta, doble capital en caso de fallecimiento por accidente o triple capital por fallecimiento por accidente de circulación.</li>
-                    <li>Forma de pago flexible y cómoda, según sus posibilidades.</li>
-                    <li>Facilidad y rapidez en la contratación. Formulario-solicitud muy simplificado.</li>
-                    <li>Hasta 45 años y un capital inferior a 120.000 euros será suficiente con cumplimentar una solicitud simplificada. En caso de capitales superiores será preciso un reconocimiento médico gratuito.</li>
-                    <li>Asesoramiento personalizado. Podemos ayudarle a reflexionar con total confianza:<br>
-                        <p>¿Necesito un seguro de vida?, ¿Con qué importe de capital?, ¿Qué garantías contrato?, ¿Qué beneficiarios son aconsejables para pagar menos impuestos?</p>
-                    </li>
-                </ul>
-
-                <img class="img-thumbnail" src="demos/05_services.jpg" alt="Seguros Vida"><br>
+                {{'main_text' | trans({},'interior')}}
             </div><!-- end content -->                   
 
             <div id="right_sidebar" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 last clearfix">

@@ -1,62 +1,75 @@
 services:
     pattern:  /services
-    defaults: { template: 'TemploBundle:Static:services.html.twig' }    
+    defaults: {  page: 'services'} 
     
 intermediation-sale:
     pattern:  /service/sale
-    defaults: { template: 'TemploBundle:Static:sales.html.twig' }    
+    defaults: {  page: 'sale'}
+    
 intermediation-rent:
     pattern:  /service/rent
-    defaults: { template: 'TemploBundle:Static:rent.html.twig' }
+    defaults: {  page: 'rent'}
+    
 intermediation-financing:
-    pattern:  /service/financing
-    defaults: { template: 'TemploBundle:Static:financing.html.twig' }
+    pattern:  /service/financial
+    defaults: { page: 'financial' }
+    
 intermediation-supplies:
     pattern:  /service/supplies
-    defaults: { template: 'TemploBundle:Static:supplies.html.twig' }
+    defaults: {  page: 'supplies'}
+    
 intermediation-insurance:
     pattern:  /service/insurance
-    defaults: { template: 'TemploBundle:Static:insurance.html.twig' }
+    defaults: {  page: 'insurance'}
 
 construction-interior:
-    pattern:  /service/interior
-    defaults: { template: 'TemploBundle:Static:interior.html.twig' }
+    pattern:  /service/interior  
+    defaults: {  page: 'interior'}
+    
 construction-safety-coordinator:
     pattern:  /service/safety-coordinator
-    defaults: { template: 'TemploBundle:Static:safety-coordinator.html.twig' }
+    defaults: {  page: 'safety-coordinator'}
+    
 construction-construction:
     pattern:  /service/construction
-    defaults: { template: 'TemploBundle:Static:construction.html.twig' }
+    defaults: {  page: 'construction'}
 
 certificates-certificates:
     pattern:  /service/certificates
-    defaults: { template: 'TemploBundle:Static:certificates.html.twig' }
+    defaults: {  page: 'certificates'}
+    
 certificates-ite:
     pattern:  /service/ite
-    defaults: { template: 'TemploBundle:Static:ite.html.twig' }
+    defaults: {  page: 'ite'}
+    
 certificates-licenses:
     pattern:  /service/licenses
-    defaults: { template: 'TemploBundle:Static:licenses.html.twig' }
+    defaults: {  page: 'licenses'}
 
 complement-painting:
     pattern:  /service/painting
-    defaults: { template: 'TemploBundle:Static:painting.html.twig' }
+    defaults: {  page: 'painting'}
+   
 complement-cleaning:
     pattern:  /service/cleaning
-    defaults: { template: 'TemploBundle:Static:cleaning.html.twig' }
+    defaults: {  page: 'cleaning'}
 
 templo-work-with-us:
     pattern:  /work-with-us
-    defaults: { template: 'TemploBundle:Static:work-with-us.html.twig' }
+    defaults: {  page: 'work-with-us'}
+
 templo-information:
     pattern:  /information
-    defaults: { template: 'TemploBundle:Static:information.html.twig' }
+    defaults: {  page: 'information'}
+    
 templo-our-values:
     pattern:  /our-values
-    defaults: { template: 'TemploBundle:Static:our-values.html.twig' }
+    defaults: {  page: 'our-values'}
+    
 templo-contact-us:
     pattern:  /contact-us
-    defaults: { template: 'TemploBundle:Static:contact-us.html.twig' }
+    defaults: {  page: 'contact-us'}
+    
 templo-ask:
     pattern:  /ask
-    defaults: { template: 'TemploBundle:Static:ask.html.twig' }
+    defaults: {  page: 'ask'}

@@ -1,14 +1,16 @@
-﻿_paginas:
+_paginas:
     resource: routing_static_pages.yml
     prefix:   /{_locale}
     requirements:
         _locale: en|es|cn
     defaults:
         _locale: es
-        _controller: FrameworkBundle:Template:template
-        private: false
-        maxAge: 86400
-        sharedMaxAge: 86400
+        _controller: 'TemploBundle:Default:staticPage'
+        #_controller: FrameworkBundle:Template:template
+        #private: false
+        #maxAge: 86400
+        #sharedMaxAge: 86400
+        
 
 # Ruta de la portada completa del sitio (con _locale y el slug de la ciudad)
 portada:
