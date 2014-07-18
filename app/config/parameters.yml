@@ -1,13 +1,11 @@
 # This file is auto-generated during the composer install
 parameters:
     database_driver: pdo_sqlite
-    database_host: ~
-    database_port: ~
-    database_name: ~
+    database_host: null
+    database_port: null
+    database_name: null
     database_user: root
     database_password: null
-    database_p: "%kernel.root_dir%/data/templo.db3"
-    
     mailer_transport: smtp
     mailer_host: 10.0.0.3
     mailer_user: keiler.gonzalez
@@ -17,3 +15,4 @@ parameters:
     debug_toolbar: true
     debug_redirects: false
     use_assetic_controller: true
+    database_path: '%kernel.root_dir%/data/templo.db3'
