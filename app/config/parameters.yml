@@ -6,7 +6,7 @@ parameters:
     database_name: 
     database_user: root
     database_password: null
-    database_path: "%kernel.root_dir%/data/templo.db3"
+    database_p: "%kernel.root_dir%/data/templo.db3"
     
     mailer_transport: smtp
     mailer_host: 10.0.0.3
