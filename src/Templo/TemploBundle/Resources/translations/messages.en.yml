@@ -1,5 +1,5 @@
 top-bar:
-    login-register: Log in / Register
+    login-register: Log in | Register
     languages:
         spanish: Spanish
         english: English

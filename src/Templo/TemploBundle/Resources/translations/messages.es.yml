@@ -1,5 +1,5 @@
 top-bar:
-    login-register: Acceso / Registro
+    login-register: Acceso | Registro
     languages:
         spanish: Español
         english: Inglés
@@ -38,7 +38,7 @@ menu:
                   cleaning: Formulario de Contacto
                   work: ¿Tienes Dudas?
     property: Propiedades
-    find: Buscamos su vivienda
+    find: Buscamos tu Vivienda
     house: Publica tu Anuncio Gratis
     
 sticky-toolbar:

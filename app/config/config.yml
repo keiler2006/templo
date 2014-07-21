@@ -14,6 +14,7 @@ imports:
 framework:
     #esi:             ~
     translator:      { fallback: "%locale%" }
+    esi: { enabled: true }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -32,6 +33,7 @@ framework:
         handler_id:  ~
     fragments:       ~
     http_method_override: true
+   
 
 # Twig Configuration
 twig:
@@ -81,6 +83,8 @@ doctrine:
 swiftmailer:
     transport: "%mailer_transport%"
     host:      "%mailer_host%"
+    port :     "%mailer_port%" 
     username:  "%mailer_user%"
     password:  "%mailer_password%"
-    spool:     { type: memory }
+    encryption: "%mailer_encryption%"
+    #spool:     { type: memory }
