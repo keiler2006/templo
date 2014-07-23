@@ -1,3 +1,7 @@
+equipment:
+    resource: "@EquipmentBundle/Resources/config/routing.yml"
+    prefix:   /
+
 templo_user:
     resource: "@TemploUserBundle/Resources/config/routing.yml"
     prefix:   /

@@ -1,8 +1,8 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "keiler2006/templo",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "The \"Templo Computing\" app",
     "autoload": {
         "psr-0": { "": "src/", "SymfonyStandard": "app/" }
     },
@@ -24,7 +24,8 @@
         "leafo/lessphp": "0.4.*@dev",
         "stof/doctrine-extensions-bundle": "1.1.*@dev",
         "vich/uploader-bundle": "v0.9.0",
-        "avalanche123/imagine-bundle": "2.1.*"
+        "avalanche123/imagine-bundle": "2.1.*",
+        "craue/formflow-bundle": "~2.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
