@@ -33,7 +33,7 @@ class LoginListener
     {
         if (null != $this->userId) {
            // if ($this->contexto->isGranted('ROLE_USER')) {
-                $profile = $this->router->generate('fos_user_profile_show');
+                $profile = $this->router->generate('dashboard');
            
             /* } else {
                 $portada = $this->router->generate('portada', array(
