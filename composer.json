@@ -21,7 +21,7 @@
         "friendsofsymfony/jsrouting-bundle": "2.0.*@dev",
         "friendsofsymfony/user-bundle": "2.0.*@dev",
         "friendsofsymfony/message-bundle": "1.2.*@dev",
-        "leafo/lessphp": "0.4.*@dev",
+        "oyejorge/less.php": "dev-master",
         "stof/doctrine-extensions-bundle": "1.1.*@dev",
         "vich/uploader-bundle": "v0.9.0",
         "avalanche123/imagine-bundle": "2.1.*",

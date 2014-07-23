@@ -1,0 +1,12 @@
+user_navbar:
+    ads: Mis anuncions
+    starred_ads: Anuncios destacados
+    create_ad: Crear anuncio
+    create_ad_blank: Crear un nuevo anuncio
+    create_brick_by_fetching_url: Crear brick por recuperación de contenidos de un url
+    change_password: Cambiar contraseña
+    dashboard: DASHBOARD
+    edit_profile: Modificar perfil
+    logout: Salir
+    message: Mensajes
+    profile: PERFIL

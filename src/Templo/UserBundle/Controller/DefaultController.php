@@ -3,9 +3,31 @@
 namespace Templo\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller {
 
+    
+    public function dashboardAction(Request $request) {        
+        $em = $this->getDoctrine()->getManager();
+       
+        $usuario = $this->get('security.context')->getToken()->getUser(); 
+
+        return $this->render('TemploUserBundle::dashboard.html.twig', array(
+                    'usuario' => $usuario                    
+        ));
+    }
+    
+     public function userSettingAction(Request $request) {        
+        $em = $this->getDoctrine()->getManager();
+       
+        $usuario = $this->get('security.context')->getToken()->getUser(); 
+
+        return $this->render('TemploUserBundle::settings.html.twig', array(
+                    'usuario' => $usuario                    
+        ));
+    }
+    
     
     public function profileAction(Request $request) {        
         $em = $this->getDoctrine()->getManager();
