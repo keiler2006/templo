@@ -73,3 +73,8 @@ templo-contact-us:
 templo-ask:
     pattern:  /ask
     defaults: {  page: 'ask'}
+    
+templo-perfil:
+    pattern:  /perfil-login
+    defaults: {  page: 'perfil-login'}
+    

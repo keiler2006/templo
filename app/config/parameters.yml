@@ -6,10 +6,15 @@ parameters:
     database_name: null
     database_user: root
     database_password: null
+    
     mailer_transport: smtp
-    mailer_host: 10.0.0.3
-    mailer_user: keiler.gonzalez
-    mailer_password: Apoloatenea-60
+    mailer_host: smtp.gmail.com
+    mailer_port: 465
+    mailer_user: templot568
+    mailer_password: web12345
+    mailer_encryption: ssl
+    
+    
     locale: es
     secret: ThisTokenIsNotSoSecretChangeIt
     debug_toolbar: true

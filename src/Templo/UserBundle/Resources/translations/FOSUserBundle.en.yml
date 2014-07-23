@@ -58,8 +58,8 @@ security:
     login:
         page_title: Sign in
         password: "Password"
-        remember_me: Remember me
-        submit: Sign in
+        remember_me: Remember me on this Computer
+        submit: Login to my Account
         username: "Username"
         login_with_credentials_head: "Enter the username and passwords you chose during your registration to sign in."
         login_with_oauth:
