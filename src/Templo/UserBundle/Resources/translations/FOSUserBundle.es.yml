@@ -57,10 +57,11 @@ security:
     forgot_password: ¿has olvidado tu contraseña?
     login:
         page_title: Entrar en mi Cuenta
-        password: "Contraseña"
-        remember_me: Recordar en este Ordenador
+        password: Contraseña
+        remember_me: Recordar mis datos
         submit: Entrar a mi Cuenta
-        username: "Usuario"
+        username: Usuario
+        register_new_user: Registro de nuevo usuario
         login_with_credentials_head: "Escribe el nombre de usuario y la contraseña que elegiste durante tu inscripción."
         login_with_oauth:
             head: "Utiliza uno de los siguientes proveedores de OAuth para iniciar sesión con tu cuenta."

@@ -1,4 +1,6 @@
-services-routes:
-    resource: services_routing.yml
+# Ruta para mostrar el perfil del usuario logueado
+user_profile:
+    pattern:  /profile
+    defaults: { _controller: UserBundle:Default:profile }
 
 

@@ -1,0 +1,57 @@
+menu:
+    home: Inicio
+    service: Servicios
+    service-type: 
+        intermediation: Intermediación
+        intermediation-submenu:
+                  sale: Venta
+                  rent: Renta
+                  financing: Financiación           
+                  supplies: Suministro
+                  insurance: Seguros           
+        construction: Construcción
+        construction-submenu:
+                  interior: Interiorismo 
+                  coord: Coord. Seguridad 
+                  construction: Construcción
+        certificate: Certificados
+        certificate-submenu:
+                  certificates: Certificados  
+                  ite: ITE
+                  licenses: Licencias
+        supplementary: Complementos
+        supplementary-submenu:
+                  paint: Pintura  
+                  cleaning: Limpieza Profesional
+        templo: Templo
+        templo-submenu:
+                  work: Trabaja con Nosotros  
+                  cleaning: Información Empresa 
+                  valors: Nuestros Valores
+                  cleaning: Formulario de Contacto
+                  work: ¿Tienes Dudas?
+    property: Propiedades
+    find: Buscamos tu Vivienda
+    house: Publica tu Anuncio Gratis
+    
+sticky-toolbar:
+    support-menu: Menú de soporte
+    questions: ¿Alguna pregunta?
+    popup:
+        contact: Contacto
+        office: Oficinas
+        what: Qué hacemos
+        
+breadcrumb:
+    home: Inicio
+    services: Servicios
+    sale: Venta
+    rent: Renta
+    coord-safe: Coord. Seguridad
+    construcction: Construccion
+    interior: Interiorismo, Decoración y Diseño de Espacios
+    financial: Financiación Personalizada
+    supplies: Cambio de Suministros en su Hogar o Negocio
+    insuraces: Seguros de hogar, vida, alquiler...
+
+    
