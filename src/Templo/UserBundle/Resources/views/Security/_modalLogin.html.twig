@@ -45,7 +45,7 @@
                                          <a href="{{ path('fos_user_resetting_request') }}">{{ 'security.forgot_password'|trans({}, 'FOSUserBundle')|upper }}</a>                                             
                                     </div>                                    
                                 </div>
-                                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                                <input type="hidden" name="_csrf_token" value="{{ fos_csrf_provider.generateCsrfToken('authenticate') }}" />
                                 
                                  {% if targetPath is defined and targetPath != null %}
                                     <input type="hidden" name="_target_path" value="{{ targetPath }}" />
