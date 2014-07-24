@@ -6,15 +6,12 @@ $(document).ready(function() {
             url: Routing.generate('fos_user_security_check'),
             data: $('form').serialize(),
             dataType: "json",
-            success: function(data, status, object) {
-                console.log(data);
+            success: function(data, status, object) {                
                 if (data.error)
                  {  $('#modal-login-error-container').html('');
                     $('#modal-login-error-container').html("<div class=\"alert alert-danger fade in\">\n\<button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">&times;</button>"+data.message+"</div>");
                  }else
-                 {
-                     alert('pepe');
-                     alert(data);
+                 {                  
                      window.location.href = data.targetUrl;
                  }
             },
