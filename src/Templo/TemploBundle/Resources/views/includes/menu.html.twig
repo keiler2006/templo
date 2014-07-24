@@ -84,7 +84,7 @@
 {% if is_granted("IS_AUTHENTICATED_FULLY") %}
       <ul class="nav pull-right navbar-inverse">
         <li id="fat-menu" class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ app.user }} <b class="glyphicon glyphicon-cog"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="glyphicon glyphicon-user"> </b> {{ app.user }} __<b class="glyphicon glyphicon-cog"></b></a>
           <ul class="dropdown-menu">
             <li><a href="#">Acci&oacute;n</a></li>
             <li><a href="#">Otra acci&oacute;n</a></li>
