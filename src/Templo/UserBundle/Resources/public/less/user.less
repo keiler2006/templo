@@ -1,7 +1,8 @@
 /* import bootstrap mixins */
-@import "../../../../../web/assets/bootstrap/less/mixins.less";
+@import "../../../../../../web/assets/bootstrap/less/mixins.less";
 
 div#dashboard{
+    margin-top: 20px;
     ul#large-icons {
         overflow:   hidden;
         margin-top: 80px;
@@ -9,16 +10,14 @@ div#dashboard{
         li {
             float:          left;
             border:     1px solid #CCC;
-            .border-radius(3px);
+            .border-top-radius(3px);
+            .border-bottom-radius(3px);
             background:     #F1F1F1;
             margin-left: 50px;
 
-            &:first-child {
-                margin-left:   0px;
-            }
 
             a {
-                width:          358px;
+                width:          300px;
                 height:         180px;
                 display:        inline-block;
                 padding:        30px;

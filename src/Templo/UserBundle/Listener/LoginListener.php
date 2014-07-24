@@ -26,7 +26,8 @@ class LoginListener
     public function onSecurityInteractiveLogin(InteractiveLoginEvent $event)
     {
         $token = $event->getAuthenticationToken();
-        $this->userId = $token->getUser()->getId();
+        //$this->userId = $token->getUser()->getId();
+        $this->userId = 3;
     }
 
     public function onKernelResponse(FilterResponseEvent $event)

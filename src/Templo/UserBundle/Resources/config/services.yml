@@ -2,6 +2,11 @@ parameters:
 #    templo_user.example.class: Templo\UserBundle\Example
 
 services:
+    authentication_handler:
+        class: Templo\UserBundle\Handler\AuthenticationHandler
+        public: false
+        arguments: [@router, @session, @translator, @security.context]
+
     login_listener:
         class: Templo\UserBundle\Listener\LoginListener
         scope: container

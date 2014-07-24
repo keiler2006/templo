@@ -10,21 +10,36 @@
 
 	<title>Templo Consulting - Grupo Inmobiliario.</title>
 
-	<!-- Bootstrap core CSS -->
-	<link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
+        {% block head_style %}
+            <!-- Bootstrap core CSS -->
+            <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
 
-	<!-- Style CSS -->
-	<link href="{{ asset('style.css') }}" rel="stylesheet">
+            <!-- Style CSS -->
+            <link href="{{ asset('style.css') }}" rel="stylesheet">    
+
+             {% stylesheets filter='cssrewrite,lessphp'    
+               '@TemploUserBundle/Resources/public/less/user.less'
+             %}
+            <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+            {% endstylesheets %} 
+        
+       {% endblock head_style %}
+            
+       {% block head_script %}
+            <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!--[if lt IE 9]>
+              <script src="{{ asset('assets/js/html5shiv.js') }}"></script>
+              <script src="{{ asset('assets/js/respond.min.js') }}"></script>
+            <![endif]-->
+       {% endblock head_script %}
+        
+	
     
 	<!-- Google Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,700italic,900' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic' rel='stylesheet' type='text/css'>
 
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-	  <script src="{{ asset('assets/js/html5shiv.js') }}"></script>
-	  <script src="{{ asset('assets/js/respond.min.js') }}"></script>
-	<![endif]-->
+	
 
 	<!-- Favicons -->
         <link rel="apple-touch-icon" href="{{ asset('assets/ico/apple-touch-icon.png') }}" />
@@ -43,16 +58,27 @@
      
 	    {% include 'TemploBundle:includes:footer.html.twig' %}
     
+            
+        {% block foot_script_assetic %}
+            <script src="{{ asset('js/jquery-1.10.2.min.js') }}"></script>
+            <script src="{{ asset('js/bootstrap.js') }}"></script>
+            <script src="{{ asset('js/jquery.fitvids.js') }}"></script>    
+            <script src="{{ asset('js/retina-1.1.0.js') }}"></script>
+            <script src="{{ asset('js/fhmm.js') }}"></script>
+            <script src="{{ asset('js/bootstrap-select.js') }}"></script>
+            <script src="{{ asset('fancyBox/jquery.fancybox.pack.js') }}"></script>
+            <script src="{{ asset('js/application.js') }}"></script>
+            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+            {% javascripts
+                '@TemploUserBundle/Resources/public/js/user.js'             
+                %}
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock foot_script_assetic %}
 	<!-- Bootstrap core and JavaScript's
     ================================================== -->
-<script src="{{ asset('js/jquery-1.10.2.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.js') }}"></script>
-<script src="{{ asset('js/jquery.fitvids.js') }}"></script>    
-<script src="{{ asset('js/retina-1.1.0.js') }}"></script>
-<script src="{{ asset('js/fhmm.js') }}"></script>
-<script src="{{ asset('js/bootstrap-select.js') }}"></script>
-<script src="{{ asset('fancyBox/jquery.fancybox.pack.js') }}"></script>
-<script src="{{ asset('js/application.js') }}"></script>
+
 
 	<!-- FlexSlider JavaScript
     ================================================== -->

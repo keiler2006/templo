@@ -1,21 +1,35 @@
 {% extends 'TemploBundle::base.html.twig' %}
 
+       
+
 {% block main %}
     <div id="dashboard" class="row">
-        <div class="col-md-3">        
-            <h1><i class="icon-home"></i> {{ 'user_navbar.dashboard'|trans({}, 'UserBundle')|capitalize }}</h1>
+        <h1><i class="fa fa-home"></i> {{ 'user_navbar.dashboard'|trans({}, 'UserBundle')|capitalize }}</h1>
+        <div class="col-md-10">        
+            
+            
+            <div class="col-md-2">
+                sad
+            </div>
+            <div class="col-md-2">
+                sad
+            </div>
+            <div class="col-md-2">
+                sad
+            </div>
+            
             
             <ul id="large-icons">
                 <li>
                     <a href="">
-                        <i class="icon-star"></i>
+                        <i class="fa fa-star"></i>
                         <br><br>
                         {{ 'user_navbar.starred_ads'|trans({}, 'UserBundle')|upper }} (10)
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <i class="icon-book"></i>
+                        <i class="fa fa-book"></i>
                         <br><br>
                         {{ 'user_navbar.ads'|trans({}, 'UserBundle')|upper }} (10)
                     </a>
@@ -28,6 +42,7 @@
                     </a>
                 </li>
             </ul>
+            
         </div>
     </div>
 

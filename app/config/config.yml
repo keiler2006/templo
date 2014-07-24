@@ -6,6 +6,7 @@ imports:
      # bundles config   
     - { resource: bundle_avalanche_imagine.yml }  
     - { resource: bundle_fos_user.yml }  
+    - { resource: bundle_fos_jsrouting.yml }  
     #- { resource: bundle_fos_message.yml }  
     - { resource: bundle_stof_doctrine_extensions.yml }
     - { resource: bundle_vich_uploader.yml }

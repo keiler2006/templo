@@ -30,7 +30,7 @@ portada:
 
 _portada:
      pattern:  /
-     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: portada }
+     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: portada }    
 
 templo:
     resource: "@TemploBundle/Resources/config/routing.yml"
@@ -38,4 +38,9 @@ templo:
     requirements:
         _locale:  %route_locale_requirements%
     
-
+    
+################################################################################################
+# FOSJsRoutingBundle routes
+################################################################################################
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
