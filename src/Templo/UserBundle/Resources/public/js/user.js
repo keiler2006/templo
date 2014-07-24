@@ -13,6 +13,8 @@ $(document).ready(function() {
                     $('#modal-login-error-container').html("<div class=\"alert alert-danger fade in\">\n\<button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">&times;</button>"+data.message+"</div>");
                  }else
                  {
+                     alert('pepe');
+                     alert(data);
                      window.location.href = data.targetUrl;
                  }
             },
