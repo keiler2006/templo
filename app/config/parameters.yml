@@ -17,4 +17,4 @@ parameters:
     debug_toolbar: true
     debug_redirects: false
     use_assetic_controller: true
-   # database_path: '%kernel.root_dir%/data/templo.db3'
+    database_path: '%kernel.root_dir%/data/templo.db3'

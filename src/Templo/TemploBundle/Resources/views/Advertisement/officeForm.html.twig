@@ -3,5 +3,5 @@
 {% block section_title %}{{ 'advertisement-create-links.office'|trans|capitalize }}{% endblock %}
 
 {% block form_action %}
-{{ (entity.isNew) ? path('new_office') : path('new_office', { 'id': entity.id }) }}
+{{ (entity.isNew) ? path('create-office') : path('create-office', { 'id': entity.id }) }}
 {% endblock %}

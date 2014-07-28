@@ -1,6 +1,3 @@
-# Ruta para mostrar el perfil del usuario logueado
-new_office:
-    pattern:  /user/create/office
-    defaults: { _controller: TemploBundle:Default:newOffice }
+
 
 
