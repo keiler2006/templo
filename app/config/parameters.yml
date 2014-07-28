@@ -8,7 +8,7 @@ parameters:
     database_password: null
     mailer_transport: smtp
     mailer_host: 10.0.0.3
-    mailer_port: 25 
+    mailer_port: 25
     mailer_user: keiler.gonzalez
     mailer_password: Apoloatenea-60
     mailer_encryption: ssl

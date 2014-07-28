@@ -60,37 +60,48 @@
 
 
  {% include 'TemploUserBundle:Security:_modalLogin.html.twig' %}
-
-<div class="topbar clearfix">
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="callus">
-                    <p>
-                        <span><i class="fa fa-envelope"></i> info@temploconsulting.com</span>
-                        <span><i class="fa fa-phone-square"></i> 914892127</span>
-                    </p>
-                </div><!-- end callus-->
-            </div><!-- end col-lg-6 -->
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="marketing">
-                    <ul class="topflags pull-right">
-                        {% set route = app.request.get('_route') %}
-                        <li><a data-placement="bottom" data-lang="es" data-toggle="tooltip" data-original-title="{{'top-bar.languages.spanish' | trans}}" title="" href="{{ path(route, { '_locale': 'es' }) }}"><img alt="es" src="{{ asset('images/flags/es.png') }}"></a></li>
-                        <li><a data-placement="bottom" data-lang="en" data-toggle="tooltip" data-original-title="{{'top-bar.languages.english' | trans}}" title="" href="{{ path(route, { '_locale': 'en' }) }}"><img alt="us" src="{{ asset('images/flags/us.png') }}"></a></li>
-                        <li><a data-placement="bottom" data-lang="cn" data-toggle="tooltip" data-original-title="{{'top-bar.languages.chinese' | trans}}" title="" href="{{ path(route, { '_locale': 'cn' }) }}"><img alt="cn" src="{{ asset('images/flags/cn.png') }}"></a></li>
-                    </ul><!-- end flags -->
-                    <ul class="topmenu pull-right">
-                        <li><a href="#LoginContact" data-toggle="modal"><!-- <i class="fa fa-lock"> --> </i>{{'top-bar.login-register' | trans}}</a></li> 
-                        <li><a href="{{ path('user_settings') }}" id="logout_link">Settings</a></li> 
-                        <li><a href="{{ path('logout') }}" id="logout_link">Logout</a></li> 
-                        
-                    </ul><!--  -->
-                </div><!-- end marketing -->
-            </div><!-- end col-lg-6 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</div><!-- end topbar -->        
+{% if is_granted("IS_AUTHENTICATED_FULLY") %}
+      <ul class="nav pull-right navbar-inverse">
+        <li id="fat-menu" class="dropdown">
+          <a href="{{ path('logout') }}">Salir <b class="glyphicon glyphicon-off"></b></a>        
+        </li>        
+      </ul>
+{% else %}
+      <ul class="nav pull-right navbar-inverse">
+        <li id="fat-menu" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lenguajes <b class="fa fa-book fa-fw"></b></a>
+          <ul class="dropdown-menu">
+            <li><div style="padding-left: 20px;"> <img  alt="es" src="{{ asset('images/flags/es.png') }}"><a href="{{ path('portada', { '_locale': 'es' }) }}"> {{'top-bar.languages.spanish' | trans}}</a></div></li>
+            <li><div style="padding-left: 20px;"> <img  alt="es" src="{{ asset('images/flags/us.png') }}"><a href="{{ path('portada', { '_locale': 'en' }) }}"> {{'top-bar.languages.english' | trans}}</a></div></li>
+            <li><div style="padding-left: 20px;"> <img  alt="es" src="{{ asset('images/flags/cn.png') }}"><a href="{{ path('portada', { '_locale': 'cn' }) }}"> {{'top-bar.languages.chinese' | trans}}</a></div></li>
+          </ul>
+        </li>        
+      </ul>
+{% endif %} 
+{% if is_granted("IS_AUTHENTICATED_FULLY") %}
+      <ul class="nav pull-right navbar-inverse">
+        <li id="fat-menu" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="glyphicon glyphicon-user"> </b> {{ app.user }} __<b class="glyphicon glyphicon-cog"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Acci&oacute;n</a></li>
+            <li><a href="#">Otra acci&oacute;n</a></li>
+            <li><a href="#">Algo m&aacute;s aqu&iacute;</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Enlace separado</a></li>
+          </ul>
+        </li>        
+      </ul>                              
+{% else %}
+      <ul class="nav pull-right navbar-inverse">
+        <li><a href="#LoginContact" data-toggle="modal"><!-- <i class="fa fa-lock"> --> </i>{{'top-bar.login-register' | trans}}</a></li>
+      </ul><!-- -->
+{% endif %}    
+    </div>
+  </div>
+</div> 
 <header class="header1">
     <div class="container">
         <div class="row header-row">

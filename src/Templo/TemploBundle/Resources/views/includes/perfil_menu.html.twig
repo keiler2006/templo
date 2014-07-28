@@ -58,14 +58,17 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+
+ {% include 'TemploUserBundle:Security:_modalLogin.html.twig' %}
+
 <div class="topbar clearfix">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="callus">
                     <p>
-                        <span><i class="fa fa-envelope"> </i> milanes1988@gmail.com </span>
-                        <span><i class="fa fa-phone-square"> </i> 914892127 </span>
+                        <span><i class="fa fa-envelope"></i> info@temploconsulting.com</span>
+                        <span><i class="fa fa-phone-square"></i> 914892127</span>
                     </p>
                 </div><!-- end callus-->
             </div><!-- end col-lg-6 -->
@@ -75,11 +78,25 @@
                         <li><a data-placement="bottom" data-toggle="tooltip" data-original-title="{{'top-bar.languages.spanish' | trans}}" title="" href="{{ path('portada', { '_locale': 'es' }) }}"><img alt="es" src="{{ asset('images/flags/es.png') }}"></a></li>
                         <li><a data-placement="bottom" data-toggle="tooltip" data-original-title="{{'top-bar.languages.english' | trans}}" title="" href="{{ path('portada', { '_locale': 'en' }) }}"><img alt="us" src="{{ asset('images/flags/us.png') }}"></a></li>
                         <li><a data-placement="bottom" data-toggle="tooltip" data-original-title="{{'top-bar.languages.chinese' | trans}}" title="" href="{{ path('portada', { '_locale': 'cn' }) }}"><img alt="cn" src="{{ asset('images/flags/cn.png') }}"></a></li>
-                    </ul><!-- end flags -->
-                    <ul class="topmenu pull-right">
+                    </ul><!-- end flags -->                 
+                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                    
+                    <ul class="topmenu pull-right">      
+                        <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"> <b class="fa fa-envelope"></b></a>
+                            <ul class="" role="">
+                                <li class="active"><a>Typography</a></li>
+                                <li><a>Typography</a></li>
+                                <li><a>Typography</a></li>
+                            </ul><!-- end dropdown-menu -->
+                        </li><!-- end standard drop down -->
                         <li><a><!-- <i class="fa fa-lock"> --> </i>Bienvenido a Usario</a></li>
-                        <li><a href="#LoginContact" data-toggle="modal"><!-- <i class="fa fa-lock"> --> </i>Cerrar</a></li>
+                        <li><a href="{{ path('logout') }}" data-toggle="modal"><!-- <i class="fa fa-lock"> --> </i>Cerrar</a></li>
                     </ul><!--  -->
+                {% else %}
+                    <ul class="topmenu pull-right">
+                        <li><a href="#LoginContact" data-toggle="modal"><!-- <i class="fa fa-lock"> --> </i>{{'top-bar.login-register' | trans}}</a></li>                         
+                    </ul><!--  -->
+                {% endif %}                   
                 </div><!-- end marketing -->
             </div><!-- end col-lg-6 -->
         </div><!-- end row -->
@@ -119,62 +136,74 @@
                         <!-- Mega Menu -->
                         <li class="dropdown fhmm-fw"><a href="{{ path('portada') }}"><i class="fa fa-home"></i> {{ 'menu.home' | trans | upper }}</a></li><!-- mega menu -->
                         <!-- list elements -->
-                        <li class="dropdown fhmm-fw"><a href="" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-cogs fa-fw"></i> Configuracion<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li class="fhmm-content fullwidth">
-                                    <div class="row">                                        
-                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                           <div class="">
-                                                <div class="ImageWrapper boxes_img">
-                                                    <img class="img-responsive" src="{{ asset('uploads/images/property/user_profile.png') }}" alt="">
-                                                    <div class="ImageOverlayH"></div>
-                                                    <div class="Buttons StyleMg">
-                                                        <span class="WhiteSquare"><a class="fancybox" href="{{ asset('uploads/images/property/user_profile.png') }}"><i class="fa fa-search"></i></a>
-                                                        </span>
-                                                            <span class="WhiteSquare"><a><i class="fa fa-upload"></i></a>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="text-center text-danger">Marcelino Milanes Lazo</div> 
-                                                <div class="callus">
-                                                   <p>
-                                                       <span><i class="fa fa-envelope"></i> <strong> milanes1988@gmail.com </strong></span><br>
-                                                       <span><i class="fa fa-phone-square"></i><strong> 914892127 </strong></span>
-                                                   </p>
-                                                </div><!-- end callus-->
-                                            </div><!-- end boxes -->                                            
-                                        </div>
-                                       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                           <div class="callus">                                               
-                                               <div class="text-center text-danger">Editar Cuenta</div>
-                                                <ul class="nav nav-pills nav-stacked">
-                                                    <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Correo</a></li>
-                                                    <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Nombre</a></li>
-                                                    <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Telefono</a></li>
-                                                    <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Contrasena</a></li>
-                                                </ul>
-                                            </div>                                            
-                                       </div>
-                                    </div><!-- end row -->
-                                </li><!-- end grid demo -->
-                            </ul><!-- end drop down menu -->
-                        </li><!-- end list elements -->                       
-                        <li class="dropdown fhmm-fw"><a href="" data-toggle="dropdown" class="dropdown-toggle">Opciones<b class="caret"></b></a>
+                        <li class="dropdown fhmm-fw"><a href="" data-toggle="dropdown" class="dropdown-toggle">{{ 'menu.service' | trans | upper }}<b class="caret"></b></a>
                             <ul class="dropdown-menu fullwidth">
                                 <li class="fhmm-content withdesc">
-                                    <div class="row">                                        
+                                    <div class="row">
                                         <div class="col-sm-2">
-                                            <h3 class="title">Mis Anuncios</h3>
+                                            <h3 class="title">{{ 'menu.service-type.intermediation' | trans | upper }}</h3>
                                             <ul>
-                                                <li><a  href="{{ path('intermediation-sale') }}">{{ 'menu.service-type.intermediation-submenu.sale' | trans| upper }}</a></li>
-                                                <li><a  href="{{ path('intermediation-rent') }}">{{ 'menu.service-type.intermediation-submenu.rent' | trans| upper }}</a></li>
+                                                <li><a data-description="Ventas Mobiliarios" href="{{ path('intermediation-sale') }}">{{ 'menu.service-type.intermediation-submenu.sale' | trans| upper }}</a></li>
+                                                <li><a data-description="Activos Mobiliarios" href="{{ path('intermediation-rent') }}">{{ 'menu.service-type.intermediation-submenu.rent' | trans| upper }}</a></li>
+                                                <li><a data-description="Credito Personalizado" href="{{ path('intermediation-financing') }}">{{ 'menu.service-type.intermediation-submenu.financing' | trans| upper }}</a></li>
+                                                <li><a data-description="Luz, agua, gas..." href="{{ path('intermediation-supplies') }}">{{ 'menu.service-type.intermediation-submenu.supplies' | trans| upper }}</a></li>
+                                                <li><a data-description="Impago, hogar, vida..." href="{{ path('intermediation-insurance') }}">{{ 'menu.service-type.intermediation-submenu.insurance' | trans| upper }}</a></li>
                                             </ul>
-                                        </div>                                       
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <h3 class="title">{{ 'menu.service-type.construction' | trans | upper }}</h3>
+                                            <ul>
+                                                <li><a data-description="Diseño de Interiores" href="{{ path('construction-interior') }}">{{ 'menu.service-type.construction-submenu.interior' | trans| upper }}</a></li>
+                                                <li><a data-description="Seguidad y Salud" href="{{ path('construction-safety-coordinator') }}">{{ 'menu.service-type.construction-submenu.coord' | trans| upper }}</a></li>
+                                                <li><a data-description="Dirección de Ejecución" href="{{ path('construction-construction') }}">{{ 'menu.service-type.construction-submenu.construction' | trans| upper }}</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <h3 class="title">{{ 'menu.service-type.certificate' | trans | upper }}</h3>
+                                            <ul>
+                                                <li><a data-description="Certificado Energético" href="{{ path('certificates-certificates') }}">{{ 'menu.service-type.certificate-submenu.certificates' | trans| upper }}</a></li>
+                                                <li><a data-description="Inspección Edificios" href="{{ path('certificates-ite') }}">{{ 'menu.service-type.certificate-submenu.ite' | trans| upper }}</a></li>
+                                                <li><a data-description="Licencia de Actividad" href="{{ path('certificates-licenses') }}">{{ 'menu.service-type.certificate-submenu.licenses' | trans| upper }}</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <h3 class="title">{{ 'menu.service-type.supplementary' | trans | upper }}</h3>
+                                            <ul>
+                                                <li><a data-description="Liso, estuco..." href="{{ path('complement-painting') }}">{{ 'menu.service-type.supplementary-submenu.paint' | trans | upper }}</a></li>
+                                                <li><a data-description="Hogar, locales, oficinas..." href="{{ path('complement-cleaning') }}">{{ 'menu.service-type.supplementary-submenu.cleaning' | trans | upper }}</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <h3 class="title">{{ 'menu.service-type.templo' | trans | upper }}</h3>
+                                            <ul>
+                                                <li><a data-description="Envíenos su CV" href="{{ path('templo-work-with-us') }}">{{ 'menu.service-type.templo-submenu.work' | trans | upper }}</a></li>
+                                                <li><a data-description="Información" href="{{ path('templo-information') }}">{{ 'menu.service-type.templo-submenu.cleaning' | trans | upper }}</a></li>
+                                                <li><a data-description="Valores Empresa" href="{{ path('templo-our-values') }}">{{ 'menu.service-type.templo-submenu.valors' | trans | upper }}</a></li>
+                                                <li><a data-description="Podemos Ayudarte" href="{{ path('templo-contact-us') }}">{{ 'menu.service-type.templo-submenu.cleaning' | trans | upper }}</a></li>
+                                                <li><a data-description="Preguntas Frecuentes..." href="{{ path('templo-ask') }}">{{ 'menu.service-type.templo-submenu.work' | trans | upper }}</a></li>
+                                            </ul>
+                                        </div>
                                     </div><!-- end row -->
                                 </li><!-- end grid demo -->
                             </ul><!-- end drop down menu -->
-                        </li><!-- end list elements -->                        
-                        <li><a href="list-property.html">Publica tu Anuncio</a></li>
+                        </li><!-- end list elements -->
+                        <!-- list elements -->
+                        <li class="dropdown fhmm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ 'menu.property' | trans | upper }} <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="fhmm-content fullwidth">
+                                    <div class="row">
+                                        
+                                       {{ render(controller('TemploBundle:Default:topMenuProperties')) }}                                       
+                                                                                
+                                                              
+                                    </div><!-- end row -->
+                                </li><!-- end grid demo -->
+                            </ul><!-- end drop down menu -->
+                        </li><!-- end list elements -->
+                        <!-- standard drop down -->
+                        <li><a href="list-property.html">{{ 'menu.find' | trans | upper }}</a></li>
+                        
+                        <li><a href="list-property.html">{{ 'menu.house' | trans | upper }}</a></li>
                     </ul><!-- end nav navbar-nav -->
                 </div><!-- end #navbar-collapse-1 -->
             </div><!-- end dm_container -->
