@@ -35,7 +35,7 @@ class AuthenticationHandler implements AuthenticationSuccessHandlerInterface, Au
         if ($this->session->get('_security.main.target_path')) {
             $url = $this->session->get('_security.main.target_path');
         } else {
-            $url = $this->router->generate('dashboard');
+            $url = $this->router->generate('user_dashboard');
         } // end if 
         // if AJAX login
         if ($request->isXmlHttpRequest()) {

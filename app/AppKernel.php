@@ -23,6 +23,10 @@ class AppKernel extends Kernel
             // StofDoctrineExtensionsBundle
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             
+            new Craue\FormFlowBundle\CraueFormFlowBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
+            
               // FOSJsRoutingBundle
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             

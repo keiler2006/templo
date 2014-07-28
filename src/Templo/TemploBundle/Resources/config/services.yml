@@ -5,7 +5,15 @@ services:
     # custom file namer
     templo.namer_uniqid:
         class: Templo\TemploBundle\Namer\TemploNamer
-        
-#    templo.example:
-#        class: %templo.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+
+    templo.form.oficina:
+        class: Templo\TemploBundle\Form\OficinaType 
+        tags:
+            - { name: form.type, alias: oficina_form}
+            
+    templo.form.flow.oficina:
+        class: Templo\TemploBundle\Form\OficinaFlow
+        parent: craue.form.flow
+        scope: request
+        calls:
+            - [setFormType, ["@templo.form.oficina"]]

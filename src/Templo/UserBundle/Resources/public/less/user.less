@@ -1,8 +1,58 @@
 /* import bootstrap mixins */
 @import "../../../../../../web/assets/bootstrap/less/mixins.less";
 
-div#dashboard{
-    margin-top: 20px;
+header.header1{
+    margin-bottom: 25px;
+}
+
+footer.footer1{
+    margin-top:50px;
+}
+
+section.advertisement-create{
+    header{
+         margin-bottom: 30px;
+        h1{
+            margin-bottom: 5px;
+        }
+    }
+    ul.breadcrumb{
+       margin-top:0px;
+       li.active{
+           color: #F6700E;
+           font-weight: bold;
+           text-decoration: underline;
+       }
+    }
+}
+
+div#advertisement-create-links{    
+    div.create-link{
+         border:     1px solid #CCC;
+         .border-top-radius(10px);
+         .border-bottom-radius(10px);
+         text-align: center;
+         width: 85%;
+         
+         a {             
+                display:        inline-block;
+                padding:        30px;
+                padding-top:    40px;
+
+                text-align: center;
+                font-size:      20px;
+                line-height:    22px;
+                color:          #888;
+
+                &:hover {
+                    text-decoration:    none;
+                    color:              #333;
+                }
+
+                i { font-size:34px; }
+            }
+    }
+    
     ul#large-icons {
         overflow:   hidden;
         margin-top: 80px;
@@ -15,7 +65,22 @@ div#dashboard{
             background:     #F1F1F1;
             margin-left: 50px;
             
-            a {
+            
+        }
+    }
+}
+
+
+div#dashboard{
+    
+    div.dasboard-action{
+         border:     1px solid #CCC;
+         .border-top-radius(10px);
+         .border-bottom-radius(10px);
+         text-align: center;
+         width: 85%;
+         
+         a {
                 width:          300px;
                 height:         180px;
                 display:        inline-block;
@@ -34,6 +99,21 @@ div#dashboard{
 
                 i { font-size:34px; }
             }
+    }
+    
+    ul#large-icons {
+        overflow:   hidden;
+        margin-top: 80px;
+
+        li {
+            float:          left;
+            border:     1px solid #CCC;
+            .border-top-radius(3px);
+            .border-bottom-radius(3px);
+            background:     #F1F1F1;
+            margin-left: 50px;
+            
+            
         }
     }
 }

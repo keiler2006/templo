@@ -75,12 +75,15 @@
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="marketing">
                     <ul class="topflags pull-right">
-                        <li><a data-placement="bottom" data-toggle="tooltip" data-original-title="{{'top-bar.languages.spanish' | trans}}" title="" href="{{ path('portada', { '_locale': 'es' }) }}"><img alt="es" src="{{ asset('images/flags/es.png') }}"></a></li>
-                        <li><a data-placement="bottom" data-toggle="tooltip" data-original-title="{{'top-bar.languages.english' | trans}}" title="" href="{{ path('portada', { '_locale': 'en' }) }}"><img alt="us" src="{{ asset('images/flags/us.png') }}"></a></li>
-                        <li><a data-placement="bottom" data-toggle="tooltip" data-original-title="{{'top-bar.languages.chinese' | trans}}" title="" href="{{ path('portada', { '_locale': 'cn' }) }}"><img alt="cn" src="{{ asset('images/flags/cn.png') }}"></a></li>
+                        {% set route = app.request.get('_route') %}
+                        <li><a data-placement="bottom" data-lang="es" data-toggle="tooltip" data-original-title="{{'top-bar.languages.spanish' | trans}}" title="" href="{{ path(route, { '_locale': 'es' }) }}"><img alt="es" src="{{ asset('images/flags/es.png') }}"></a></li>
+                        <li><a data-placement="bottom" data-lang="en" data-toggle="tooltip" data-original-title="{{'top-bar.languages.english' | trans}}" title="" href="{{ path(route, { '_locale': 'en' }) }}"><img alt="us" src="{{ asset('images/flags/us.png') }}"></a></li>
+                        <li><a data-placement="bottom" data-lang="cn" data-toggle="tooltip" data-original-title="{{'top-bar.languages.chinese' | trans}}" title="" href="{{ path(route, { '_locale': 'cn' }) }}"><img alt="cn" src="{{ asset('images/flags/cn.png') }}"></a></li>
                     </ul><!-- end flags -->
                     <ul class="topmenu pull-right">
                         <li><a href="#LoginContact" data-toggle="modal"><!-- <i class="fa fa-lock"> --> </i>{{'top-bar.login-register' | trans}}</a></li> 
+                        <li><a href="{{ path('user_settings') }}" id="logout_link">Settings</a></li> 
+                        <li><a href="{{ path('logout') }}" id="logout_link">Logout</a></li> 
                         
                     </ul><!--  -->
                 </div><!-- end marketing -->

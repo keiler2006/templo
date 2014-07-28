@@ -3,6 +3,8 @@
 namespace Templo\TemploBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Templo\TemploBundle\Entity\Oficina;
+use Templo\TemploBundle\Form\OficinaType;
 
 class DefaultController extends Controller {
 
@@ -10,7 +12,7 @@ class DefaultController extends Controller {
         return $this->render(
                         sprintf('TemploBundle:Static:%s/%s.html.twig', $this->getRequest()->getLocale(), $page)
         );
-    }
+    }    
 
     public function indexAction() {
         $mostPopular = array();

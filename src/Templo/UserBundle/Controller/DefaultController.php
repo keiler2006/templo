@@ -4,6 +4,7 @@ namespace Templo\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller {
 
@@ -13,9 +14,16 @@ class DefaultController extends Controller {
        
         $usuario = $this->get('security.context')->getToken()->getUser(); 
 
-        return $this->render('TemploUserBundle::dashboard.html.twig', array(
+        $response = $this->render('TemploUserBundle::dashboard.html.twig', array(
                     'usuario' => $usuario                    
         ));
+        //$response->setSharedMaxAge(0);
+        $response->headers->addCacheControlDirective('no-cache', true);
+        $response->headers->addCacheControlDirective('no-store', true);
+        $response->headers->addCacheControlDirective('must-revalidate', true);
+        $response->headers->set('Pragma','no-cache');
+        $response->headers->set('Expires','0');
+        return $response;
     }
     
      public function userSettingAction(Request $request) {        
@@ -23,9 +31,15 @@ class DefaultController extends Controller {
        
         $usuario = $this->get('security.context')->getToken()->getUser(); 
 
-        return $this->render('TemploUserBundle::settings.html.twig', array(
+        $response = $this->render('TemploUserBundle::settings.html.twig', array(
                     'usuario' => $usuario                    
         ));
+         $response->headers->addCacheControlDirective('no-cache', true);
+        $response->headers->addCacheControlDirective('no-store', true);
+        $response->headers->addCacheControlDirective('must-revalidate', true);
+        $response->headers->set('Pragma','no-cache');
+        $response->headers->set('Expires','0');
+        return $response;
     }
     
     

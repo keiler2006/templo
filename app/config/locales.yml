@@ -17,7 +17,7 @@ parameters:
         
     # parameter to be used in routes.yml
     # add |[locale] if a new interface locale is available
-    route_locale_requirements: '^es|en|cn$'
+    route_locale_requirements: 'es|en|cn'
 
     simple_array_locales: [es, en, cn]
     

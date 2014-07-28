@@ -25,7 +25,9 @@
         "stof/doctrine-extensions-bundle": "1.1.*@dev",
         "vich/uploader-bundle": "v0.9.0",
         "avalanche123/imagine-bundle": "2.1.*",
-        "craue/formflow-bundle": "~2.0"
+        "craue/formflow-bundle": "~2.0",
+		"knplabs/knp-menu-bundle": "dev-master",
+		"mopa/bootstrap-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

@@ -9,6 +9,9 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *
  * @ORM\Table(name="property")
  * @ORM\Entity(repositoryClass="Templo\TemploBundle\Entity\PropertyRepository") 
+ * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\DiscriminatorColumn(name="discr", type="string")
+ * @ORM\DiscriminatorMap({"property" = "Property", "oficina" = "Oficina"})
  */
 class Property
 {
@@ -19,75 +22,73 @@ class Property
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
-     * @var text $title    
+     * @var text $localidad    
      *
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", nullable=false)
      */
-    private $title;
+    protected $localidad;
 
     /**
-     * @var text $description
+     * @var text $calle
      *    
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="string", nullable=false)
      */
-    private $description;
-
+    protected $calle;
+    
     /**
-     * @var text $content   
-     * @ORM\Column(type="text", nullable=true)
+     * @var text $numero
+     *    
+     * @ORM\Column(type="integer", nullable=false)
      */
-    private $content;
+    protected $numero;
+    
+     /**
+     * @var text $numero
+     *    
+     * @ORM\Column(type="string", nullable=false)
+     */
+    protected $urbanizacion;
 
-    /**
-     * @Gedmo\Slug(fields={"title"})
-     * @ORM\Column(length=128, unique=true)
+    
+     /**
+     * @ORM\Column(type="decimal", scale=2) 
+     * 
      */
-    private $slug;
+    protected $precio;
     
     /**
      * @var boolean $published
      *
      * @ORM\Column(type="boolean", nullable=true)
      */
-    private $published;
+    protected $published;
 
     /**
      * @var datetime $published_at
      *
      * @ORM\Column(name="published_at", type="datetime", nullable=true)
      */
-    private $publishedAt;
+    protected $publishedAt;
    
 
     /**
      * @var object $user
      *
-     * @ORM\ManyToOne(targetEntity="Templo\UserBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="Templo\UserBundle\Entity\User", inversedBy="properties")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=true)
      */
-    private $user;
+    protected $user;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Templo\TemploBundle\Entity\PropertyHasTag", mappedBy="property", cascade={"persist"})
-     */
-    public $propertyHasTags;
-
-    /**
-     * @ORM\OneToMany(targetEntity="Templo\TemploBundle\Entity\UserStarsProperty", mappedBy="user", cascade={"persist"})
-     */
-    private $userStarsProperty;
-    
-
-    /**
+     /**
      * @var datetime $updated_at
      *
      * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $updated_at;
+    protected $updated_at;
 
     /**
      * @var datetime $created_at
@@ -95,7 +96,7 @@ class Property
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $created_at;
+    protected $created_at;
 
     /**************************************************************************************************
      *	custom functions
@@ -125,35 +126,12 @@ class Property
         return $this;
     }
 
-    /**
-     * Return the list of tags separated by comma
-     *
-     * Useful in "keywords" meta tag
-     */
-    public function getCommaSeparatedTags()
-    {
-        $tags = array();
-
-        foreach ($this->getPropertyHasTags() as $bht) {
-            $tags[] = $bht->getTag();
-        }
-
-        return implode($tags, ', ');
-    }
 
 
 
     /**************************************************************************************************
      *	getters and setters
     **************************************************************************************************/
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->propertyHasTags = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->userStarsProperty = new \Doctrine\Common\Collections\ArrayCollection();
-    }
     
     /**
      * Get id
@@ -164,99 +142,7 @@ class Property
     {
         return $this->id;
     }
-
-    /**
-     * Set title
-     *
-     * @param string $title
-     * @return Property
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    
-        return $this;
-    }
-
-    /**
-     * Get title
-     *
-     * @return string 
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     * @return Property
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string 
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * Set content
-     *
-     * @param string $content
-     * @return Property
-     */
-    public function setContent($content)
-    {
-        $this->content = $content;
-    
-        return $this;
-    }
-
-    /**
-     * Get content
-     *
-     * @return string 
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    /**
-     * Set slug
-     *
-     * @param string $slug
-     * @return Property
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-    
-        return $this;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string 
-     */
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
+   
     /**
      * Get published
      *
@@ -337,73 +223,8 @@ class Property
         return $this->user;
     }
 
-    /**
-     * Add propertyHasTag
-     *
-     * @param \Templo\TemploBundle\Entity\PropertyHasTag $propertyHasTags
-     * @return Property
-     */
-    public function addPropertyHasTag(\Templo\TemploBundle\Entity\PropertyHasTag $propertyHasTags)
-    {
-        $this->propertyHasTags[] = $propertyHasTags;
-    
-        return $this;
-    }
 
-    /**
-     * Remove propertyHasTag
-     *
-     * @param \Templo\TemploBundle\Entity\PropertyHasTag $propertyHasTag
-     */
-    public function removePropertyHasTag(\Templo\TemploBundle\Entity\PropertyHasTag $propertyHasTag)
-    {
-        $this->propertyHasTags->removeElement($propertyHasTag);
-    }
-
-    /**
-     * Get propertyHasTags
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getPropertyHasTags()
-    {
-        return $this->propertyHasTags;
-    }
-
-    /**
-     * Add userStarsProperty
-     *
-     * @param \Templo\TemploBundle\Entity\UserStarsProperty $userStarsProperty
-     * @return Property
-     */
-    public function addUserStarsProperty(\Templo\TemploBundle\Entity\UserStarsProperty $userStarsProperty)
-    {
-        $this->userStarsProperty[] = $userStarsProperty;
-    
-        return $this;
-    }
-
-    /**
-     * Remove userStarsProperties
-     *
-     * @param \Templo\TemploBundle\Entity\UserStarsProperty $userStarsProperty
-     */
-    public function removeUserStarsProperty(\Templo\TemploBundle\Entity\UserStarsProperty $userStarsProperty)
-    {
-        $this->userStarsProperty->removeElement($userStarsProperty);
-    }
-
-    /**
-     * Get userStarsProperty
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getUserStarsProperty()
-    {
-        return $this->userStarsProperty;
-    }
-
-  
+   
     /**
      * Set publishedAt
      *
@@ -425,5 +246,120 @@ class Property
     public function getPublishedAt()
     {
         return $this->publishedAt;
+    }
+
+    /**
+     * Set localidad
+     *
+     * @param string $localidad
+     * @return Property
+     */
+    public function setLocalidad($localidad)
+    {
+        $this->localidad = $localidad;
+
+        return $this;
+    }
+
+    /**
+     * Get localidad
+     *
+     * @return string 
+     */
+    public function getLocalidad()
+    {
+        return $this->localidad;
+    }
+
+    /**
+     * Set calle
+     *
+     * @param string $calle
+     * @return Property
+     */
+    public function setCalle($calle)
+    {
+        $this->calle = $calle;
+
+        return $this;
+    }
+
+    /**
+     * Get calle
+     *
+     * @return string 
+     */
+    public function getCalle()
+    {
+        return $this->calle;
+    }
+
+    /**
+     * Set numero
+     *
+     * @param integer $numero
+     * @return Property
+     */
+    public function setNumero($numero)
+    {
+        $this->numero = $numero;
+
+        return $this;
+    }
+
+    /**
+     * Get numero
+     *
+     * @return integer 
+     */
+    public function getNumero()
+    {
+        return $this->numero;
+    }
+
+    /**
+     * Set urbanizacion
+     *
+     * @param string $urbanizacion
+     * @return Property
+     */
+    public function setUrbanizacion($urbanizacion)
+    {
+        $this->urbanizacion = $urbanizacion;
+
+        return $this;
+    }
+
+    /**
+     * Get urbanizacion
+     *
+     * @return string 
+     */
+    public function getUrbanizacion()
+    {
+        return $this->urbanizacion;
+    }
+
+    /**
+     * Set precio
+     *
+     * @param string $precio
+     * @return Property
+     */
+    public function setPrecio($precio)
+    {
+        $this->precio = $precio;
+
+        return $this;
+    }
+
+    /**
+     * Get precio
+     *
+     * @return string 
+     */
+    public function getPrecio()
+    {
+        return $this->precio;
     }
 }

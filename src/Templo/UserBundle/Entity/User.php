@@ -73,10 +73,7 @@ class User extends BaseUser implements ParticipantInterface
      */
     protected $properties;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Templo\TemploBundle\Entity\UserStarsProperty", mappedBy="user", cascade={"persist"})
-     */
-    protected $userStarsProperties;
+  
 
     /**************************************************************************************************
      *	custom functions
@@ -87,40 +84,9 @@ class User extends BaseUser implements ParticipantInterface
         // your own logic
     }
 
-    /**
-     * return if a user marked a $property as "starred".
-     *
-     * marking a property as "starred" is like putting it in the "favorites"
-     *
-     * @param Property $property
-     * @return boolean
-     */
-    public function isStarringProperty(Property $property)
-    {
-        foreach ($this->getUserStarsProperties() as $usp) {
-            if ($usp->getProperty() && $usp->getProperty()->getId() === $property->getId()) {
-                return true;
-            }
-        }
+   
 
-        return false;
-    }
-
-    /**
-     * return the starred properties for a user
-     *
-     * @return multitype:NULL
-     */
-    public function getStarredProperties()
-    {
-        $entities = array();
-
-        foreach ($this->getUserStarsProperties() as $usp) {
-            $entities[] = $usp->getProperty();
-        }
-
-        return $entities;
-    }
+   
 
     /**
      * VichUploaderBundle Fix
@@ -272,38 +238,6 @@ class User extends BaseUser implements ParticipantInterface
     public function getProperties()
     {
         return $this->properties;
-    }
-
-    /**
-     * Add userStarsProperty
-     *
-     * @param \Templo\TemploBundle\Entity\UserStarsProperty $userStarsProperty
-     * @return User
-     */
-    public function addUserStarsBrick(\Templo\TemploBundle\Entity\UserStarsProperty $userStarsProperty)
-    {
-        $this->userStarsProperties[] = $userStarsProperty;
+    }   
     
-        return $this;
-    }
-
-    /**
-     * Remove userStarsProperty
-     *
-     * @param \Templo\TemploBundle\Entity\UserStarsProperty $userStarsProperty
-     */
-    public function removeUserStarsProperty(\Templo\TemploBundle\Entity\UserStarsProperty $userStarsProperty)
-    {
-        $this->userStarsProperties->removeElement($userStarsProperties);
-    }
-
-    /**
-     * Get userStarsProperties
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getUserStarsProperties()
-    {
-        return $this->userStarsProperties;
-    }
 }

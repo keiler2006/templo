@@ -3,12 +3,69 @@
 namespace Templo\TemploBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Component\HttpFoundation\Request;
+use Templo\TemploBundle\Entity\Oficina;
+use Templo\TemploBundle\Form\OficinaType;
 
-class DefaultController extends Controller {
+/**
+ * @Route("/user")
+ */
+class AdvertisementController extends Controller {
+    
+    /**
+     * Muestra los enlaces para crear los distintos tipos de anuncios
+     * 
+     * @Route("/create-advertisement", name="user_create_advertisement")
+     * @Security("has_role('ROLE_USER')")
+     * @Template()
+     */
+    public function advertisementCreateLinksAction() {               
+         
+        return array();
+    }
 
-    public function staticPageAction($page) {
-        return $this->render(
-                        sprintf('TemploBundle:Static:%s/%s.html.twig', $this->getRequest()->getLocale(), $page)
+   /**
+     * Muestra los enlaces para crear los distintos tipos de anuncios
+     * 
+     * @Route("/create-office", name="user_new_office")
+     * @Security("has_role('ROLE_USER')")
+     * @Template("TemploBundle:Advertisement:officeForm.html.twig")
+     */
+    public function newOfficeAction() {       
+
+        $em = $this->getDoctrine()->getManager();
+        $oficina = new Oficina();
+
+        $user = $this->container->get('security.context')->getToken()->getUser();
+
+        $flow = $this->get('templo.form.flow.oficina'); // must match the flow's service id
+        $flow->bind($oficina);
+
+        // form of the current step
+        $form = $flow->createForm();
+        if ($flow->isValid($form)) {
+            $flow->saveCurrentStepData($form);
+
+            if ($flow->nextStep()) {
+                // form for the next step
+                $form = $flow->createForm();
+            } else {
+                $em = $this->getDoctrine()->getEntityManager();
+                $em->persist($oficina);
+                $em->flush();
+
+                $this->get('session')->getFlashBag()->add('success', 'Anuncio creado exitosamente');
+                return $this->redirect($this->generateUrl('user_dashboard')); // redirect when done
+            }
+        }
+        return array(
+                    'form' => $form->createView(),
+                    'flow' => $flow,
+                    'entity' => $oficina
         );
     }
 

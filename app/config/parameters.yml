@@ -1,9 +1,9 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_driver: pdo_sqlite
-    database_host: null
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
     database_port: null
-    database_name: null
+    database_name: templo
     database_user: root
     database_password: null
     mailer_transport: smtp
@@ -17,4 +17,4 @@ parameters:
     debug_toolbar: true
     debug_redirects: false
     use_assetic_controller: true
-    database_path: '%kernel.root_dir%/data/templo.db3'
+   # database_path: '%kernel.root_dir%/data/templo.db3'
