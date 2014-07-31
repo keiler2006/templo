@@ -13,9 +13,11 @@
         {% block head_style %}
             <!-- Bootstrap core CSS -->
             <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
-
+            <link href="{{ asset('tabla/css/bootstrap.min.css') }}" rel="stylesheet">
+            <link href="{{ asset('tabla/css/dataTables.bootstrap.css') }}" rel="stylesheet"> 
+                
             <!-- Style CSS -->
-            <link href="{{ asset('style.css') }}" rel="stylesheet">    
+            <link href="{{ asset('style.css') }}" rel="stylesheet">
 
              {% stylesheets filter='cssrewrite,lessphp'    
                '@TemploUserBundle/Resources/public/less/user.less'
@@ -72,7 +74,7 @@
             <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
             <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
             {% javascripts
-                '@TemploUserBundle/Resources/public/js/user.js'             
+                '@TemploUserBundle/Resources/public/js/user.js'            
              %}
                 <script type="text/javascript" src="{{ asset_url }}"></script>
             {% endjavascripts %}
@@ -84,7 +86,7 @@
 	<!-- FlexSlider JavaScript
     ================================================== -->
  	<script src="{{ asset('js/jquery.flexslider.js') }}"></script>
-	<script>
+	<script>        
         $(window).load(function() {
             $('#carousel').flexslider({
                 animation: "slide",
