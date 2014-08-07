@@ -19,8 +19,19 @@
     <div class="container">
         <div class="row"> 
                 <div id="content" class="col-lg-9 col-md-9 col-sm-9 col-xs-12 clearfix">
-                    <div class="blog_container clearfix">
-                        {% block anuncios_region %}{% endblock %}
+                    <div class="blog_container clearfix">                         
+                            <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="datatable">
+                                <thead>
+                                        <tr>
+                                          {% block table_th %}
+                                          {% endblock %}
+                                        </tr>
+                                </thead>   
+                                <tbody>
+                                        {% block table_tr %}                                        
+                                        {% endblock %}
+                                </tbody>
+                            </table>
                     </div><!-- end blog_container --> 
                </div><!-- end content -->
                <div id="right_sidebar" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 last clearfix">
@@ -30,5 +41,22 @@
         </div><!-- end row -->
     </div><!-- end container -->
 </section><!-- end generalwrapper -->
+<script src="{{ asset('tabla/js/jquery.js') }}"></script>
+<script src="{{ asset('tabla/js/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('tabla/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('tabla/js/dataTables.bootstrap.js') }}"></script>
+<script src="{{ asset('tabla/js/dataTables.bootstrapPagination.js') }}"></script>
+<script>
+    $('#datatable').dataTable( {
+        "sDom": "<'row'<'col-xs-6'T><'col-xs-6'f>r>t<'row'<'col-xs-6'i><'col-xs-6'p>>",
+        "sPaginationType": "bootstrap"
+    } );
+</script>
+
 {% endblock %}
+
+
+
+       
+
 

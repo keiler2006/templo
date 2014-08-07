@@ -3,7 +3,7 @@
     <div class="container">
         <ul class="nav pull-right navbar-inverse">
         <li id="fat-menu" class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lenguajes <b class="fa fa-book fa-fw"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Idiomas<b class="fa fa-book fa-fw"></b></a>
           <ul class="dropdown-menu">
             <li><div style="padding-left: 20px;"> <img  alt="es" src="{{ asset('images/flags/es.png') }}"><a href="{{ path('portada', { '_locale': 'es' }) }}"> {{'top-bar.languages.spanish' | trans}}</a></div></li>
             <li><div style="padding-left: 20px;"> <img  alt="es" src="{{ asset('images/flags/us.png') }}"><a href="{{ path('portada', { '_locale': 'en' }) }}"> {{'top-bar.languages.english' | trans}}</a></div></li>
@@ -133,7 +133,7 @@
                             </ul><!-- end drop down menu -->
                         </li><!-- end list elements -->
                         <!-- standard drop down -->
-                        <li><a href="list-property.html">{{ 'menu.find' | trans | upper }}</a></li>
+                        <li><a href="{{ path('templo-find') }}">{{ 'menu.find' | trans | upper }}</a></li>
                         
                         <li><a href="list-property.html">{{ 'menu.house' | trans | upper }}</a></li>
                     </ul><!-- end nav navbar-nav -->
