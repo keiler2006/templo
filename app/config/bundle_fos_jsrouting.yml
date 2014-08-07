@@ -1,2 +1,2 @@
 fos_js_routing:
-    routes_to_expose: [ fos_user_security_check ]
+    routes_to_expose: [ fos_user_security_check, user_publish_flat ]

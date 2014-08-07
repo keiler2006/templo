@@ -2200,3 +2200,44 @@
 	.infobox .title a {
 		font-weight:bold;
 	}
+	
+	
+	
+	
+	
+	.has-feedback {
+  position: relative;
+}
+.has-feedback .form-control {
+  padding-right: 42.5px;
+}
+.has-feedback .form-control-feedback {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+}
+
+.has-success .form-control-feedback {
+  color: #3c763d;
+}
+.has-warning .form-control-feedback {
+  color: #8a6d3b;
+}
+.has-error .form-control-feedback {
+  color: #a94442;
+}
+  .form-inline .has-feedback .form-control-feedback {
+    top: 0;
+  }
+  .form-horizontal .has-feedback .form-control-feedback {
+  top: 0;
+  right: 15px;
+}
+  .navbar-form .has-feedback .form-control-feedback {
+    top: 0;
+  }

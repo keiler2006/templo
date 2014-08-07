@@ -13,7 +13,8 @@
         {% block head_style %}
             <!-- Bootstrap core CSS -->
             <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
-
+            <!--<link href="{{ asset('assets/bootstrap-3.1.1/css/bootstrap.min.css') }}" rel="stylesheet"> -->
+            
             <!-- Style CSS -->
             <link href="{{ asset('style.css') }}" rel="stylesheet">    
 
@@ -51,8 +52,26 @@
 </head>
 <body>
         <div class="toolbar-wrapp">
+            <div class="sticky-toolbar">
+                <ul>
+                    <li id="support"><a title="{{'sticky-toolbar.support-menu' | trans}}" title="" href="#" ><i class="fa fa-link"></i></a></li>
+                    <li id="help"><a href="#ContactFormModal" data-toggle="modal" title="{{'sticky-toolbar.question' | trans}}"><i class="fa fa-question"></i></a></li>
+                </ul>
+            </div><!--/ sticky-toolbar-->
+            <div class="popup">
+                <ul>
+                    <li><a href="contact.php">{{'sticky-toolbar.popup.contact' | trans}}</a></li>
+                    <li><a href="forum.html">{{'sticky-toolbar.popup.office' | trans}}</a></li>
+                    <li><a href="ticket.html">{{'sticky-toolbar.popup.what' | trans}}</a></li>
+                </ul>
+            </div><!--/ popup-->
+         </div><!--/ toolbar-wrapp-->
         {% include 'TemploBundle:includes:menu.html.twig' %}
-
+            
+        {% if not is_granted("IS_AUTHENTICATED_FULLY") %}
+            {% include 'TemploUserBundle:Security:_modalLogin.html.twig' %}
+        {% endif%}       
+            
         <div class="container">
         {% block main %}{% endblock %}
 	</div>	 
@@ -61,21 +80,23 @@
     
             
         {% block foot_script_assetic %}
-            <script src="{{ asset('js/jquery-1.10.2.min.js') }}"></script>
-            <script src="{{ asset('js/bootstrap.js') }}"></script>
+            <script src="{{ asset('assets/js/jquery-1.11.0.min.js') }}"></script>            
+            <script src="{{ asset('assets/bootstrap-3.1.1/js/bootstrap.min.js') }}"></script>
+            
             <script src="{{ asset('js/jquery.fitvids.js') }}"></script>    
             <script src="{{ asset('js/retina-1.1.0.js') }}"></script>
             <script src="{{ asset('js/fhmm.js') }}"></script>
             <script src="{{ asset('js/bootstrap-select.js') }}"></script>
-            <script src="{{ asset('fancyBox/jquery.fancybox.pack.js') }}"></script>
-            <script src="{{ asset('js/application.js') }}"></script>
+            <script src="{{ asset('fancyBox/jquery.fancybox.pack.js') }}"></script>          
             <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
             <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
             {% javascripts
+                '@TemploBundle/Resources/public/js/application.js'             
                 '@TemploUserBundle/Resources/public/js/user.js'             
              %}
                 <script type="text/javascript" src="{{ asset_url }}"></script>
             {% endjavascripts %}
+           
         {% endblock foot_script_assetic %}
 	<!-- Bootstrap core and JavaScript's
     ================================================== -->

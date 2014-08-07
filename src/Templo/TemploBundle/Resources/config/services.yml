@@ -2,18 +2,15 @@ parameters:
 #    templo.example.class: Templo\TemploBundle\Example
 
 services:
+    templo.advertisement.validator:
+        class: Templo\TemploBundle\Util\AdvertisementValidator
+        arguments: [@validator]
+    
     # custom file namer
     templo.namer_uniqid:
         class: Templo\TemploBundle\Namer\TemploNamer
 
-    templo.form.oficina:
-        class: Templo\TemploBundle\Form\OficinaType 
+    twig.extension.templo:
+        class: Templo\TemploBundle\Twig\Extension\TemploTwigExtension
         tags:
-            - { name: form.type, alias: oficina_form}
-            
-    templo.form.flow.oficina:
-        class: Templo\TemploBundle\Form\OficinaFlow
-        parent: craue.form.flow
-        scope: request
-        calls:
-            - [setFormType, ["@templo.form.oficina"]]
+            - { name: twig.extension }

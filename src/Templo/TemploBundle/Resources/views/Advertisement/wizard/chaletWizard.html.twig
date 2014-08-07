@@ -1,0 +1,123 @@
+    <div class="wizard" id="chale-wizard" data-title="{{ 'advertisement.chale-publish'|trans }}">
+         <div class="wizard-card" data-cardname="chale.step1">	
+            <h3>{{ 'advertisement.location'|trans }}</h3>           
+            <div class="wizard-input-section">
+                                    {{ form_row(chalet_form.localidad) }}
+            </div>
+            <div class="wizard-input-section">
+                                   {{ form_row(chalet_form.calle) }}
+            </div>
+            <div class="wizard-input-section">
+                                   {{ form_row(chalet_form.numero) }}
+            </div>
+            <div class="wizard-input-section">
+                                    {{ form_row(chalet_form.conserje) }}
+            </div>
+            <div class="wizard-input-section">
+                                    {{ form_row(chalet_form.descripcion) }}
+            </div>						
+        </div>	
+        <div class="wizard-card" data-cardname="chale.step2">
+            <h3>{{ 'advertisement.location-confirm'|trans }}</h3>
+            <p>Google Map</p>
+            {{ form_widget(chalet_form.gps_longitud) }}
+            {{ form_widget(chalet_form.gps_altitud) }}            
+        </div>
+
+        <div class="wizard-card" data-cardname="chale.step3">
+            <h3>{{ 'advertisement.price'|trans }}</h3>
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.tipo) }}
+            </div>
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.precio_alquiler) }}
+            </div>
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.precio_venta) }}
+            </div>           
+        </div>
+        <div class="wizard-card" data-cardname="chale.step4">
+            <h3>{{ 'advertisement.details'|trans }}</h3>
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.cocina) }}
+            </div>
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.alarma) }}
+            </div>
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.garaje) }}
+            </div> 
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.bannos) }}
+            </div> 
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.aire_acondicionado) }}
+            </div> 
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.calefaccion) }}
+            </div> 
+        </div>
+        <div class="wizard-card" data-cardname="chale.step5">
+            <h3>{{ 'advertisement.details'|trans }}</h3>
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.certificado_energetico) }}
+            </div>
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.metros_utiles) }}
+            </div>
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.metros_construidos) }}
+            </div> 
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.nivel_estado) }}
+            </div>             
+        </div>
+        <div class="wizard-card" data-cardname="chale.step6">
+            <h3>{{ 'advertisement.details'|trans }}</h3>
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.habitaciones) }}
+            </div>
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.trasteros) }}
+            </div>                  
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.plantas) }}
+            </div>  
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.salones) }}
+            </div>  
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.metros_parcelas) }}
+            </div>  
+            <div class="wizard-input-section">
+                    {{ form_row(chalet_form.piscina_independiente) }}
+            </div>  
+        </div> 
+         <div class="wizard-card" data-cardname="flat.step7">
+            <h3>{{ 'advertisement.photos'|trans }}</h3>           
+            
+             <table class="table table-condensed" id="chalet-image-list"
+                       data-prototype-file="{{ form_widget(chalet_form.fotos.vars.prototype.file)|e }}"
+                       data-prototype-file-label="{{ form_label(chalet_form.fotos.vars.prototype.file)|e }}"
+                       data-prototype-name="{{ form_widget(chalet_form.fotos.vars.prototype.name)|e }}" 
+                       data-prototype-name-label="{{ form_label(chalet_form.fotos.vars.prototype.name)|e }}"
+                       data-prototype-main="{{ form_widget(chalet_form.fotos.vars.prototype.main)|e }}" 
+                       data-prototype-main-label="{{ form_label(chalet_form.fotos.vars.prototype.main)|e }}"> 
+                 <thead>
+                        <tr>
+                            <th></th>   
+                        </tr>
+                    </thead>
+                    <tbody>  
+                        <tr class="add-photo">
+                            <td><a href="#" data-table="chalet-image-list">Adicionar foto</a></td>                        
+                        </tr>
+                    </tbody>
+              </table>            
+        </div>      
+        <div class="wizard-success">
+            <h3>Oficina creada exitosamente</h3>            
+        </div>
+
+    </div>
+

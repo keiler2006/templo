@@ -8,14 +8,17 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
-use Templo\TemploBundle\Entity\Oficina;
-use Templo\TemploBundle\Form\OficinaType;
+use Templo\TemploBundle\Entity\Piso;
+use Templo\TemploBundle\Form\PisoType;
+use Templo\TemploBundle\Form\LocalType;
+use Templo\TemploBundle\Form\ChaletType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * @Route("/user")
  */
 class AdvertisementController extends Controller {
-    
+
     /**
      * Muestra los enlaces para crear los distintos tipos de anuncios
      * 
@@ -23,19 +26,91 @@ class AdvertisementController extends Controller {
      * @Security("has_role('ROLE_USER')")
      * @Template()
      */
-    public function advertisementCreateLinksAction() {               
-         
-        return array();
-    }
+    public function advertisementCreateLinksAction() {
+        
+         $flat_form = $this->createForm(new PisoType());
+         $local_form = $this->createForm(new LocalType());
+         $chalet_form = $this->createForm(new ChaletType());
 
-   /**
+        return array(
+            'flat_form' => $flat_form->createView(),
+            'local_form' => $local_form->createView(),
+            'chalet_form' => $chalet_form->createView()
+        );
+    }
+    
+      
+    /**
      * Muestra los enlaces para crear los distintos tipos de anuncios
      * 
-     * @Route("/create-office", name="user_new_office")
+     * @Route("/publish-flat", name="user_publish_flat")
      * @Security("has_role('ROLE_USER')")
-     * @Template("TemploBundle:Advertisement:officeForm.html.twig")
+     * @Template("TemploBundle:Advertisement:pisoWizard.html.twig")
      */
-    public function newOfficeAction() {       
+    public function publishFlatAction(Request $request) {
+
+        $piso = new Piso();
+        $form = $this->createForm(new PisoType(), $piso);
+
+        if ($request->isMethod('POST')) {
+            $form->handleRequest($request);
+
+            $valid = $this->get('templo.advertisement.validator');
+            
+            $step = $request->request->get('step');
+            $piso->setGpsAltitud(0.0);
+            $piso->setGpsLongitud(0.0);
+            $errors = $valid->validarPiso($piso, $step);
+            if (count($errors) == 0) {
+                $response['success'] = true;
+                if ($request->request->has('last')) {                  
+                    try { 
+                        $em = $this->getDoctrine()->getEntityManager();                       
+                        $em->persist($piso);
+                        $em->flush();                      
+                    } catch (\Exception $es) {                     
+                        $response['success'] = false;
+                        $response['cause'] = $es->getMessage();
+                    }
+                }  
+            } else {               
+                $response['success'] = false;
+                $response['cause'] = $errors;
+            }
+
+
+            return new JsonResponse($response);
+        }
+
+        return array(
+            'form' => $form->createView()
+        );
+
+    }
+
+    /**
+     * Muestra los enlaces para crear los distintos tipos de anuncios
+     * 
+     * @Route("/verify-office", name="user_new_office_ajaxaa")
+     * @Security("has_role('ROLE_USER')")
+     * @Template("TemploBundle:Advertisement:officeFormAjax.html.twig")
+     */
+    public function verifyOfficeDataAction(Request $request) {
+
+        if ($request->isMethod('GET')) {
+
+            $form = $this->createForm(new OficinaTypeA());
+
+
+            return array(
+                'form' => $form->createView()
+            );
+        }
+
+
+
+
+
 
         $em = $this->getDoctrine()->getManager();
         $oficina = new Oficina();
@@ -63,9 +138,9 @@ class AdvertisementController extends Controller {
             }
         }
         return array(
-                    'form' => $form->createView(),
-                    'flow' => $flow,
-                    'entity' => $oficina
+            'form' => $form->createView(),
+            'flow' => $flow,
+            'entity' => $oficina
         );
     }
 

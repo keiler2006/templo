@@ -68,10 +68,10 @@ class User extends BaseUser implements ParticipantInterface
     protected $updated_at;
 
     /**
-     * @ORM\OneToMany(targetEntity="Templo\TemploBundle\Entity\Property", mappedBy="user", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Templo\TemploBundle\Entity\Inmueble", mappedBy="user", cascade={"persist"})
      * @ORM\OrderBy({"created_at" = "ASC"})
      */
-    protected $properties;
+    protected $inmuebles;
 
   
 

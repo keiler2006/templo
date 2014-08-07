@@ -62,6 +62,105 @@ breadcrumb:
     insuraces: Seguros de hogar, vida, alquiler...
 
     
-advertisement-create-links:
+advertisement-publish-links:
     title: Crear anuncio
-    office: Oficina
+    flat: Piso
+    local: Local
+    chale: Chale
+    
+advertisement:
+    flat-publish: Publicar piso
+    local-publish: Publicar local
+    chale-publish: Publicar chale
+    photos: Fotos
+    location: Datos de ubicación
+    location-confirm: Confirmar ubicación
+    price: Precio
+    details: Detalles
+    form:
+        location:
+            label: Localidad
+            placeholder: Localidad
+            empty-message: Debe especificar la localidad
+        street:
+            label: Calle
+            placeholder: Calle
+            empty-message: Debe especificar la calle
+        number:
+            label: Número
+            placeholder: Número
+            empty-message: Debe especificar el número
+            not-number-message: Formato de número incorrecto
+        description:
+            label: Descripción
+            placeholder: Descripción            
+        doorman:
+            label: Conserje           
+        type:
+            label: Tipo
+            empty-message: Debe especificar el tipo
+            options:
+                rent: Alquiler
+                sale: Venta
+                both: Ambos
+        sale-price:
+            label: Precio de venta
+            placeholder: Precio de venta
+            empty-message: Debe especificar el precio
+            not-number-message: Formato de número incorrecto
+        rent-price:
+            label: Precio de alquiler
+            placeholder: Precio de alquiler
+            empty-message: Debe especificar el precio
+            not-number-message: Formato de número incorrecto  
+        kitchen:
+            label: Cocina
+            empty-message: Debe especificar el tipo
+            options:
+                ind: Independiente
+                ame: Americana
+        alarm:
+            label: Alarma
+        garage:
+            label: Garajes
+            placeholder: Garajes
+            empty-message: Debe especificar la cantidad de garajes
+        heating:
+            label: Calefacción
+        air-cond:
+            label: Aire acondicionado
+        bath:
+            label: Baños
+            placeholder: Baños
+            empty-message: Debe especificar el valor
+            not-number-message: Formato de número incorrecto
+        mu:
+            label: Metros útiles
+            placeholder: Metros útiles
+            empty-message: Debe especificar el valor
+            not-number-message: Formato de número incorrecto
+        mc:
+            label: Metros construidos
+            placeholder: Metros construidos
+            empty-message: Debe especificar el valor
+            not-number-message: Formato de número incorrecto
+        energy-certificate:
+            label: Certificado Energético            
+            empty-message: Debe especificar el valor
+            not-number-message: Formato de número incorrecto
+        state:
+            label: Nivel de estado           
+            empty-message: Debe especificar el valor
+            not-number-message: Formato de número incorrecto
+        room:
+            label: Habitaciones
+            placeholder: Habitaciones
+            empty-message: Debe especificar el valor
+            not-number-message: Formato de número incorrecto
+        lumber-room:
+            label: Habitaciones
+            placeholder: Habitaciones
+            empty-message: Debe especificar el valor
+            not-number-message: Formato de número incorrecto
+            
+        

@@ -1,9 +1,5 @@
 $(document).ready(function() {
-    /*$('logout-link').click(function(e){
-        e.preventDefault();
-    });*/
-   
-    $('#submit-modal-login').click(function(e) {
+      $('#submit-modal-login').click(function(e) {
         e.preventDefault();
         $.ajax({
             type: $('form').attr('method'),

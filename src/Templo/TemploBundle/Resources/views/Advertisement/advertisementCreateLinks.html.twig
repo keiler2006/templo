@@ -1,47 +1,73 @@
 {% extends 'TemploBundle::base.html.twig' %}
 
 
+{% block head_style %}
+ {{ parent() }}
+<link href="{{ asset('assets/bootstrap-wizard/bootstrap-wizard.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/bootstrap-validator/css/bootstrapValidator.min.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/bootstrap-fileinput/css/fileinput.min.css') }}" rel="stylesheet">
+
+
+
+{% endblock %}
+
+{% block foot_script_assetic %}
+ {{ parent() }}
+
+<script src="{{ asset('assets/bootstrap-wizard/bootstrap-wizard.min.js') }}"></script>
+<script src="{{ asset('assets/bootstrap-validator/js/bootstrapValidator.min.js') }}"></script>
+<script src="{{ asset('assets/bootstrap-fileinput/js/fileinput.min.js') }}"></script>
+
+{% javascripts   
+    '@TemploBundle/Resources/public/js/publish/publish-common.js'
+    '@TemploBundle/Resources/public/js/publish/publish-flat.js'
+    '@TemploBundle/Resources/public/js/publish/publish-local.js'
+    '@TemploBundle/Resources/public/js/publish/publish-chalet.js'
+    %}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+{% endblock  %}
+
+
 
 {% block main %}
-<div id="advertisement-create-links" class="row">
-    <h1><i class="fa fa-thumb-tack"></i> {{ 'advertisement-create-links.title'|trans|capitalize }}</h1>
-    <div class="col-md-3">
-        <div class="create-link">
-            <a href="{{ path('user_new_office') }}">
+    {% include 'TemploBundle:Advertisement/wizard:flatWizard.html.twig' %}
+    {% include 'TemploBundle:Advertisement/wizard:localWizard.html.twig' %}
+    {% include 'TemploBundle:Advertisement/wizard:chaletWizard.html.twig' %}
+
+
+<div id="advertisment-publish-links" class="row">
+    <h1><i class="fa fa-thumb-tack"></i> {{ 'advertisement-publish-links.title'|trans|capitalize }}</h1>
+   
+    <div class="col-md-4">
+        <div class="publish-link">
+            <a href="" id="flat-wizard-start">
                 <img src="{{ asset('assets/img/home_32.png') }}">
                 <br><br>
-                {{ 'advertisement-create-links.office'|trans|capitalize }}
+                {{ 'advertisement-publish-links.flat'|trans|capitalize }}
             </a>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="create-link">
-            <a href="">
-                <i class="fa fa-book"></i>
+    <div class="col-md-4">
+        <div class="publish-link">
+            <a href="" id="local-wizard-start">
+                <img src="{{ asset('assets/img/home_32.png') }}">
                 <br><br>
-                AAAAAAA
+                {{ 'advertisement-publish-links.local'|trans|capitalize }}
             </a>
         </div>
     </div>    
 
-    <div class="col-md-3">
-        <div class="create-link">
-            <a href="">
+    <div class="col-md-4">
+        <div class="publish-link">
+            <a href="" id="chale-wizard-start">
                 <i class="fa fa-star"></i>
                 <br><br>
-                AAAAAAA
+                {{ 'advertisement-publish-links.chale'|trans|capitalize }}
             </a>
         </div>
-    </div>
-    <div class="col-md-3">
-        <div class="create-link">
-            <a href="">
-                <i class="fa fa-star"></i>
-                <br><br>
-                AAAAAAA
-            </a>
-        </div>
-    </div>
+    </div>  
 
 
 

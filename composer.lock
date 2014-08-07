@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fef369872cf28bccbbf9b12fa3d8ad4e",
+    "hash": "b36e9e8a61f722cd22bd2ceb036d9789",
     "packages": [
         {
             "name": "avalanche123/imagine-bundle",
@@ -797,12 +797,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSMessageBundle.git",
-                "reference": "ea4dcc183193f1fa7c7d7393bbefd6e924cc4929"
+                "reference": "fc199a37d12b66b58eec0b870972ac5c4f4d8715"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSMessageBundle/zipball/ea4dcc183193f1fa7c7d7393bbefd6e924cc4929",
-                "reference": "ea4dcc183193f1fa7c7d7393bbefd6e924cc4929",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSMessageBundle/zipball/fc199a37d12b66b58eec0b870972ac5c4f4d8715",
+                "reference": "fc199a37d12b66b58eec0b870972ac5c4f4d8715",
                 "shasum": ""
             },
             "require": {
@@ -849,7 +849,7 @@
                 "messaging",
                 "symfony"
             ],
-            "time": "2014-07-14 20:46:36"
+            "time": "2014-08-02 12:09:00"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -858,12 +858,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "ef7ca325929ff102fff521653a2e3b88c7a40361"
+                "reference": "1fe261de17abde29d6d461b7a93873d48b0efce7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/ef7ca325929ff102fff521653a2e3b88c7a40361",
-                "reference": "ef7ca325929ff102fff521653a2e3b88c7a40361",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/1fe261de17abde29d6d461b7a93873d48b0efce7",
+                "reference": "1fe261de17abde29d6d461b7a93873d48b0efce7",
                 "shasum": ""
             },
             "require": {
@@ -904,13 +904,12 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "Thibault Duplessis",
-                    "email": "thibault.duplessis@gmail.com",
-                    "homepage": "http://ornicar.github.com"
-                },
-                {
                     "name": "FriendsOfSymfony Community",
                     "homepage": "https://github.com/friendsofsymfony/FOSUserBundle/contributors"
+                },
+                {
+                    "name": "Thibault Duplessis",
+                    "email": "thibault.duplessis@gmail.com"
                 }
             ],
             "description": "Symfony FOSUserBundle",
@@ -918,7 +917,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2014-07-09 10:33:42"
+            "time": "2014-08-01 02:49:19"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -1150,17 +1149,61 @@
             "time": "2014-01-12 16:20:24"
         },
         {
-            "name": "knplabs/knp-menu",
-            "version": "v2.0.0",
+            "name": "kartik-v/bootstrap-fileinput",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/KnpLabs/KnpMenu.git",
-                "reference": "ca591b2fd7021c2608c22cfe5ad54eec66c1acee"
+                "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
+                "reference": "a4fac1ed8c4c7e8dfc929ade855b40fa622ca4f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpMenu/zipball/ca591b2fd7021c2608c22cfe5ad54eec66c1acee",
-                "reference": "ca591b2fd7021c2608c22cfe5ad54eec66c1acee",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/a4fac1ed8c4c7e8dfc929ade855b40fa622ca4f6",
+                "reference": "a4fac1ed8c4c7e8dfc929ade855b40fa622ca4f6",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "kartik\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "An enhanced HTML 5 file input for Bootstrap 3.x with file preview, multiple selection, and more features.",
+            "homepage": "https://github.com/kartik-v/bootstrap-fileinput",
+            "keywords": [
+                "bootstrap",
+                "file",
+                "image",
+                "input",
+                "jquery",
+                "preview",
+                "upload"
+            ],
+            "time": "2014-07-31 13:15:27"
+        },
+        {
+            "name": "knplabs/knp-menu",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpMenu.git",
+                "reference": "5758d0026d7ed00c8dd4727e413918cf2dc74c1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenu/zipball/5758d0026d7ed00c8dd4727e413918cf2dc74c1a",
+                "reference": "5758d0026d7ed00c8dd4727e413918cf2dc74c1a",
                 "shasum": ""
             },
             "require": {
@@ -1197,7 +1240,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "KnpLabs",
+                    "name": "Knplabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -1211,7 +1254,7 @@
                 "menu",
                 "tree"
             ],
-            "time": "2014-07-18 10:01:56"
+            "time": "2014-08-01 09:50:16"
         },
         {
             "name": "knplabs/knp-menu-bundle",
@@ -1220,16 +1263,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpMenuBundle.git",
-                "reference": "e6a0756b80349f04023faaef4ae4d801cbd716df"
+                "reference": "bdfc95da5ff7e4e67f948aaa9ea5da835a3a9088"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/e6a0756b80349f04023faaef4ae4d801cbd716df",
-                "reference": "e6a0756b80349f04023faaef4ae4d801cbd716df",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/bdfc95da5ff7e4e67f948aaa9ea5da835a3a9088",
+                "reference": "bdfc95da5ff7e4e67f948aaa9ea5da835a3a9088",
                 "shasum": ""
             },
             "require": {
-                "knplabs/knp-menu": "~2.0, >=2.0.0-beta1",
+                "knplabs/knp-menu": "~2.0",
                 "symfony/framework-bundle": "~2.0"
             },
             "type": "symfony-bundle",
@@ -1253,7 +1296,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "KnpLabs",
+                    "name": "Knplabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -1265,7 +1308,7 @@
             "keywords": [
                 "menu"
             ],
-            "time": "2014-06-16 19:59:46"
+            "time": "2014-08-01 09:57:23"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -2461,7 +2504,8 @@
         "oyejorge/less.php": 20,
         "stof/doctrine-extensions-bundle": 20,
         "knplabs/knp-menu-bundle": 20,
-        "mopa/bootstrap-bundle": 20
+        "mopa/bootstrap-bundle": 20,
+        "kartik-v/bootstrap-fileinput": 20
     },
     "platform": {
         "php": ">=5.3.3"

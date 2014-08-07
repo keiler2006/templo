@@ -10,7 +10,7 @@ imports:
     - { resource: bundle_fos_jsrouting.yml }  
     #- { resource: bundle_fos_message.yml }  
     - { resource: bundle_stof_doctrine_extensions.yml }
-    - { resource: bundle_vich_uploader.yml }
+    #- { resource: bundle_vich_uploader.yml }
     - { resource: "@TemploBundle/Resources/config/services.yml" }
 
 framework:
