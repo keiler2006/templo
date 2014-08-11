@@ -1,0 +1,260 @@
+{% extends 'TemploBundle::base.html.twig' %}
+
+
+{% block head_style %}
+ {{ parent() }}
+
+<link href="{{ asset('assets/bootstrap-select/bootstrap-select.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block foot_script_assetic %}
+ {{ parent() }}
+
+
+<script src="{{ asset('assets/bootstrap-select/bootstrap-select.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        function Wizard() {
+            this.current_step = 1;
+            var a = new Array();
+            $('.wizard-card').each(function(index, element) {
+                a.push($(this).attr('id'));
+                if (index > 0) {
+                    $(this).hide();
+                }
+            });
+            $('.wizard-submit').hide();
+            this.cards = a;
+
+
+            this.next = function() {
+               if (this.current_step < this.cards.length) {
+                    var current_id = this.cards[this.current_step - 1];
+                    var next_id = this.cards[this.current_step];
+                    $('#' + current_id).hide();
+                    $('#' + next_id).show();
+                    this.current_step++;
+                } else
+                {
+                    $('.wizard-next').hide();
+                    $('.wizard-submit').show();
+                }
+            };
+            this.back = function() {
+                if (this.current_step > 0) {
+                    var current_id = this.cards[this.current_step - 1];
+                    var next_id = this.cards[this.current_step - 2];
+                    $('#' + current_id).hide();
+                    $('#' + next_id).show();
+                    this.current_step--;
+                    $('.wizard-submit').hide();
+                    $('.wizard-next').show();
+                } else
+                {
+                    $('.wizard-back').hide();
+                }
+            };
+
+
+        }
+        ;
+
+        var wizard = new Wizard();
+
+        $('section.advert-create form').on('submit', function(e) {
+            e.preventDefault();
+            var form = $(this);
+            var a = form.serializeArray();
+            alert('SUM');
+            a.push({
+                name: 'last',
+                value: true
+            });
+            $.ajax({
+                type: "POST",
+                url: form.attr('action'),
+                data: a,
+                dataType: "json"
+            }).done(function(response) {
+                alert('ok');
+            }).fail(function() {
+                wizard.submitError();           // display the error card
+                wizard.hideButtons();           // hides the next and back buttons
+            });
+        });
+
+        $('#next-button').click(function() {
+            //e.preventDefault();
+            wizard.next();
+           
+        });
+        $('#back-button').click(function() {
+           // e.preventDefault();
+            wizard.back();
+        });
+
+
+
+
+
+    });
+
+    function validateStep1(card) {
+        var form = $('form.form-office');
+        var datos = card.el.find('input').serializeArray();
+        datos.push({
+            name: "step",
+            value: card.index + 1
+        });
+        var r;
+        $.ajax({
+            type: 'POST',
+            url: form.attr('action'),
+            async: false,
+            data: datos,
+            success: function(data) {
+                if (!data.success) {
+                    for (i = 0; i < data.cause.length; i++) {
+                        campo = data.cause[i].field;
+                        errores = data.cause[i].errors;
+                        showFieldErrors(campo, errores);
+                    }
+                    r = false;
+                } else
+                {
+                    r = true;
+                }
+            }
+        });
+        return r;
+    }
+
+    function validateStep2(card) {
+        var form = $('form.form-office');
+        var datos = card.el.find('input').serializeArray();
+
+        var datos_location = $('div.wizard-card[data-cardname="location"]').find('input').serializeArray();
+        for (i = 0; i < datos_location.length; i++)
+        {
+            datos.push(datos_location[i]);
+        }
+
+        datos.push({
+            name: "step",
+            value: card.index + 1
+        });
+        var r;
+        $.ajax({
+            type: 'POST',
+            url: form.attr('action'),
+            async: false,
+            data: datos,
+            success: function(data) {
+                if (!data.success) {
+                    for (i = 0; i < data.cause.length; i++) {
+                        campo = data.cause[i].field;
+                        errores = data.cause[i].errors;
+                        showFieldErrors(campo, errores);
+                    }
+                    r = false;
+                } else
+                {
+                    r = true;
+                }
+            }
+        });
+        return r;
+    }
+
+    function showFieldErrors(campo, errores) {
+        field = $('#piso_form_' + campo);
+        form_group = field.parents('.form-group');
+        form_group.addClass('has-error');
+        div = field.parent('div');
+        div.find('ul').remove();
+        ul = document.createElement('ul');
+        for (i = 0; i < errores.length; i++)
+        {
+            li = document.createElement('li');
+            li.appendChild(document.createTextNode(errores[i]));
+            ul.appendChild(li);
+        }
+        div.append(ul);
+    }
+
+
+
+</script>
+{% endblock  %}
+
+{% block main %}
+<section class="row advert-create">
+    <div class="col-sm-3">
+
+    </div>
+    <div class="col-sm-9">
+        {{ form_start(form, {'action': path('user_publish_flat'), 'method': 'POST', 'class': 'form-horizontal form-ad-creat', 'novalidate': 'novalidate'}) }}        
+            {{ form_widget(form.gps_longitud) }}
+            {{ form_widget(form.gps_altitud) }}  
+            {{ form_widget(form.current_step) }}  
+        <fieldset id="step1" class="wizard-card">
+            <legend>Datos de ubicación</legend>
+                  {{ form_row(form.localidad) }}
+                  {{ form_row(form.calle) }}
+                  {{ form_row(form.numero) }}          
+                  {{ form_row(form.conserje) }}            
+                  {{ form_row(form.descripcion) }}
+        </fieldset>
+        <fieldset id="step2" class="wizard-card">
+            <legend>Confirmación de ubicación</legend>
+            <p>Google Map</p>
+        </fieldset>
+        <fieldset id="step3" class="wizard-card">
+            <legend>Precio</legend>
+                 {{ form_row(form.tipo) }}            
+                 {{ form_row(form.precio_alquiler) }}           
+                 {{ form_row(form.precio_venta) }}
+        </fieldset>
+        <fieldset id="step4" class="wizard-card">
+            <legend>Detalles 1/3</legend>
+                 {{ form_row(form.cocina) }}          
+                 {{ form_row(form.alarma) }}          
+                 {{ form_row(form.garajes) }}         
+                 {{ form_row(form.bannos) }}          
+                 {{ form_row(form.aire_acondicionado) }}           
+                 {{ form_row(form.calefaccion) }}
+        </fieldset>
+        <fieldset id="step5" class="wizard-card">
+            <legend>Detalles 2/3</legend>
+                 {{ form_row(form.certificado_energetico) }}          
+                 {{ form_row(form.metros_utiles) }}           
+                 {{ form_row(form.metros_construidos) }}          
+                 {{ form_row(form.nivel_estado) }}
+        </fieldset>
+        <fieldset id="step6" class="wizard-card">
+            <legend>Detalles 3/3</legend>
+                 {{ form_row(form.habitaciones) }}          
+                 {{ form_row(form.trasteros) }} 
+        </fieldset>
+        <fieldset id="step7" class="wizard-card">
+            <legend>Fotos</legend>
+                 {{ form_row(form.image1) }}          
+                 {{ form_row(form.image2) }}           
+                 {{ form_row(form.image3) }}
+        </fieldset>           
+
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                <button type="button" id="back-button" class="btn wizard-back">Atras</button>
+                <button type="button" id="next-button" class="btn wizard-next">Siguiente</button>
+                <button type="submit" id="submit-button" class="btn btn-success wizard-submit">Salvar</button>
+            </div>
+        </div>
+
+         {{ form_end(form) }}
+    </div>
+
+
+</section>    
+{% endblock %}

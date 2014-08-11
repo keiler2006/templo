@@ -1,6 +1,12 @@
 mopa_bootstrap:
     form:
+        horizontal_label_class:  col-sm-4 control-label
+        horizontal_label_offset_class:  col-sm-offset-4
+        horizontal_input_wrapper_class:  col-sm-6
         show_legend: false
+        render_optional_text:  false
+        render_required_asterisk:  true
+        checkbox_label:       label
     menu: ~
     icons:
         icon_set: fontawesome4

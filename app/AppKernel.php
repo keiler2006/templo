@@ -23,7 +23,7 @@ class AppKernel extends Kernel
             // StofDoctrineExtensionsBundle
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             
-            new Craue\FormFlowBundle\CraueFormFlowBundle(),
+           // new Craue\FormFlowBundle\CraueFormFlowBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
             
@@ -34,7 +34,7 @@ class AppKernel extends Kernel
             //new FOS\MessageBundle\FOSMessageBundle(),
             
               // VichUploaderBundle, KnpGaufretteBundle
-            new Vich\UploaderBundle\VichUploaderBundle(),
+           // new Vich\UploaderBundle\VichUploaderBundle(),
 
             // AvalancheImagineBundle
             new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
@@ -43,6 +43,8 @@ class AppKernel extends Kernel
 
             new Templo\MessageBundle\TemploMessageBundle(),
             new Templo\UserBundle\TemploUserBundle(),
+            
+         //   new Oneup\UploaderBundle\OneupUploaderBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {           

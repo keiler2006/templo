@@ -2,9 +2,9 @@ vich_uploader:
     db_driver: orm
     storage: vich_uploader.storage.filesystem
     mappings:
-        user_profile_image:
-            uri_prefix: /uploads/users
-            upload_destination: %kernel.root_dir%/../web/uploads/users
+        property_image:
+            uri_prefix: /uploads/property
+            upload_destination: %kernel.root_dir%/../web/uploads/property
             delete_on_remove: true
             delete_on_update: true
             namer: templo.namer_uniqid
