@@ -70,6 +70,10 @@ templo-contact-us:
     pattern:  /contact-us
     defaults: {  page: 'contact-us'}
     
+templo-find:
+    pattern:  /find
+    defaults: {  page: 'search-for'}
+    
 templo-ask:
     pattern:  /ask
     defaults: {  page: 'ask'}
