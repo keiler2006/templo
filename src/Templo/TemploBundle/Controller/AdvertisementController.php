@@ -27,10 +27,10 @@ class AdvertisementController extends Controller {
      * @Template()
      */
     public function advertisementCreateLinksAction() {
-        
-         $flat_form = $this->createForm(new PisoType());
-         $local_form = $this->createForm(new LocalType());
-         $chalet_form = $this->createForm(new ChaletType());
+
+        $flat_form = $this->createForm(new PisoType());
+        $local_form = $this->createForm(new LocalType());
+        $chalet_form = $this->createForm(new ChaletType());
 
         return array(
             'flat_form' => $flat_form->createView(),
@@ -38,8 +38,7 @@ class AdvertisementController extends Controller {
             'chalet_form' => $chalet_form->createView()
         );
     }
-    
-      
+
     /**
      * Muestra los enlaces para crear los distintos tipos de anuncios
      * 
@@ -52,30 +51,33 @@ class AdvertisementController extends Controller {
         $piso = new Piso();
         $form = $this->createForm(new PisoType(), $piso);
 
+
         if ($request->isMethod('POST')) {
             $form->handleRequest($request);
 
-            $valid = $this->get('templo.advertisement.validator');
-            
-            $step = $request->request->get('step');
+            $user = $this->get('security.context')->getToken()->getUser();
+           // $valid = $this->get('templo.advertisement.validator');
+
+
+            //$step = $request->request->get('step');
             $piso->setGpsAltitud(0.0);
             $piso->setGpsLongitud(0.0);
-            $errors = $valid->validarPiso($piso, $step);
-            if (count($errors) == 0) {
+            $piso->setUser($user);
+            // $errors = $valid->validarPiso($piso, $step);
+            // if (count($errors) == 0) {
+            if (true) {
                 $response['success'] = true;
-                if ($request->request->has('last')) {                  
-                    try { 
-                        $em = $this->getDoctrine()->getEntityManager();                       
-                        $em->persist($piso);
-                        $em->flush();                      
-                    } catch (\Exception $es) {                     
-                        $response['success'] = false;
-                        $response['cause'] = $es->getMessage();
-                    }
-                }  
-            } else {               
+                try {
+                    $em = $this->getDoctrine()->getEntityManager();
+                    $em->persist($piso);
+                    $em->flush();
+                } catch (\Exception $es) {
+                    $response['success'] = false;
+                    $response['cause'] = $es->getMessage();
+                }
+            } else {
                 $response['success'] = false;
-                $response['cause'] = $errors;
+                //$response['cause'] = $errors;
             }
 
 
@@ -84,63 +86,6 @@ class AdvertisementController extends Controller {
 
         return array(
             'flat_form' => $form->createView()
-        );
-
-    }
-
-    /**
-     * Muestra los enlaces para crear los distintos tipos de anuncios
-     * 
-     * @Route("/verify-office", name="user_new_office_ajaxaa")
-     * @Security("has_role('ROLE_USER')")
-     * @Template("TemploBundle:Advertisement:officeFormAjax.html.twig")
-     */
-    public function verifyOfficeDataAction(Request $request) {
-
-        if ($request->isMethod('GET')) {
-
-            $form = $this->createForm(new OficinaTypeA());
-
-
-            return array(
-                'form' => $form->createView()
-            );
-        }
-
-
-
-
-
-
-        $em = $this->getDoctrine()->getManager();
-        $oficina = new Oficina();
-
-        $user = $this->container->get('security.context')->getToken()->getUser();
-
-        $flow = $this->get('templo.form.flow.oficina'); // must match the flow's service id
-        $flow->bind($oficina);
-
-        // form of the current step
-        $form = $flow->createForm();
-        if ($flow->isValid($form)) {
-            $flow->saveCurrentStepData($form);
-
-            if ($flow->nextStep()) {
-                // form for the next step
-                $form = $flow->createForm();
-            } else {
-                $em = $this->getDoctrine()->getEntityManager();
-                $em->persist($oficina);
-                $em->flush();
-
-                $this->get('session')->getFlashBag()->add('success', 'Anuncio creado exitosamente');
-                return $this->redirect($this->generateUrl('user_dashboard')); // redirect when done
-            }
-        }
-        return array(
-            'form' => $form->createView(),
-            'flow' => $flow,
-            'entity' => $oficina
         );
     }
 

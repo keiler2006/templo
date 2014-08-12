@@ -7,10 +7,10 @@ parameters:
     database_user: root
     database_password: null
     mailer_transport: smtp
-    mailer_host: 10.0.0.3
+    mailer_host: 127.0.0.1
     mailer_port: 25
-    mailer_user: keiler.gonzalez
-    mailer_password: Apoloatenea-60
+    mailer_user: keiler@templo.com
+    mailer_password: keiler
     mailer_encryption: ssl
     locale: es
     secret: ThisTokenIsNotSoSecretChangeIt

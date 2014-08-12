@@ -30,13 +30,13 @@ class Inmueble {
     protected $id;
 
     /**
-     * @ORM\Column(type="decimal", scale=2, nullable=false)
+     * @ORM\Column(type="decimal", scale=2, nullable=true)
      * @Assert\NotBlank()
      */
     protected $precio_venta;
 
     /**
-     * @ORM\Column(type="decimal", scale=2, nullable=false) 
+     * @ORM\Column(type="decimal", scale=2, nullable=true) 
      * @Assert\NotBlank()
      */
     protected $precio_alquiler;
@@ -116,7 +116,7 @@ class Inmueble {
     protected $gps_altitud;
 
     /**
-     * @ORM\Column(type="text") 
+     * @ORM\Column(type="text", nullable=true) 
      */
     protected $descripcion;
 

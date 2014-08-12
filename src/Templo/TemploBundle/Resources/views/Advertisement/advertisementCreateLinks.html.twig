@@ -31,6 +31,77 @@
 <script src="{{ asset_url }}"></script>
 {% endjavascripts %}
 
+<script type="text/javascript">
+function photoConfig() {    
+    $('tr.add-photo').on('click', 'a', function(e) {
+        //$('.add-photo a').on('click', function(e) {        
+        //  $('tr.add-photo').delegate('a','click', function(e) {        
+        e.preventDefault();
+
+        collectionHolder_id = $(this).attr('data-table');
+        collectionHolder = $('#' + collectionHolder_id);
+
+        var count = collectionHolder.find('.photo-row').length;
+        var index = 0;
+        if (count > 0)
+        {
+            var name = collectionHolder.find('.photo-row').last().find('input').attr('name');
+            re = /.*(\d+).*/;
+            if (re.exec(name))
+            {
+                index = parseInt(RegExp.$1) + 1;
+            }
+        }
+
+        var file = collectionHolder.attr('data-prototype-file').replace(/__name__/g, index);
+       // var file_label = collectionHolder.attr('data-prototype-file-label').replace(/__name__/g, index);
+        //var name = collectionHolder.attr('data-prototype-name').replace(/__name__/g, index);
+       // var name_label = collectionHolder.attr('data-prototype-name-label').replace(/__name__/g, index);
+        //var main = collectionHolder.attr('data-prototype-main').replace(/__name__/g, index);
+        //var main_label = collectionHolder.attr('data-prototype-main-label').replace(/__name__/g, index);
+
+        var file_id_prefix = collectionHolder.attr('data-file-id-prefix') + '_' + index + '_file';
+
+        $(this).parent().parent().before('<tr id="tr-' + index + '" class="photo-row">' +
+                '<td>' +
+                '<div class="container">' +
+                '<div class="row">' +
+                file +
+                '</div>' +
+                '<div class="row">' +
+                '<div class="pull-right">' +
+                '<a href="#" id="del-' + index + '" class="del-photo" data-tr="tr-' + index + '">{{'advertisement.form.photo.delete' | trans}}</a>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</td>' +
+                '</tr>');
+
+        $('#del-'+index).on('click', function(e) {
+            e.preventDefault();
+            var tr = $(this).attr('data-tr');
+            $('#' + tr).remove();
+        });
+
+        $("#" + file_id_prefix).removeClass('form-control').fileinput({
+            showCaption: true,
+            previewFileType: "image",
+	    browseClass: "btn btn-success",
+            browseIcon: "<i class=\"glyphicon glyphicon-picture\"></i> ",
+            showPreview: true,
+            showRemove: false,
+            showUpload: false,
+            browseLabel: '{{'advertisement.form.photo.browse' | trans}}',
+            maxFileSize: 2048,
+            msgSizeTooLarge: '{{'advertisement.form.photo.msg-too-large' | trans | raw}}'
+            
+        });
+
+    });
+
+}
+</script>
+
 {% endblock  %}
 
 
@@ -43,7 +114,7 @@
 
 <div id="advertisment-publish-links" class="row">
     <h1><i class="fa fa-thumb-tack"></i> {{ 'advertisement-publish-links.title'|trans|capitalize }}</h1>
-   
+  
     <div class="col-md-4">
         <div class="publish-link">
             <a href="" id="flat-wizard-start">

@@ -3,25 +3,24 @@
     <div class="container">
         <ul class="nav pull-right navbar-inverse">
         <li id="fat-menu" class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Idiomas<b class="fa fa-book fa-fw"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{'top-bar.language-select.label' | trans}}<b class="fa fa-book fa-fw"></b></a>
           <ul class="dropdown-menu">
-            <li><div style="padding-left: 20px;"> <img  alt="es" src="{{ asset('images/flags/es.png') }}"><a href="{{ path('portada', { '_locale': 'es' }) }}"> {{'top-bar.languages.spanish' | trans}}</a></div></li>
-            <li><div style="padding-left: 20px;"> <img  alt="es" src="{{ asset('images/flags/us.png') }}"><a href="{{ path('portada', { '_locale': 'en' }) }}"> {{'top-bar.languages.english' | trans}}</a></div></li>
-            <li><div style="padding-left: 20px;"> <img  alt="es" src="{{ asset('images/flags/cn.png') }}"><a href="{{ path('portada', { '_locale': 'cn' }) }}"> {{'top-bar.languages.chinese' | trans}}</a></div></li>
+            <li><div style="padding-left: 20px;"> <img  alt="es" src="{{ asset('images/flags/es.png') }}"><a href="{{ path('portada', { '_locale': 'es' }) }}"> {{'top-bar.language-select.options.spanish' | trans}}</a></div></li>
+            <li><div style="padding-left: 20px;"> <img  alt="es" src="{{ asset('images/flags/us.png') }}"><a href="{{ path('portada', { '_locale': 'en' }) }}"> {{'top-bar.language-select.options.english' | trans}}</a></div></li>
+            <li><div style="padding-left: 20px;"> <img  alt="es" src="{{ asset('images/flags/cn.png') }}"><a href="{{ path('portada', { '_locale': 'cn' }) }}"> {{'top-bar.language-select.options.chinese' | trans}}</a></div></li>
           </ul>
         </li>        
       </ul>  
 {% if is_granted("IS_AUTHENTICATED_FULLY") %}
       <ul class="nav pull-right navbar-inverse">
         <li id="fat-menu" class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="glyphicon glyphicon-user"> </b> {{ 'app.user' }} __<b class="glyphicon glyphicon-cog"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="glyphicon glyphicon-user"> </b> {{ app.user }} __<b class="glyphicon glyphicon-cog"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Acci&oacute;n</a></li>
+            <li><a href="{{ path('user_dashboard') }}">{{'top-bar.user-menu.dashboard' | trans}}</a></li>
             <li><a href="#">Otra acci&oacute;n</a></li>
             <li><a href="#">Algo m&aacute;s aqu&iacute;</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Enlace separado</a></li>
-            <li><a href="{{ path('logout') }}">Salir <b class="glyphicon glyphicon-off"></b></a></li>
+            <li class="divider"></li>           
+            <li><a href="{{ path('logout') }}">{{'top-bar.user-menu.logout' | trans}}</a></li>
           </ul>
         </li>        
       </ul>       

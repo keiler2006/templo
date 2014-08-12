@@ -1,7 +1,0 @@
-{% extends 'TemploBundle:Advertisement:advertisement-template.html.twig' %}
-
-{% block section_title %}{{ 'advertisement-create-links.office'|trans|capitalize }}{% endblock %}
-
-{% block form_action %}
-{{ (entity.isNew) ? path('user_publish_office') : path('user_new_office', { 'id': entity.id }) }}
-{% endblock %}

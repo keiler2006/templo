@@ -1,10 +1,14 @@
 top-bar:
     login-register: Acceso | Registro
-    languages:
-        spanish: Español
-        english: Inglés
-        chinese: Chino
-        
+    language-select:
+        label: Idiomas
+        options:
+            spanish: Español
+            english: Inglés
+            chinese: Chino
+    user-menu:
+        dashboard: Escritorio
+        logout: Salir
 menu:
     home: Inicio
     service: Servicios
@@ -72,8 +76,7 @@ advertisement:
     flat-publish: Publicar piso
     local-publish: Publicar local
     chale-publish: Publicar chale
-    photos: Fotos
-    add-photo: Adicionar foto
+    photos: Fotos    
     publish-other-flat: Publicar otro piso
     success-flat-message: Piso publicado <strong>exitosamente.</strong>
     done: Terminar
@@ -166,5 +169,9 @@ advertisement:
             placeholder: Trasteros
             empty-message: Debe especificar el valor
             not-number-message: Formato de número incorrecto
-            
+        photo:
+            browse: Buscar
+            delete: Eliminar
+            add: Adicionar foto
+            msg-too-large: Fichero "{name}" (<b>{size} KB</b>) excede el límite de subida de <b>{maxSize} KB</b>.        
         

@@ -19,9 +19,40 @@ $(document).ready(function() {
             flat_wizard.reset();
         });
 
+        flat_wizard.on("submit", function(wizard) {
+            var form = $('form.form-publish-flat');
+            post_data = new FormData(form[0]);
+            post_data.append('last', 'true')
+            $.ajax({
+                type: "POST",
+                url: wizard.args.submitUrl,
+                data: post_data,
+                processData: false,
+                contentType: false,
+                dataType: "json",
+                enctype: 'multipart/form-data'
+            }).done(function(response) {
+                if (response.success)
+                {
+                    wizard.submitSuccess();         // displays the success card
+                    wizard.hideButtons();           // hides the next and back buttons
+                    wizard.updateProgressBar(0);    // sets the progress meter to 0
+                } else
+                {
+                    wizard.find('div.wizard-error > div.alert-danger').html(response.cause);
+                    wizard.submitError();           // displays the success card                  
+                }
+
+            }).fail(function() {
+                wizard.submitFailure();           // display the error card
+                wizard.hideButtons();           // hides the next and back buttons
+            });
+        });
+
         flat_wizard.on("reset", function() {
             flat_wizard.modal.find(':input').val('').removeAttr('disabled');
             flat_wizard.modal.find('.form-group').removeClass('has-error').removeClass('has-succes');
+            $('form.form-publish-flat').data('bootstrapValidator').resetForm();
         });
 
         flat_wizard.el.find(".wizard-success .im-done").click(function() {
@@ -34,8 +65,6 @@ $(document).ready(function() {
 
         flat_wizard.el.find(".wizard-success .publish-another-flat").click(function() {
             flat_wizard.reset();
-            $('form.form-publish-flat').data('bootstrapValidator').resetForm();
-            
         });
 
 
@@ -59,8 +88,6 @@ $(document).ready(function() {
             var venta_field = $('#piso_form_precio_venta');
             var venta_row = venta_field.parent().parent().parent();
 
-            //var bootstrapValidator = $('form.form-publish-flat').data('bootstrapValidator');
-
             var select = $(this);
 
             if (select.val() === 'alquiler')
@@ -79,9 +106,7 @@ $(document).ready(function() {
         });
 
     });
-
 });
-
 function flatValidateStep(card) {
     // var name = card.el[0].attr('data-cardname');
 
